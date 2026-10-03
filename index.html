@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>Orthora Creative Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark">O</div>
+        <div><div class="brand-name">ORTHORA</div><div class="brand-sub">Creative Intelligence</div></div>
+      </div>
+      <div class="stage-label">RESEARCH STACK</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="competitors"><span class="nav-index">01</span><span>Competitors</span><span class="nav-status" id="competitorNavCount">0/10</span></button>
+        <button class="nav-item" data-view="hypotheses"><span class="nav-index">02</span><span>Hypotheses</span><span class="nav-status" id="hypothesisNavCount">0</span></button>
+        <button class="nav-item" data-view="angles"><span class="nav-index">03</span><span>Angle Pipeline</span><span class="nav-status" id="angleNavCount">0</span></button>
+      </nav>
+      <div class="stage-label top-gap">NEXT MODULES</div>
+      <div class="future-stack">
+        <div class="future-row"><span>04</span><span>YouTube</span><em>later</em></div>
+        <div class="future-row"><span>05</span><span>Reddit</span><em>later</em></div>
+        <div class="future-row"><span>06</span><span>TikTok</span><em>later</em></div>
+        <div class="future-row"><span>07</span><span>Amazon</span><em>later</em></div>
+        <div class="future-row"><span>08</span><span>Internal VOC</span><em>later</em></div>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="autosave"><span class="pulse"></span> Autosaved locally</div>
+        <button class="ghost-btn full" id="exportBtn">Export backup</button>
+        <label class="ghost-btn full file-label">Import backup<input id="importInput" type="file" accept="application/json" hidden /></label>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">ORTHORA / CREATIVE RECOVERY SPRINT</div><h1 id="pageTitle">Competitor Intelligence</h1></div>
+        <div class="top-actions"><div class="sprint-pill">14-DAY SPRINT</div><button class="primary-btn" id="newHypothesisBtn">+ New hypothesis</button></div>
+      </header>
+
+      <section class="view active" id="competitorsView">
+        <div class="intro-grid">
+          <div class="statement-card"><div class="statement-kicker">THE JOB</div><div class="statement-text">Do the reps. Understand <strong>why</strong> a creative works before translating it to Orthora.</div></div>
+          <div class="flow-card"><div class="flow-step active">Competitors</div><div class="flow-arrow">→</div><div class="flow-step">Hypotheses</div><div class="flow-arrow">→</div><div class="flow-step">Angles</div><div class="flow-arrow">→</div><div class="flow-step">Concepts</div><div class="flow-arrow">→</div><div class="flow-step">Scripts</div></div>
+        </div>
+        <div class="metrics" id="metrics"></div>
+        <div class="section-head"><div><div class="section-label">STAGE 01</div><h2>10 competitor brands</h2></div><p>Start with brands worth studying. Each brand has room for 10 creative swipes and a structured teardown.</p></div>
+        <div class="competitor-grid" id="competitorGrid"></div>
+      </section>
+
+      <section class="view" id="brandView"><div class="back-row"><button class="back-btn" id="backToCompetitors">← All competitors</button></div><div id="brandWorkspace"></div></section>
+
+      <section class="view" id="hypothesesView">
+        <div class="section-head wide-head"><div><div class="section-label">STAGE 02</div><h2>Hypothesis Lab</h2></div><p>Turn observations into falsifiable bets. No vague “this could work.” State what you believe, why, and what evidence would validate it.</p></div>
+        <div class="hypothesis-layout"><div id="hypothesisList" class="hypothesis-list"></div><div class="principles-card"><div class="statement-kicker">GOOD HYPOTHESIS</div><p><strong>Observation</strong><br>What did you repeatedly see?</p><p><strong>Customer truth</strong><br>What belief, pain or desire sits underneath?</p><p><strong>Bet</strong><br>If we communicate X to avatar Y, we believe Z will happen.</p><p><strong>Evidence</strong><br>What would make you increase or kill confidence?</p></div></div>
+      </section>
+
+      <section class="view" id="anglesView">
+        <div class="section-head wide-head"><div><div class="section-label">STAGE 03</div><h2>Angle Pipeline</h2></div><p>Only promote hypotheses you are willing to spend money testing. This is your bridge from research to actual creative production.</p></div>
+        <div class="angle-board" id="angleBoard"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="hypothesisModal">
+    <div class="modal-head"><div><div class="section-label">NEW BET</div><h3>Research hypothesis</h3></div><button class="icon-btn" id="closeModal">×</button></div>
+    <form id="hypothesisForm">
+      <label>Hypothesis title<input name="title" required placeholder="e.g. Hour-6 cushioning collapse" /></label>
+      <label>Observation<textarea name="observation" rows="3" placeholder="What pattern did you observe?"></textarea></label>
+      <label>Customer truth<textarea name="truth" rows="3" placeholder="What is the underlying pain, desire, belief or frustration?"></textarea></label>
+      <label>The bet<textarea name="bet" rows="3" placeholder="If we communicate X to Y, we believe Z..."></textarea></label>
+      <div class="form-grid two"><label>Avatar<input name="avatar" placeholder="Nurse, restaurant worker, 55+..." /></label><label>Source<select name="source"><option>Competitor</option><option>YouTube</option><option>Reddit</option><option>TikTok</option><option>Amazon</option><option>Internal VOC</option><option>Multiple</option></select></label></div>
+      <div class="form-grid three"><label>Evidence<select name="evidence"><option value="1">1 — weak</option><option value="2">2</option><option value="3" selected>3 — moderate</option><option value="4">4</option><option value="5">5 — strong</option></select></label><label>Relevance<select name="relevance"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select></label><label>Novelty<select name="novelty"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select></label></div>
+      <label>Evidence / links<textarea name="evidenceNotes" rows="3" placeholder="Paste links, quotes, patterns or notes that support this bet."></textarea></label>
+      <div class="modal-actions"><button type="button" class="ghost-btn" id="cancelModal">Cancel</button><button class="primary-btn" type="submit">Save hypothesis</button></div>
+    </form>
+  </div></div>
+
+  <template id="swipeTemplate"><details class="swipe-card"><summary><div class="swipe-number"></div><div class="swipe-summary-main"><strong class="swipe-title-display">Untitled creative</strong><span class="swipe-format-display">Not analyzed</span></div><div class="swipe-completeness"><span></span></div><div class="chevron">⌄</div></summary><div class="swipe-body">
+    <div class="form-grid two"><label>Creative name<input data-field="title" placeholder="e.g. Nurse comparison VSL" /></label><label>Creative URL<input data-field="url" type="url" placeholder="Meta Ad Library / TikTok / landing page" /></label></div>
+    <div class="form-grid three"><label>Avatar<input data-field="avatar" placeholder="Who is this for?" /></label><label>Format<select data-field="format"><option value="">Select</option><option>UGC</option><option>VSL</option><option>Static</option><option>Listicle</option><option>Comparison</option><option>Testimonial</option><option>Founder</option><option>Authority</option><option>Demo</option><option>Other</option></select></label><label>Awareness<select data-field="awareness"><option value="">Select</option><option>Unaware</option><option>Problem aware</option><option>Solution aware</option><option>Product aware</option><option>Most aware</option></select></label></div>
+    <label>Transcript / copy<textarea data-field="transcript" rows="7" placeholder="Paste the creative transcript or full copy. Do this manually — this is where the reps begin."></textarea></label>
+    <div class="analysis-grid"><label>Angle<textarea data-field="angle" rows="3" placeholder="What core lens makes the problem/desire feel compelling?"></textarea></label><label>Hook<textarea data-field="hook" rows="3" placeholder="What earns the first 1–3 seconds?"></textarea></label><label>Lead<textarea data-field="lead" rows="3" placeholder="How does it deepen attention after the hook?"></textarea></label><label>Mechanism<textarea data-field="mechanism" rows="3" placeholder="Why does the problem happen / why does this solution work?"></textarea></label><label>Problem<textarea data-field="problem" rows="3" placeholder="What painful problem is being made vivid?"></textarea></label><label>Desire<textarea data-field="desire" rows="3" placeholder="What outcome does the customer really want?"></textarea></label><label>Proof<textarea data-field="proof" rows="3" placeholder="Reviews, demo, specificity, authority, social proof..."></textarea></label><label>Offer<textarea data-field="offer" rows="3" placeholder="Price, guarantee, bundle, urgency, risk reversal..."></textarea></label></div>
+    <label>Why do you believe this works?<textarea data-field="why" rows="5" placeholder="Your analysis. What is doing the heavy lifting? Be specific."></textarea></label>
+    <label>Orthora translation<textarea data-field="translation" rows="5" placeholder="Not a copy. How could the underlying logic be translated to Orthora without stealing surface-level execution?"></textarea></label>
+    <div class="swipe-actions"><button class="ghost-btn create-hypothesis-from-swipe" type="button">→ Turn into hypothesis</button><button class="danger-link clear-swipe" type="button">Clear swipe</button></div>
+  </div></details></template>
+
+  <script src="app.js"></script>
+</body>
+</html>
