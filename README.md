@@ -14,5 +14,7 @@ Interactive research workspace for Orthora's founder-led creative recovery sprin
 ## Philosophy
 The tool intentionally does **not** automate the research or fill analyses with AI. The founder and creative strategists do the reps. The app provides structure, storage, and progression from research to testable hypotheses.
 
-## Deploy
+## Deploy to Vercel
+[Deploy this repo to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/Orthora/orthora-dashboards1)
+
 Zero-build static app. Deploy the repository root directly to Vercel.
