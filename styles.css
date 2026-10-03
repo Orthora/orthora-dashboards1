@@ -158,3 +158,209 @@ textarea::placeholder{
 .danger-link:hover{
   color:#ffffff !important;
 }
+
+
+/* Clean white workspace mode */
+:root{
+  --bg:#ffffff !important;
+  --panel:#ffffff !important;
+  --panel2:#f7f7f7 !important;
+  --border:#dddddd !important;
+  --border2:#c8c8c8 !important;
+  --text:#111111 !important;
+  --muted:#666666 !important;
+  --accent:#111111 !important;
+  --good:#111111 !important;
+  --danger:#111111 !important;
+  --shadow:0 12px 30px rgba(0,0,0,.08) !important;
+}
+
+html,
+body,
+.shell,
+.main,
+.sidebar,
+.topbar,
+.view{
+  background:#ffffff !important;
+  color:#111111 !important;
+}
+
+.sidebar{
+  border-right:1px solid #dddddd !important;
+}
+
+.topbar{
+  border-bottom:1px solid #dddddd !important;
+  background:#ffffff !important;
+  backdrop-filter:none !important;
+}
+
+.brand-mark,
+.nav-item.active,
+.statement-card,
+.flow-card,
+.metric-card,
+.competitor-card,
+.principles-card,
+.hypothesis-card,
+.angle-card,
+.brand-hero,
+.brand-meta-card,
+.empty-state,
+.swipe-card,
+.angle-column,
+.modal{
+  background:#ffffff !important;
+  border-color:#dddddd !important;
+  color:#111111 !important;
+  box-shadow:none !important;
+}
+
+.competitor-card:hover,
+.nav-item:hover{
+  background:#f7f7f7 !important;
+  border-color:#bdbdbd !important;
+}
+
+.nav-item.active{
+  background:#f3f3f3 !important;
+  border-color:#cfcfcf !important;
+}
+
+.primary-btn{
+  background:#111111 !important;
+  color:#ffffff !important;
+  border-color:#111111 !important;
+}
+
+.primary-btn:hover{
+  background:#2a2a2a !important;
+}
+
+.ghost-btn,
+.back-btn,
+.icon-btn,
+.tiny-btn{
+  background:#ffffff !important;
+  color:#111111 !important;
+  border-color:#cfcfcf !important;
+}
+
+.ghost-btn:hover,
+.back-btn:hover,
+.icon-btn:hover,
+.tiny-btn:hover{
+  background:#f5f5f5 !important;
+  border-color:#999999 !important;
+  color:#111111 !important;
+}
+
+input,
+textarea,
+select{
+  background:#ffffff !important;
+  color:#111111 !important;
+  border-color:#cccccc !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#111111 !important;
+  box-shadow:0 0 0 2px rgba(0,0,0,.06) !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#999999 !important;
+}
+
+.eyebrow,
+.section-label,
+.statement-kicker,
+.stage-label,
+.nav-index,
+.nav-status,
+.metric-name,
+.metric-sub,
+.competitor-domain,
+.competitor-notes,
+.card-footer,
+.brand-score-label,
+.brand-score-caption,
+.swipes-head p,
+.swipe-summary-main span,
+.future-row,
+.hyp-block span,
+.hyp-block p,
+.angle-card p,
+.autosave,
+.section-head p,
+.principles-card p,
+.statement-text{
+  color:#666666 !important;
+}
+
+.brand-name,
+.topbar h1,
+.section-head h2,
+.competitor-name,
+.hyp-title,
+.angle-card h4,
+.swipe-summary-main strong{
+  color:#111111 !important;
+}
+
+.progress-line,
+.swipe-completeness{
+  background:#eeeeee !important;
+}
+
+.progress-line>span,
+.swipe-completeness span{
+  background:#111111 !important;
+}
+
+.tag,
+.score-tag,
+.sprint-pill,
+.future-row em{
+  color:#111111 !important;
+  border-color:#cccccc !important;
+  background:#ffffff !important;
+}
+
+.flow-step{
+  background:#ffffff !important;
+  color:#555555 !important;
+  border-color:#d5d5d5 !important;
+}
+
+.flow-step.active{
+  background:#111111 !important;
+  color:#ffffff !important;
+  border-color:#111111 !important;
+}
+
+.flow-arrow,
+.chevron{
+  color:#888888 !important;
+}
+
+.pulse{
+  background:#111111 !important;
+  box-shadow:0 0 0 4px rgba(0,0,0,.05) !important;
+}
+
+.danger-link{
+  color:#666666 !important;
+}
+
+.danger-link:hover{
+  color:#111111 !important;
+}
+
+.modal-backdrop{
+  background:rgba(0,0,0,.25) !important;
+}
