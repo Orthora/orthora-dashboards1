@@ -364,3 +364,357 @@ textarea::placeholder{
 .modal-backdrop{
   background:rgba(0,0,0,.25) !important;
 }
+
+
+/* Friendly neutral workspace */
+:root{
+  --bg:#f4f5f7 !important;
+  --panel:#ffffff !important;
+  --panel2:#f8f9fb !important;
+  --border:#e2e5e9 !important;
+  --border2:#cfd4da !important;
+  --text:#1f2328 !important;
+  --muted:#6f7782 !important;
+  --accent:#2f343a !important;
+  --good:#4f6b5a !important;
+  --danger:#9b5555 !important;
+  --shadow:0 8px 24px rgba(20,25,35,.06) !important;
+}
+
+html,body,.shell,.main,.view{
+  background:#f4f5f7 !important;
+  color:#1f2328 !important;
+}
+
+.sidebar{
+  background:#eef0f3 !important;
+  border-right:1px solid #dde1e6 !important;
+  padding:24px 16px !important;
+}
+
+.topbar{
+  background:rgba(244,245,247,.94) !important;
+  border-bottom:1px solid #dde1e6 !important;
+  backdrop-filter:blur(10px) !important;
+}
+
+.brand-mark{
+  background:#ffffff !important;
+  color:#1f2328 !important;
+  border:1px solid #d9dde2 !important;
+  box-shadow:0 2px 8px rgba(20,25,35,.04) !important;
+}
+
+.brand-name{color:#1f2328 !important;}
+.brand-sub{color:#7a828c !important;}
+
+.stage-label{
+  color:#9299a3 !important;
+  margin-top:10px !important;
+}
+
+.nav-item{
+  border-radius:10px !important;
+  padding:11px 12px !important;
+  color:#68717c !important;
+}
+
+.nav-item:hover{
+  background:#e7e9ed !important;
+  border-color:transparent !important;
+}
+
+.nav-item.active{
+  background:#ffffff !important;
+  color:#1f2328 !important;
+  border-color:#dde1e6 !important;
+  box-shadow:0 3px 10px rgba(20,25,35,.04) !important;
+}
+
+.nav-index,.nav-status,.future-row>span:first-child{
+  color:#9aa1aa !important;
+}
+
+.future-row{
+  color:#8a929c !important;
+}
+
+.future-row em{
+  background:#f7f8fa !important;
+  color:#9aa1aa !important;
+  border-color:#dde1e6 !important;
+}
+
+.autosave{
+  color:#78818c !important;
+}
+
+.statement-card,
+.flow-card,
+.metric-card,
+.competitor-card,
+.principles-card,
+.hypothesis-card,
+.angle-card,
+.brand-hero,
+.brand-meta-card,
+.empty-state,
+.swipe-card,
+.angle-column,
+.modal{
+  background:#ffffff !important;
+  border:1px solid #e1e4e8 !important;
+  color:#1f2328 !important;
+  box-shadow:0 4px 14px rgba(20,25,35,.035) !important;
+  border-radius:14px !important;
+}
+
+.statement-card,
+.flow-card,
+.metric-card,
+.brand-hero,
+.brand-meta-card,
+.principles-card{
+  padding:22px !important;
+}
+
+.competitor-card{
+  padding:22px !important;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease !important;
+}
+
+.competitor-card:hover{
+  transform:translateY(-2px) !important;
+  border-color:#cfd4da !important;
+  box-shadow:0 10px 24px rgba(20,25,35,.06) !important;
+  background:#ffffff !important;
+}
+
+.competitor-card.empty{
+  background:#fafbfc !important;
+  border-style:dashed !important;
+}
+
+.eyebrow,
+.section-label,
+.statement-kicker{
+  color:#8b939d !important;
+  letter-spacing:.1em !important;
+}
+
+.topbar h1,
+.section-head h2,
+.competitor-name,
+.hyp-title,
+.angle-card h4,
+.swipe-summary-main strong{
+  color:#1f2328 !important;
+}
+
+.statement-text,
+.section-head p,
+.principles-card p{
+  color:#66707b !important;
+}
+
+.flow-card{
+  background:#fafbfc !important;
+}
+
+.flow-step{
+  background:#ffffff !important;
+  color:#68717c !important;
+  border:1px solid #dfe3e7 !important;
+  border-radius:8px !important;
+  padding:8px 10px !important;
+}
+
+.flow-step.active{
+  background:#2f343a !important;
+  color:#ffffff !important;
+  border-color:#2f343a !important;
+}
+
+.flow-arrow{
+  color:#b0b6bd !important;
+}
+
+.metric-card{
+  min-height:104px !important;
+}
+
+.metric-name{
+  color:#808893 !important;
+}
+
+.metric-value{
+  color:#1f2328 !important;
+  font-size:26px !important;
+}
+
+.metric-sub{
+  color:#9aa1aa !important;
+}
+
+.progress-line,
+.swipe-completeness{
+  background:#edf0f2 !important;
+}
+
+.progress-line>span,
+.swipe-completeness span{
+  background:#59616b !important;
+}
+
+.card-footer,
+.competitor-domain,
+.competitor-notes,
+.brand-score-label,
+.brand-score-caption,
+.swipes-head p,
+.swipe-summary-main span,
+.hyp-block span,
+.hyp-block p,
+.angle-card p{
+  color:#7b848f !important;
+}
+
+.primary-btn{
+  background:#2f343a !important;
+  color:#ffffff !important;
+  border:1px solid #2f343a !important;
+  border-radius:9px !important;
+  padding:10px 14px !important;
+  box-shadow:0 2px 6px rgba(20,25,35,.08) !important;
+}
+
+.primary-btn:hover{
+  background:#1f2328 !important;
+}
+
+.ghost-btn,
+.back-btn,
+.icon-btn,
+.tiny-btn{
+  background:#ffffff !important;
+  color:#49515a !important;
+  border:1px solid #d7dce1 !important;
+  border-radius:9px !important;
+}
+
+.ghost-btn:hover,
+.back-btn:hover,
+.icon-btn:hover,
+.tiny-btn:hover{
+  background:#f6f7f9 !important;
+  border-color:#c2c8cf !important;
+  color:#1f2328 !important;
+}
+
+.sprint-pill,
+.tag,
+.score-tag{
+  background:#f7f8fa !important;
+  color:#59616b !important;
+  border:1px solid #dfe3e7 !important;
+  border-radius:999px !important;
+}
+
+input,textarea,select{
+  background:#fbfcfd !important;
+  color:#1f2328 !important;
+  border:1px solid #d9dde2 !important;
+  border-radius:10px !important;
+  padding:11px 12px !important;
+  min-height:42px !important;
+  line-height:1.5 !important;
+}
+
+textarea{
+  min-height:92px !important;
+}
+
+input:hover,textarea:hover,select:hover{
+  border-color:#c4cad1 !important;
+}
+
+input:focus,textarea:focus,select:focus{
+  background:#ffffff !important;
+  border-color:#8f98a3 !important;
+  box-shadow:0 0 0 3px rgba(80,90,105,.08) !important;
+}
+
+input::placeholder,textarea::placeholder{
+  color:#a2a9b1 !important;
+}
+
+.swipe-card summary{
+  padding:15px 17px !important;
+  background:#ffffff !important;
+}
+
+.swipe-card[open] summary{
+  background:#fafbfc !important;
+}
+
+.swipe-body{
+  background:#ffffff !important;
+  border-top:1px solid #e5e8eb !important;
+  padding:20px !important;
+  gap:16px !important;
+}
+
+.analysis-grid{
+  gap:14px !important;
+}
+
+.hypothesis-card{
+  padding:20px !important;
+}
+
+.hyp-block{
+  border-top:1px solid #e7e9ec !important;
+}
+
+.angle-column{
+  background:#f7f8fa !important;
+  border-color:#e1e4e8 !important;
+  padding:13px !important;
+}
+
+.angle-card{
+  background:#ffffff !important;
+}
+
+.principles-card{
+  background:#fafbfc !important;
+}
+
+.modal-backdrop{
+  background:rgba(31,35,40,.22) !important;
+  backdrop-filter:blur(3px) !important;
+}
+
+.modal{
+  border-color:#d9dde2 !important;
+  box-shadow:0 24px 60px rgba(20,25,35,.16) !important;
+}
+
+.pulse{
+  background:#617267 !important;
+  box-shadow:0 0 0 4px rgba(97,114,103,.09) !important;
+}
+
+.danger-link{
+  color:#8a6262 !important;
+}
+
+.danger-link:hover{
+  color:#6d4242 !important;
+}
+
+@media(max-width:760px){
+  .sidebar{
+    background:#f1f2f4 !important;
+  }
+}
