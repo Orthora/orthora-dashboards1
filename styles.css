@@ -1,1 +1,160 @@
 :root{--bg:#090b0e;--panel:#101318;--panel2:#15191f;--border:#252b34;--border2:#303742;--text:#f2f4f7;--muted:#8e98a7;--accent:#ff6b35;--good:#70d6a2;--danger:#f17676;--shadow:0 24px 70px rgba(0,0,0,.28)}*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:14px}.shell{min-height:100vh;display:grid;grid-template-columns:264px 1fr}.sidebar{position:sticky;top:0;height:100vh;border-right:1px solid var(--border);background:#0c0f13;padding:26px 18px;display:flex;flex-direction:column}.brand-block{display:flex;align-items:center;gap:12px;padding:0 8px 30px}.brand-mark{width:35px;height:35px;border:1px solid #4d5561;border-radius:10px;display:grid;place-items:center;font-weight:700;background:linear-gradient(145deg,#1b2027,#0e1115)}.brand-name{font-size:13px;font-weight:700;letter-spacing:.14em}.brand-sub{font-size:11px;color:var(--muted);margin-top:3px}.stage-label{font:500 10px/1 'DM Mono',monospace;color:#56606d;letter-spacing:.12em;margin:8px 9px 10px}.top-gap{margin-top:28px}.nav{display:grid;gap:5px}.nav-item{display:grid;grid-template-columns:27px 1fr auto;align-items:center;gap:8px;width:100%;border:1px solid transparent;background:transparent;color:#9ba4b0;border-radius:9px;padding:10px;text-align:left;cursor:pointer}.nav-item:hover{background:#12161b}.nav-item.active{color:#fff;border-color:#2b313a;background:#15191f}.nav-index,.future-row>span:first-child{font:500 10px 'DM Mono',monospace;color:#5e6875}.nav-status{font:500 10px 'DM Mono',monospace;color:#727d8b}.future-stack{display:grid;gap:2px}.future-row{display:grid;grid-template-columns:27px 1fr auto;gap:8px;padding:9px 10px;color:#596370;font-size:12px}.future-row em{font-style:normal;font:400 9px 'DM Mono',monospace;border:1px solid #232a32;padding:2px 5px;border-radius:4px}.sidebar-bottom{margin-top:auto;display:grid;gap:8px}.autosave{font-size:11px;color:#6f7986;padding:8px 3px;display:flex;align-items:center;gap:7px}.pulse{width:6px;height:6px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px rgba(112,214,162,.07)}.main{min-width:0}.topbar{height:94px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 42px;position:sticky;top:0;background:rgba(9,11,14,.9);backdrop-filter:blur(18px);z-index:20}.eyebrow,.section-label,.statement-kicker{font:500 10px 'DM Mono',monospace;color:#65707e;letter-spacing:.13em}.topbar h1{font-size:24px;margin:7px 0 0;letter-spacing:-.035em}.top-actions{display:flex;gap:10px;align-items:center}.sprint-pill{font:500 10px 'DM Mono',monospace;border:1px solid #373e48;color:#98a1ad;border-radius:99px;padding:9px 12px}.primary-btn,.ghost-btn,.back-btn,.icon-btn{font:600 12px Inter;border-radius:8px;padding:10px 13px;cursor:pointer}.primary-btn{border:1px solid #e65c2b;background:var(--accent);color:white}.primary-btn:hover{background:#ff7847}.ghost-btn,.back-btn{background:#11151a;border:1px solid var(--border2);color:#b8c0ca}.ghost-btn:hover,.back-btn:hover{border-color:#4a5360;color:white}.full{width:100%;text-align:center}.file-label{display:block}.view{display:none;padding:34px 42px 70px}.view.active{display:block}.intro-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:12px}.statement-card,.flow-card,.metric-card,.competitor-card,.principles-card,.hypothesis-card,.angle-card,.brand-hero,.brand-meta-card,.empty-state{border:1px solid var(--border);background:linear-gradient(180deg,#11151a,#0f1216);border-radius:12px}.statement-card{padding:22px}.statement-text{font-size:16px;line-height:1.5;margin-top:11px;color:#bcc4ce}.statement-text strong{color:#fff}.flow-card{padding:16px 19px;display:flex;align-items:center;justify-content:center;gap:9px;overflow:auto}.flow-step{white-space:nowrap;font:500 11px 'DM Mono',monospace;border:1px solid #303640;border-radius:6px;padding:8px 9px;color:#8d97a4;background:#0d1014}.flow-step.active{color:#fff;border-color:#70452f;background:#1b1411}.flow-arrow{color:#404954}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.metric-card{padding:17px 18px}.metric-name{font-size:11px;color:var(--muted);margin-bottom:10px}.metric-value{font:500 24px 'DM Mono',monospace;letter-spacing:-.04em}.metric-sub{font-size:10px;color:#616b77;margin-top:6px}.section-head{display:flex;align-items:end;justify-content:space-between;margin:42px 0 17px}.section-head h2{font-size:21px;margin:7px 0 0;letter-spacing:-.025em}.section-head p{max-width:520px;color:#7d8794;font-size:12px;line-height:1.55;margin:0}.wide-head{margin-top:8px}.competitor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.competitor-card{min-height:180px;padding:20px;cursor:pointer;position:relative;transition:.18s ease}.competitor-card:hover{border-color:#414955;transform:translateY(-1px);background:linear-gradient(180deg,#15191f,#101318)}.competitor-card.empty{display:flex;align-items:center;justify-content:center;text-align:center;border-style:dashed;color:#5f6976}.empty-plus{font-size:22px;color:#767f8b;margin-bottom:10px}.competitor-slot{position:absolute;top:17px;right:18px;font:500 10px 'DM Mono',monospace;color:#59636f}.competitor-domain{font:400 10px 'DM Mono',monospace;color:#66717e;margin-bottom:18px}.competitor-name{font-size:19px;font-weight:650;letter-spacing:-.03em}.competitor-notes{font-size:11px;color:#737e8a;margin-top:8px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:85%}.progress-line{height:3px;background:#1d232a;border-radius:4px;margin-top:28px;overflow:hidden}.progress-line>span{display:block;height:100%;background:var(--accent);border-radius:4px}.card-footer{display:flex;justify-content:space-between;color:#66717d;font:400 10px 'DM Mono',monospace;margin-top:9px}.back-row{margin-bottom:15px}.back-btn{padding:8px 10px}.brand-hero{padding:24px;display:grid;grid-template-columns:1fr 260px;gap:28px}.brand-title-row{display:flex;align-items:center;gap:12px}.brand-title-row input{font-size:28px;font-weight:700;letter-spacing:-.04em;background:transparent;border:0;border-bottom:1px dashed #38414c;color:white;outline:none;min-width:0;width:100%;padding:3px 0 6px}.brand-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.brand-meta label,.swipe-body label,.modal label{display:grid;gap:7px;color:#87919e;font-size:10px;font-weight:600;letter-spacing:.035em}.brand-meta input,.brand-meta textarea,input,textarea,select{width:100%;background:#0c0f13;border:1px solid #2b323b;color:#e7eaf0;border-radius:7px;padding:10px 11px;font:400 12px Inter;outline:none}textarea{resize:vertical;line-height:1.5}input:focus,textarea:focus,select:focus{border-color:#636e7c;box-shadow:0 0 0 3px rgba(255,255,255,.025)}.brand-meta-card{padding:18px}.brand-score{font:500 42px 'DM Mono',monospace}.brand-score-label{font-size:10px;color:#6e7885;margin-top:3px}.brand-score-caption{font-size:11px;color:#7d8793;line-height:1.5;margin-top:21px}.swipes-head{display:flex;justify-content:space-between;align-items:center;margin:34px 0 12px}.swipes-head h3{margin:0;font-size:17px}.swipes-head p{margin:5px 0 0;color:#68727f;font-size:11px}.swipe-stack{display:grid;gap:8px}.swipe-card{border:1px solid var(--border);background:#0f1216;border-radius:10px;overflow:hidden}.swipe-card[open]{border-color:#343c47}.swipe-card summary{list-style:none;display:grid;grid-template-columns:36px 1fr 110px 25px;gap:12px;align-items:center;padding:13px 15px;cursor:pointer}.swipe-card summary::-webkit-details-marker{display:none}.swipe-number{font:500 10px 'DM Mono',monospace;color:#606a76}.swipe-summary-main{display:grid;gap:3px}.swipe-summary-main strong{font-size:12px}.swipe-summary-main span{font-size:10px;color:#626c79}.swipe-completeness{height:3px;background:#20262d;border-radius:4px}.swipe-completeness span{display:block;height:100%;background:#d4653e;border-radius:4px}.chevron{color:#58626f;font-size:16px}.swipe-body{border-top:1px solid var(--border);padding:18px;display:grid;gap:14px}.form-grid{display:grid;gap:12px}.form-grid.two{grid-template-columns:1fr 1fr}.form-grid.three{grid-template-columns:repeat(3,1fr)}.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.swipe-actions{display:flex;justify-content:space-between;align-items:center;padding-top:4px}.danger-link{border:0;background:transparent;color:#825b5b;font-size:10px;cursor:pointer}.danger-link:hover{color:var(--danger)}.hypothesis-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:14px}.hypothesis-list{display:grid;gap:10px;align-content:start}.principles-card{padding:20px;align-self:start;position:sticky;top:125px}.principles-card p{font-size:11px;color:#77818e;line-height:1.55;border-top:1px solid #232932;padding-top:12px}.principles-card strong{color:#ccd2da}.hypothesis-card{padding:18px}.hyp-top{display:flex;justify-content:space-between;gap:15px}.hyp-title{font-size:15px;font-weight:650}.hyp-meta{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}.tag{font:500 9px 'DM Mono',monospace;border:1px solid #313842;border-radius:5px;color:#7f8996;padding:4px 6px}.score-tag{color:#ef9c77;border-color:#513528;background:#17110f}.hyp-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.hyp-block{border-top:1px solid #252b33;padding-top:11px}.hyp-block span{display:block;font:500 9px 'DM Mono',monospace;color:#5f6975;margin-bottom:6px}.hyp-block p{margin:0;color:#9ba4b0;font-size:11px;line-height:1.55}.hyp-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:15px}.angle-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.angle-column{border:1px solid var(--border);background:#0d1014;border-radius:12px;min-height:420px;padding:12px}.angle-column-head{display:flex;justify-content:space-between;align-items:center;padding:7px 5px 13px;color:#828c99;font:500 10px 'DM Mono',monospace}.angle-card{padding:14px;margin-bottom:8px}.angle-card h4{font-size:12px;margin:0 0 7px}.angle-card p{font-size:10px;color:#727c89;line-height:1.5;margin:0}.angle-card .mini-actions{display:flex;gap:6px;margin-top:12px}.tiny-btn{font:500 9px Inter;border:1px solid #2d343d;background:#12161b;color:#8d97a4;border-radius:5px;padding:6px 7px;cursor:pointer}.tiny-btn:hover{color:#fff}.empty-state{padding:30px;text-align:center;color:#68727e;font-size:12px}.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:100;padding:25px}.modal-backdrop.show{display:flex}.modal{width:min(700px,100%);max-height:90vh;overflow:auto;background:#11151a;border:1px solid #343b45;border-radius:14px;padding:22px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}.modal h3{font-size:20px;margin:5px 0 0}.icon-btn{background:transparent;border:1px solid #333a43;color:#8b95a2;width:34px;height:34px;padding:0;font-size:20px}.modal form{display:grid;gap:13px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}.toast{position:fixed;right:25px;bottom:25px;background:#181d23;border:1px solid #39414c;border-radius:8px;padding:11px 14px;color:#bdc5ce;font-size:11px;z-index:200;box-shadow:var(--shadow)}@media(max-width:1050px){.shell{grid-template-columns:220px 1fr}.topbar,.view{padding-left:25px;padding-right:25px}.metrics{grid-template-columns:1fr 1fr}.intro-grid{grid-template-columns:1fr}.competitor-grid{grid-template-columns:1fr}.brand-hero{grid-template-columns:1fr}.hypothesis-layout{grid-template-columns:1fr}.principles-card{position:static}.angle-board{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}@media(max-width:760px){.shell{display:block}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--border)}.future-stack,.stage-label.top-gap{display:none}.sidebar-bottom{margin-top:20px;grid-template-columns:1fr 1fr}.autosave{grid-column:1/-1}.topbar{position:relative;height:auto;padding:22px;align-items:flex-start;gap:14px}.top-actions{flex-direction:column;align-items:flex-end}.view{padding:24px 18px 60px}.metrics{grid-template-columns:1fr 1fr}.flow-card{justify-content:flex-start}.form-grid.two,.form-grid.three,.brand-meta{grid-template-columns:1fr}.swipe-card summary{grid-template-columns:31px 1fr 70px 18px}}
+
+/* High-contrast black & white mode */
+:root{
+  --bg:#000000;
+  --panel:#000000;
+  --panel2:#070707;
+  --border:#2f2f2f;
+  --border2:#5a5a5a;
+  --text:#ffffff;
+  --muted:#c9c9c9;
+  --accent:#ffffff;
+  --good:#ffffff;
+  --danger:#ffffff;
+  --shadow:0 24px 70px rgba(0,0,0,.55);
+}
+
+html,body,.sidebar,.main,.topbar{
+  background:#000000 !important;
+  color:#ffffff !important;
+}
+
+.sidebar{
+  border-right:1px solid #333 !important;
+}
+
+.topbar{
+  border-bottom:1px solid #333 !important;
+  background:rgba(0,0,0,.96) !important;
+}
+
+.brand-mark,
+.nav-item.active,
+.statement-card,
+.flow-card,
+.metric-card,
+.competitor-card,
+.principles-card,
+.hypothesis-card,
+.angle-card,
+.brand-hero,
+.brand-meta-card,
+.empty-state,
+.swipe-card,
+.angle-column,
+.modal{
+  background:#000000 !important;
+  border-color:#3a3a3a !important;
+  color:#ffffff !important;
+}
+
+.competitor-card:hover,
+.nav-item:hover{
+  background:#0a0a0a !important;
+  border-color:#ffffff !important;
+}
+
+.primary-btn{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+}
+
+.primary-btn:hover{
+  background:#e8e8e8 !important;
+}
+
+.ghost-btn,
+.back-btn,
+.icon-btn,
+.tiny-btn{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border-color:#666 !important;
+}
+
+.ghost-btn:hover,
+.back-btn:hover,
+.icon-btn:hover,
+.tiny-btn:hover{
+  border-color:#ffffff !important;
+  color:#ffffff !important;
+}
+
+input,textarea,select{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border-color:#555 !important;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color:#ffffff !important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.12) !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#777 !important;
+}
+
+.eyebrow,
+.section-label,
+.statement-kicker,
+.stage-label,
+.nav-index,
+.nav-status,
+.metric-name,
+.metric-sub,
+.competitor-domain,
+.competitor-notes,
+.card-footer,
+.brand-score-label,
+.brand-score-caption,
+.swipes-head p,
+.swipe-summary-main span,
+.future-row,
+.hyp-block span,
+.hyp-block p,
+.angle-card p,
+.autosave{
+  color:#bdbdbd !important;
+}
+
+.statement-text,
+.section-head p,
+.principles-card p{
+  color:#d6d6d6 !important;
+}
+
+.progress-line,
+.swipe-completeness{
+  background:#222 !important;
+}
+
+.progress-line>span,
+.swipe-completeness span{
+  background:#ffffff !important;
+}
+
+.tag,
+.score-tag,
+.sprint-pill,
+.future-row em{
+  color:#ffffff !important;
+  border-color:#555 !important;
+  background:#000000 !important;
+}
+
+.pulse{
+  background:#ffffff !important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.08) !important;
+}
+
+.danger-link{
+  color:#bdbdbd !important;
+}
+
+.danger-link:hover{
+  color:#ffffff !important;
+}
