@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d10" />
+  <title>Orthora Creative Intelligence — Shared Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>:root{--bg:#090b0e;--panel:#101318;--panel2:#15191f;--border:#252b34;--border2:#303742;--text:#f2f4f7;--muted:#8e98a7;--accent:#ff6b35;--good:#70d6a2;--danger:#f17676;--shadow:0 24px 70px rgba(0,0,0,.28)}*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;font-size:14px}.shell{min-height:100vh;display:grid;grid-template-columns:264px 1fr}.sidebar{position:sticky;top:0;height:100vh;border-right:1px solid var(--border);background:#0c0f13;padding:26px 18px;display:flex;flex-direction:column}.brand-block{display:flex;align-items:center;gap:12px;padding:0 8px 30px}.brand-mark{width:35px;height:35px;border:1px solid #4d5561;border-radius:10px;display:grid;place-items:center;font-weight:700;background:linear-gradient(145deg,#1b2027,#0e1115)}.brand-name{font-size:13px;font-weight:700;letter-spacing:.14em}.brand-sub{font-size:11px;color:var(--muted);margin-top:3px}.stage-label{font:500 10px/1 'DM Mono',monospace;color:#56606d;letter-spacing:.12em;margin:8px 9px 10px}.top-gap{margin-top:28px}.nav{display:grid;gap:5px}.nav-item{display:grid;grid-template-columns:27px 1fr auto;align-items:center;gap:8px;width:100%;border:1px solid transparent;background:transparent;color:#9ba4b0;border-radius:9px;padding:10px;text-align:left;cursor:pointer}.nav-item:hover{background:#12161b}.nav-item.active{color:#fff;border-color:#2b313a;background:#15191f}.nav-index,.future-row>span:first-child{font:500 10px 'DM Mono',monospace;color:#5e6875}.nav-status{font:500 10px 'DM Mono',monospace;color:#727d8b}.future-stack{display:grid;gap:2px}.future-row{display:grid;grid-template-columns:27px 1fr auto;gap:8px;padding:9px 10px;color:#596370;font-size:12px}.future-row em{font-style:normal;font:400 9px 'DM Mono',monospace;border:1px solid #232a32;padding:2px 5px;border-radius:4px}.sidebar-bottom{margin-top:auto;display:grid;gap:8px}.autosave{font-size:11px;color:#6f7986;padding:8px 3px;display:flex;align-items:center;gap:7px}.pulse{width:6px;height:6px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px rgba(112,214,162,.07)}.main{min-width:0}.topbar{height:94px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 42px;position:sticky;top:0;background:rgba(9,11,14,.9);backdrop-filter:blur(18px);z-index:20}.eyebrow,.section-label,.statement-kicker{font:500 10px 'DM Mono',monospace;color:#65707e;letter-spacing:.13em}.topbar h1{font-size:24px;margin:7px 0 0;letter-spacing:-.035em}.top-actions{display:flex;gap:10px;align-items:center}.sprint-pill{font:500 10px 'DM Mono',monospace;border:1px solid #373e48;color:#98a1ad;border-radius:99px;padding:9px 12px}.primary-btn,.ghost-btn,.back-btn,.icon-btn{font:600 12px Inter;border-radius:8px;padding:10px 13px;cursor:pointer}.primary-btn{border:1px solid #e65c2b;background:var(--accent);color:white}.primary-btn:hover{background:#ff7847}.ghost-btn,.back-btn{background:#11151a;border:1px solid var(--border2);color:#b8c0ca}.ghost-btn:hover,.back-btn:hover{border-color:#4a5360;color:white}.full{width:100%;text-align:center}.file-label{display:block}.view{display:none;padding:34px 42px 70px}.view.active{display:block}.intro-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:12px}.statement-card,.flow-card,.metric-card,.competitor-card,.principles-card,.hypothesis-card,.angle-card,.brand-hero,.brand-meta-card,.empty-state{border:1px solid var(--border);background:linear-gradient(180deg,#11151a,#0f1216);border-radius:12px}.statement-card{padding:22px}.statement-text{font-size:16px;line-height:1.5;margin-top:11px;color:#bcc4ce}.statement-text strong{color:#fff}.flow-card{padding:16px 19px;display:flex;align-items:center;justify-content:center;gap:9px;overflow:auto}.flow-step{white-space:nowrap;font:500 11px 'DM Mono',monospace;border:1px solid #303640;border-radius:6px;padding:8px 9px;color:#8d97a4;background:#0d1014}.flow-step.active{color:#fff;border-color:#70452f;background:#1b1411}.flow-arrow{color:#404954}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}.metric-card{padding:17px 18px}.metric-name{font-size:11px;color:var(--muted);margin-bottom:10px}.metric-value{font:500 24px 'DM Mono',monospace;letter-spacing:-.04em}.metric-sub{font-size:10px;color:#616b77;margin-top:6px}.section-head{display:flex;align-items:end;justify-content:space-between;margin:42px 0 17px}.section-head h2{font-size:21px;margin:7px 0 0;letter-spacing:-.025em}.section-head p{max-width:520px;color:#7d8794;font-size:12px;line-height:1.55;margin:0}.wide-head{margin-top:8px}.competitor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.competitor-card{min-height:180px;padding:20px;cursor:pointer;position:relative;transition:.18s ease}.competitor-card:hover{border-color:#414955;transform:translateY(-1px);background:linear-gradient(180deg,#15191f,#101318)}.competitor-card.empty{display:flex;align-items:center;justify-content:center;text-align:center;border-style:dashed;color:#5f6976}.empty-plus{font-size:22px;color:#767f8b;margin-bottom:10px}.competitor-slot{position:absolute;top:17px;right:18px;font:500 10px 'DM Mono',monospace;color:#59636f}.competitor-domain{font:400 10px 'DM Mono',monospace;color:#66717e;margin-bottom:18px}.competitor-name{font-size:19px;font-weight:650;letter-spacing:-.03em}.competitor-notes{font-size:11px;color:#737e8a;margin-top:8px;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:85%}.progress-line{height:3px;background:#1d232a;border-radius:4px;margin-top:28px;overflow:hidden}.progress-line>span{display:block;height:100%;background:var(--accent);border-radius:4px}.card-footer{display:flex;justify-content:space-between;color:#66717d;font:400 10px 'DM Mono',monospace;margin-top:9px}.back-row{margin-bottom:15px}.back-btn{padding:8px 10px}.brand-hero{padding:24px;display:grid;grid-template-columns:1fr 260px;gap:28px}.brand-title-row{display:flex;align-items:center;gap:12px}.brand-title-row input{font-size:28px;font-weight:700;letter-spacing:-.04em;background:transparent;border:0;border-bottom:1px dashed #38414c;color:white;outline:none;min-width:0;width:100%;padding:3px 0 6px}.brand-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}.brand-meta label,.swipe-body label,.modal label{display:grid;gap:7px;color:#87919e;font-size:10px;font-weight:600;letter-spacing:.035em}.brand-meta input,.brand-meta textarea,input,textarea,select{width:100%;background:#0c0f13;border:1px solid #2b323b;color:#e7eaf0;border-radius:7px;padding:10px 11px;font:400 12px Inter;outline:none}textarea{resize:vertical;line-height:1.5}input:focus,textarea:focus,select:focus{border-color:#636e7c;box-shadow:0 0 0 3px rgba(255,255,255,.025)}.brand-meta-card{padding:18px}.brand-score{font:500 42px 'DM Mono',monospace}.brand-score-label{font-size:10px;color:#6e7885;margin-top:3px}.brand-score-caption{font-size:11px;color:#7d8793;line-height:1.5;margin-top:21px}.swipes-head{display:flex;justify-content:space-between;align-items:center;margin:34px 0 12px}.swipes-head h3{margin:0;font-size:17px}.swipes-head p{margin:5px 0 0;color:#68727f;font-size:11px}.swipe-stack{display:grid;gap:8px}.swipe-card{border:1px solid var(--border);background:#0f1216;border-radius:10px;overflow:hidden}.swipe-card[open]{border-color:#343c47}.swipe-card summary{list-style:none;display:grid;grid-template-columns:36px 1fr 110px 25px;gap:12px;align-items:center;padding:13px 15px;cursor:pointer}.swipe-card summary::-webkit-details-marker{display:none}.swipe-number{font:500 10px 'DM Mono',monospace;color:#606a76}.swipe-summary-main{display:grid;gap:3px}.swipe-summary-main strong{font-size:12px}.swipe-summary-main span{font-size:10px;color:#626c79}.swipe-completeness{height:3px;background:#20262d;border-radius:4px}.swipe-completeness span{display:block;height:100%;background:#d4653e;border-radius:4px}.chevron{color:#58626f;font-size:16px}.swipe-body{border-top:1px solid var(--border);padding:18px;display:grid;gap:14px}.form-grid{display:grid;gap:12px}.form-grid.two{grid-template-columns:1fr 1fr}.form-grid.three{grid-template-columns:repeat(3,1fr)}.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.swipe-actions{display:flex;justify-content:space-between;align-items:center;padding-top:4px}.danger-link{border:0;background:transparent;color:#825b5b;font-size:10px;cursor:pointer}.danger-link:hover{color:var(--danger)}.hypothesis-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:14px}.hypothesis-list{display:grid;gap:10px;align-content:start}.principles-card{padding:20px;align-self:start;position:sticky;top:125px}.principles-card p{font-size:11px;color:#77818e;line-height:1.55;border-top:1px solid #232932;padding-top:12px}.principles-card strong{color:#ccd2da}.hypothesis-card{padding:18px}.hyp-top{display:flex;justify-content:space-between;gap:15px}.hyp-title{font-size:15px;font-weight:650}.hyp-meta{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}.tag{font:500 9px 'DM Mono',monospace;border:1px solid #313842;border-radius:5px;color:#7f8996;padding:4px 6px}.score-tag{color:#ef9c77;border-color:#513528;background:#17110f}.hyp-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.hyp-block{border-top:1px solid #252b33;padding-top:11px}.hyp-block span{display:block;font:500 9px 'DM Mono',monospace;color:#5f6975;margin-bottom:6px}.hyp-block p{margin:0;color:#9ba4b0;font-size:11px;line-height:1.55}.hyp-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:15px}.angle-board{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.angle-column{border:1px solid var(--border);background:#0d1014;border-radius:12px;min-height:420px;padding:12px}.angle-column-head{display:flex;justify-content:space-between;align-items:center;padding:7px 5px 13px;color:#828c99;font:500 10px 'DM Mono',monospace}.angle-card{padding:14px;margin-bottom:8px}.angle-card h4{font-size:12px;margin:0 0 7px}.angle-card p{font-size:10px;color:#727c89;line-height:1.5;margin:0}.angle-card .mini-actions{display:flex;gap:6px;margin-top:12px}.tiny-btn{font:500 9px Inter;border:1px solid #2d343d;background:#12161b;color:#8d97a4;border-radius:5px;padding:6px 7px;cursor:pointer}.tiny-btn:hover{color:#fff}.empty-state{padding:30px;text-align:center;color:#68727e;font-size:12px}.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:100;padding:25px}.modal-backdrop.show{display:flex}.modal{width:min(700px,100%);max-height:90vh;overflow:auto;background:#11151a;border:1px solid #343b45;border-radius:14px;padding:22px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}.modal h3{font-size:20px;margin:5px 0 0}.icon-btn{background:transparent;border:1px solid #333a43;color:#8b95a2;width:34px;height:34px;padding:0;font-size:20px}.modal form{display:grid;gap:13px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:7px}.toast{position:fixed;right:25px;bottom:25px;background:#181d23;border:1px solid #39414c;border-radius:8px;padding:11px 14px;color:#bdc5ce;font-size:11px;z-index:200;box-shadow:var(--shadow)}@media(max-width:1050px){.shell{grid-template-columns:220px 1fr}.topbar,.view{padding-left:25px;padding-right:25px}.metrics{grid-template-columns:1fr 1fr}.intro-grid{grid-template-columns:1fr}.competitor-grid{grid-template-columns:1fr}.brand-hero{grid-template-columns:1fr}.hypothesis-layout{grid-template-columns:1fr}.principles-card{position:static}.angle-board{grid-template-columns:1fr}.analysis-grid{grid-template-columns:1fr}}@media(max-width:760px){.shell{display:block}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--border)}.future-stack,.stage-label.top-gap{display:none}.sidebar-bottom{margin-top:20px;grid-template-columns:1fr 1fr}.autosave{grid-column:1/-1}.topbar{position:relative;height:auto;padding:22px;align-items:flex-start;gap:14px}.top-actions{flex-direction:column;align-items:flex-end}.view{padding:24px 18px 60px}.metrics{grid-template-columns:1fr 1fr}.flow-card{justify-content:flex-start}.form-grid.two,.form-grid.three,.brand-meta{grid-template-columns:1fr}.swipe-card summary{grid-template-columns:31px 1fr 70px 18px}}
+
+/* High-contrast black & white mode */
+:root{
+  --bg:#000000;
+  --panel:#000000;
+  --panel2:#070707;
+  --border:#2f2f2f;
+  --border2:#5a5a5a;
+  --text:#ffffff;
+  --muted:#c9c9c9;
+  --accent:#ffffff;
+  --good:#ffffff;
+  --danger:#ffffff;
+  --shadow:0 24px 70px rgba(0,0,0,.55);
+}
+
+html,body,.sidebar,.main,.topbar{
+  background:#000000 !important;
+  color:#ffffff !important;
+}
+
+.sidebar{
+  border-right:1px solid #333 !important;
+}
+
+.topbar{
+  border-bottom:1px solid #333 !important;
+  background:rgba(0,0,0,.96) !important;
+}
+
+.brand-mark,
+.nav-item.active,
+.statement-card,
+.flow-card,
+.metric-card,
+.competitor-card,
+.principles-card,
+.hypothesis-card,
+.angle-card,
+.brand-hero,
+.brand-meta-card,
+.empty-state,
+.swipe-card,
+.angle-column,
+.modal{
+  background:#000000 !important;
+  border-color:#3a3a3a !important;
+  color:#ffffff !important;
+}
+
+.competitor-card:hover,
+.nav-item:hover{
+  background:#0a0a0a !important;
+  border-color:#ffffff !important;
+}
+
+.primary-btn{
+  background:#ffffff !important;
+  color:#000000 !important;
+  border-color:#ffffff !important;
+}
+
+.primary-btn:hover{
+  background:#e8e8e8 !important;
+}
+
+.ghost-btn,
+.back-btn,
+.icon-btn,
+.tiny-btn{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border-color:#666 !important;
+}
+
+.ghost-btn:hover,
+.back-btn:hover,
+.icon-btn:hover,
+.tiny-btn:hover{
+  border-color:#ffffff !important;
+  color:#ffffff !important;
+}
+
+input,textarea,select{
+  background:#000000 !important;
+  color:#ffffff !important;
+  border-color:#555 !important;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color:#ffffff !important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.12) !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#777 !important;
+}
+
+.eyebrow,
+.section-label,
+.statement-kicker,
+.stage-label,
+.nav-index,
+.nav-status,
+.metric-name,
+.metric-sub,
+.competitor-domain,
+.competitor-notes,
+.card-footer,
+.brand-score-label,
+.brand-score-caption,
+.swipes-head p,
+.swipe-summary-main span,
+.future-row,
+.hyp-block span,
+.hyp-block p,
+.angle-card p,
+.autosave{
+  color:#bdbdbd !important;
+}
+
+.statement-text,
+.section-head p,
+.principles-card p{
+  color:#d6d6d6 !important;
+}
+
+.progress-line,
+.swipe-completeness{
+  background:#222 !important;
+}
+
+.progress-line>span,
+.swipe-completeness span{
+  background:#ffffff !important;
+}
+
+.tag,
+.score-tag,
+.sprint-pill,
+.future-row em{
+  color:#ffffff !important;
+  border-color:#555 !important;
+  background:#000000 !important;
+}
+
+.pulse{
+  background:#ffffff !important;
+  box-shadow:0 0 0 4px rgba(255,255,255,.08) !important;
+}
+
+.danger-link{
+  color:#bdbdbd !important;
+}
+
+.danger-link:hover{
+  color:#ffffff !important;
+}
+
+
+/* Clean white workspace mode */
+:root{
+  --bg:#ffffff !important;
+  --panel:#ffffff !important;
+  --panel2:#f7f7f7 !important;
+  --border:#dddddd !important;
+  --border2:#c8c8c8 !important;
+  --text:#111111 !important;
+  --muted:#666666 !important;
+  --accent:#111111 !important;
+  --good:#111111 !important;
+  --danger:#111111 !important;
+  --shadow:0 12px 30px rgba(0,0,0,.08) !important;
+}
+
+html,
+body,
+.shell,
+.main,
+.sidebar,
+.topbar,
+.view{
+  background:#ffffff !important;
+  color:#111111 !important;
+}
+
+.sidebar{
+  border-right:1px solid #dddddd !important;
+}
+
+.topbar{
+  border-bottom:1px solid #dddddd !important;
+  background:#ffffff !important;
+  backdrop-filter:none !important;
+}
+
+.brand-mark,
+.nav-item.active,
+.statement-card,
+.flow-card,
+.metric-card,
+.competitor-card,
+.principles-card,
+.hypothesis-card,
+.angle-card,
+.brand-hero,
+.brand-meta-card,
+.empty-state,
+.swipe-card,
+.angle-column,
+.modal{
+  background:#ffffff !important;
+  border-color:#dddddd !important;
+  color:#111111 !important;
+  box-shadow:none !important;
+}
+
+.competitor-card:hover,
+.nav-item:hover{
+  background:#f7f7f7 !important;
+  border-color:#bdbdbd !important;
+}
+
+.nav-item.active{
+  background:#f3f3f3 !important;
+  border-color:#cfcfcf !important;
+}
+
+.primary-btn{
+  background:#111111 !important;
+  color:#ffffff !important;
+  border-color:#111111 !important;
+}
+
+.primary-btn:hover{
+  background:#2a2a2a !important;
+}
+
+.ghost-btn,
+.back-btn,
+.icon-btn,
+.tiny-btn{
+  background:#ffffff !important;
+  color:#111111 !important;
+  border-color:#cfcfcf !important;
+}
+
+.ghost-btn:hover,
+.back-btn:hover,
+.icon-btn:hover,
+.tiny-btn:hover{
+  background:#f5f5f5 !important;
+  border-color:#999999 !important;
+  color:#111111 !important;
+}
+
+input,
+textarea,
+select{
+  background:#ffffff !important;
+  color:#111111 !important;
+  border-color:#cccccc !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#111111 !important;
+  box-shadow:0 0 0 2px rgba(0,0,0,.06) !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#999999 !important;
+}
+
+.eyebrow,
+.section-label,
+.statement-kicker,
+.stage-label,
+.nav-index,
+.nav-status,
+.metric-name,
+.metric-sub,
+.competitor-domain,
+.competitor-notes,
+.card-footer,
+.brand-score-label,
+.brand-score-caption,
+.swipes-head p,
+.swipe-summary-main span,
+.future-row,
+.hyp-block span,
+.hyp-block p,
+.angle-card p,
+.autosave,
+.section-head p,
+.principles-card p,
+.statement-text{
+  color:#666666 !important;
+}
+
+.brand-name,
+.topbar h1,
+.section-head h2,
+.competitor-name,
+.hyp-title,
+.angle-card h4,
+.swipe-summary-main strong{
+  color:#111111 !important;
+}
+
+.progress-line,
+.swipe-completeness{
+  background:#eeeeee !important;
+}
+
+.progress-line>span,
+.swipe-completeness span{
+  background:#111111 !important;
+}
+
+.tag,
+.score-tag,
+.sprint-pill,
+.future-row em{
+  color:#111111 !important;
+  border-color:#cccccc !important;
+  background:#ffffff !important;
+}
+
+.flow-step{
+  background:#ffffff !important;
+  color:#555555 !important;
+  border-color:#d5d5d5 !important;
+}
+
+.flow-step.active{
+  background:#111111 !important;
+  color:#ffffff !important;
+  border-color:#111111 !important;
+}
+
+.flow-arrow,
+.chevron{
+  color:#888888 !important;
+}
+
+.pulse{
+  background:#111111 !important;
+  box-shadow:0 0 0 4px rgba(0,0,0,.05) !important;
+}
+
+.danger-link{
+  color:#666666 !important;
+}
+
+.danger-link:hover{
+  color:#111111 !important;
+}
+
+.modal-backdrop{
+  background:rgba(0,0,0,.25) !important;
+}
+
+
+/* Friendly neutral workspace */
+:root{
+  --bg:#f4f5f7 !important;
+  --panel:#ffffff !important;
+  --panel2:#f8f9fb !important;
+  --border:#e2e5e9 !important;
+  --border2:#cfd4da !important;
+  --text:#1f2328 !important;
+  --muted:#6f7782 !important;
+  --accent:#2f343a !important;
+  --good:#4f6b5a !important;
+  --danger:#9b5555 !important;
+  --shadow:0 8px 24px rgba(20,25,35,.06) !important;
+}
+
+html,body,.shell,.main,.view{
+  background:#f4f5f7 !important;
+  color:#1f2328 !important;
+}
+
+.sidebar{
+  background:#eef0f3 !important;
+  border-right:1px solid #dde1e6 !important;
+  padding:24px 16px !important;
+}
+
+.topbar{
+  background:rgba(244,245,247,.94) !important;
+  border-bottom:1px solid #dde1e6 !important;
+  backdrop-filter:blur(10px) !important;
+}
+
+.brand-mark{
+  background:#ffffff !important;
+  color:#1f2328 !important;
+  border:1px solid #d9dde2 !important;
+  box-shadow:0 2px 8px rgba(20,25,35,.04) !important;
+}
+
+.brand-name{color:#1f2328 !important;}
+.brand-sub{color:#7a828c !important;}
+
+.stage-label{
+  color:#9299a3 !important;
+  margin-top:10px !important;
+}
+
+.nav-item{
+  border-radius:10px !important;
+  padding:11px 12px !important;
+  color:#68717c !important;
+}
+
+.nav-item:hover{
+  background:#e7e9ed !important;
+  border-color:transparent !important;
+}
+
+.nav-item.active{
+  background:#ffffff !important;
+  color:#1f2328 !important;
+  border-color:#dde1e6 !important;
+  box-shadow:0 3px 10px rgba(20,25,35,.04) !important;
+}
+
+.nav-index,.nav-status,.future-row>span:first-child{
+  color:#9aa1aa !important;
+}
+
+.future-row{
+  color:#8a929c !important;
+}
+
+.future-row em{
+  background:#f7f8fa !important;
+  color:#9aa1aa !important;
+  border-color:#dde1e6 !important;
+}
+
+.autosave{
+  color:#78818c !important;
+}
+
+.statement-card,
+.flow-card,
+.metric-card,
+.competitor-card,
+.principles-card,
+.hypothesis-card,
+.angle-card,
+.brand-hero,
+.brand-meta-card,
+.empty-state,
+.swipe-card,
+.angle-column,
+.modal{
+  background:#ffffff !important;
+  border:1px solid #e1e4e8 !important;
+  color:#1f2328 !important;
+  box-shadow:0 4px 14px rgba(20,25,35,.035) !important;
+  border-radius:14px !important;
+}
+
+.statement-card,
+.flow-card,
+.metric-card,
+.brand-hero,
+.brand-meta-card,
+.principles-card{
+  padding:22px !important;
+}
+
+.competitor-card{
+  padding:22px !important;
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease !important;
+}
+
+.competitor-card:hover{
+  transform:translateY(-2px) !important;
+  border-color:#cfd4da !important;
+  box-shadow:0 10px 24px rgba(20,25,35,.06) !important;
+  background:#ffffff !important;
+}
+
+.competitor-card.empty{
+  background:#fafbfc !important;
+  border-style:dashed !important;
+}
+
+.eyebrow,
+.section-label,
+.statement-kicker{
+  color:#8b939d !important;
+  letter-spacing:.1em !important;
+}
+
+.topbar h1,
+.section-head h2,
+.competitor-name,
+.hyp-title,
+.angle-card h4,
+.swipe-summary-main strong{
+  color:#1f2328 !important;
+}
+
+.statement-text,
+.section-head p,
+.principles-card p{
+  color:#66707b !important;
+}
+
+.flow-card{
+  background:#fafbfc !important;
+}
+
+.flow-step{
+  background:#ffffff !important;
+  color:#68717c !important;
+  border:1px solid #dfe3e7 !important;
+  border-radius:8px !important;
+  padding:8px 10px !important;
+}
+
+.flow-step.active{
+  background:#2f343a !important;
+  color:#ffffff !important;
+  border-color:#2f343a !important;
+}
+
+.flow-arrow{
+  color:#b0b6bd !important;
+}
+
+.metric-card{
+  min-height:104px !important;
+}
+
+.metric-name{
+  color:#808893 !important;
+}
+
+.metric-value{
+  color:#1f2328 !important;
+  font-size:26px !important;
+}
+
+.metric-sub{
+  color:#9aa1aa !important;
+}
+
+.progress-line,
+.swipe-completeness{
+  background:#edf0f2 !important;
+}
+
+.progress-line>span,
+.swipe-completeness span{
+  background:#59616b !important;
+}
+
+.card-footer,
+.competitor-domain,
+.competitor-notes,
+.brand-score-label,
+.brand-score-caption,
+.swipes-head p,
+.swipe-summary-main span,
+.hyp-block span,
+.hyp-block p,
+.angle-card p{
+  color:#7b848f !important;
+}
+
+.primary-btn{
+  background:#2f343a !important;
+  color:#ffffff !important;
+  border:1px solid #2f343a !important;
+  border-radius:9px !important;
+  padding:10px 14px !important;
+  box-shadow:0 2px 6px rgba(20,25,35,.08) !important;
+}
+
+.primary-btn:hover{
+  background:#1f2328 !important;
+}
+
+.ghost-btn,
+.back-btn,
+.icon-btn,
+.tiny-btn{
+  background:#ffffff !important;
+  color:#49515a !important;
+  border:1px solid #d7dce1 !important;
+  border-radius:9px !important;
+}
+
+.ghost-btn:hover,
+.back-btn:hover,
+.icon-btn:hover,
+.tiny-btn:hover{
+  background:#f6f7f9 !important;
+  border-color:#c2c8cf !important;
+  color:#1f2328 !important;
+}
+
+.sprint-pill,
+.tag,
+.score-tag{
+  background:#f7f8fa !important;
+  color:#59616b !important;
+  border:1px solid #dfe3e7 !important;
+  border-radius:999px !important;
+}
+
+input,textarea,select{
+  background:#fbfcfd !important;
+  color:#1f2328 !important;
+  border:1px solid #d9dde2 !important;
+  border-radius:10px !important;
+  padding:11px 12px !important;
+  min-height:42px !important;
+  line-height:1.5 !important;
+}
+
+textarea{
+  min-height:92px !important;
+}
+
+input:hover,textarea:hover,select:hover{
+  border-color:#c4cad1 !important;
+}
+
+input:focus,textarea:focus,select:focus{
+  background:#ffffff !important;
+  border-color:#8f98a3 !important;
+  box-shadow:0 0 0 3px rgba(80,90,105,.08) !important;
+}
+
+input::placeholder,textarea::placeholder{
+  color:#a2a9b1 !important;
+}
+
+.swipe-card summary{
+  padding:15px 17px !important;
+  background:#ffffff !important;
+}
+
+.swipe-card[open] summary{
+  background:#fafbfc !important;
+}
+
+.swipe-body{
+  background:#ffffff !important;
+  border-top:1px solid #e5e8eb !important;
+  padding:20px !important;
+  gap:16px !important;
+}
+
+.analysis-grid{
+  gap:14px !important;
+}
+
+.hypothesis-card{
+  padding:20px !important;
+}
+
+.hyp-block{
+  border-top:1px solid #e7e9ec !important;
+}
+
+.angle-column{
+  background:#f7f8fa !important;
+  border-color:#e1e4e8 !important;
+  padding:13px !important;
+}
+
+.angle-card{
+  background:#ffffff !important;
+}
+
+.principles-card{
+  background:#fafbfc !important;
+}
+
+.modal-backdrop{
+  background:rgba(31,35,40,.22) !important;
+  backdrop-filter:blur(3px) !important;
+}
+
+.modal{
+  border-color:#d9dde2 !important;
+  box-shadow:0 24px 60px rgba(20,25,35,.16) !important;
+}
+
+.pulse{
+  background:#617267 !important;
+  box-shadow:0 0 0 4px rgba(97,114,103,.09) !important;
+}
+
+.danger-link{
+  color:#8a6262 !important;
+}
+
+.danger-link:hover{
+  color:#6d4242 !important;
+}
+
+@media(max-width:760px){
+  .sidebar{
+    background:#f1f2f4 !important;
+  }
+}
+
+.research-links{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+@media(max-width:1050px){
+  .research-links{grid-template-columns:1fr !important;}
+}
+
+
+#newHypothesisBtn,.file-label,.create-hypothesis-from-swipe,.clear-swipe,.delete-hyp,.promote-angle,.mini-actions,.competitor-card.empty{display:none!important}textarea[readonly],input[readonly]{cursor:text} .shared-banner{padding:14px 22px;background:#21342a;color:#d5ebdc;font-size:13px;line-height:1.6} .shared-banner a{color:inherit;text-decoration:underline} .shared-banner strong{display:block}
+</style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark">O</div>
+        <div><div class="brand-name">ORTHORA</div><div class="brand-sub">Creative Intelligence</div></div>
+      </div>
+      <div class="stage-label">RESEARCH STACK</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="competitors"><span class="nav-index">01</span><span>Competitors</span><span class="nav-status" id="competitorNavCount">0/10</span></button>
+        <button class="nav-item" data-view="hypotheses"><span class="nav-index">02</span><span>Hypotheses</span><span class="nav-status" id="hypothesisNavCount">0</span></button>
+        <button class="nav-item" data-view="angles"><span class="nav-index">03</span><span>Angle Pipeline</span><span class="nav-status" id="angleNavCount">0</span></button>
+      </nav>
+      <div class="stage-label top-gap">NEXT MODULES</div>
+      <div class="future-stack">
+        <div class="future-row"><span>04</span><span>YouTube</span><em>later</em></div>
+        <div class="future-row"><span>05</span><span>Reddit</span><em>later</em></div>
+        <div class="future-row"><span>06</span><span>TikTok</span><em>later</em></div>
+        <div class="future-row"><span>07</span><span>Amazon</span><em>later</em></div>
+        <div class="future-row"><span>08</span><span>Internal VOC</span><em>later</em></div>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="autosave"><span class="pulse"></span> Shared snapshot · 4 Oct 2026</div>
+        <button class="ghost-btn full" id="exportBtn">Export backup</button>
+        <label class="ghost-btn full file-label">Import backup<input id="importInput" type="file" accept="application/json" hidden /></label>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="shared-banner"><strong>Justin’s shared research · 4 October 2026</strong>7 brands · 12 swipes · 11 hypotheses · 2 promoted angles. Read-only snapshot; later browser edits do not sync automatically.</div><header class="topbar">
+        <div><div class="eyebrow">ORTHORA / CREATIVE RECOVERY SPRINT</div><h1 id="pageTitle">Competitor Intelligence</h1></div>
+        <div class="top-actions"><div class="sprint-pill">14-DAY SPRINT</div><button class="primary-btn" id="newHypothesisBtn">+ New hypothesis</button></div>
+      </header>
+
+      <section class="view active" id="competitorsView">
+        <div class="intro-grid">
+          <div class="statement-card"><div class="statement-kicker">THE JOB</div><div class="statement-text">Do the reps. Understand <strong>why</strong> a creative works before translating it to Orthora.</div></div>
+          <div class="flow-card"><div class="flow-step active">Competitors</div><div class="flow-arrow">→</div><div class="flow-step">Hypotheses</div><div class="flow-arrow">→</div><div class="flow-step">Angles</div><div class="flow-arrow">→</div><div class="flow-step">Concepts</div><div class="flow-arrow">→</div><div class="flow-step">Scripts</div></div>
+        </div>
+        <div class="metrics" id="metrics"></div>
+        <div class="section-head"><div><div class="section-label">STAGE 01</div><h2>10 competitor brands</h2></div><p>Start with brands worth studying. Each brand has room for 10 creative swipes and a structured teardown.</p></div>
+        <div class="competitor-grid" id="competitorGrid"></div>
+      </section>
+
+      <section class="view" id="brandView"><div class="back-row"><button class="back-btn" id="backToCompetitors">← All competitors</button></div><div id="brandWorkspace"></div></section>
+
+      <section class="view" id="hypothesesView">
+        <div class="section-head wide-head"><div><div class="section-label">STAGE 02</div><h2>Hypothesis Lab</h2></div><p>Turn observations into falsifiable bets. No vague “this could work.” State what you believe, why, and what evidence would validate it.</p></div>
+        <div class="hypothesis-layout"><div id="hypothesisList" class="hypothesis-list"></div><div class="principles-card"><div class="statement-kicker">GOOD HYPOTHESIS</div><p><strong>Observation</strong><br>What did you repeatedly see?</p><p><strong>Customer truth</strong><br>What belief, pain or desire sits underneath?</p><p><strong>Bet</strong><br>If we communicate X to avatar Y, we believe Z will happen.</p><p><strong>Evidence</strong><br>What would make you increase or kill confidence?</p></div></div>
+      </section>
+
+      <section class="view" id="anglesView">
+        <div class="section-head wide-head"><div><div class="section-label">STAGE 03</div><h2>Angle Pipeline</h2></div><p>Only promote hypotheses you are willing to spend money testing. This is your bridge from research to actual creative production.</p></div>
+        <div class="angle-board" id="angleBoard"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal" id="hypothesisModal">
+    <div class="modal-head"><div><div class="section-label">NEW BET</div><h3>Research hypothesis</h3></div><button class="icon-btn" id="closeModal">×</button></div>
+    <form id="hypothesisForm">
+      <label>Hypothesis title<input name="title" required placeholder="e.g. Hour-6 cushioning collapse" /></label>
+      <label>Observation<textarea name="observation" rows="3" placeholder="What pattern did you observe?"></textarea></label>
+      <label>Customer truth<textarea name="truth" rows="3" placeholder="What is the underlying pain, desire, belief or frustration?"></textarea></label>
+      <label>The bet<textarea name="bet" rows="3" placeholder="If we communicate X to Y, we believe Z..."></textarea></label>
+      <div class="form-grid two"><label>Avatar<input name="avatar" placeholder="Nurse, restaurant worker, 55+..." /></label><label>Source<select name="source"><option>Competitor</option><option>YouTube</option><option>Reddit</option><option>TikTok</option><option>Amazon</option><option>Internal VOC</option><option>Multiple</option></select></label></div>
+      <div class="form-grid three"><label>Evidence<select name="evidence"><option value="1">1 — weak</option><option value="2">2</option><option value="3" selected>3 — moderate</option><option value="4">4</option><option value="5">5 — strong</option></select></label><label>Relevance<select name="relevance"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select></label><label>Novelty<select name="novelty"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option><option value="4">4</option><option value="5">5</option></select></label></div>
+      <label>Evidence / links<textarea name="evidenceNotes" rows="3" placeholder="Paste links, quotes, patterns or notes that support this bet."></textarea></label>
+      <div class="modal-actions"><button type="button" class="ghost-btn" id="cancelModal">Cancel</button><button class="primary-btn" type="submit">Save hypothesis</button></div>
+    </form>
+  </div></div>
+
+  <template id="swipeTemplate"><details class="swipe-card"><summary><div class="swipe-number"></div><div class="swipe-summary-main"><strong class="swipe-title-display">Untitled creative</strong><span class="swipe-format-display">Not analyzed</span></div><div class="swipe-completeness"><span></span></div><div class="chevron">⌄</div></summary><div class="swipe-body">
+    <div class="form-grid two"><label>Creative name<input data-field="title" placeholder="e.g. Nurse comparison VSL" /></label><label>Creative URL<input data-field="url" type="url" placeholder="Meta Ad Library / TikTok / landing page" /></label></div>
+    <div class="form-grid three"><label>Avatar<input data-field="avatar" placeholder="Who is this for?" /></label><label>Format<select data-field="format"><option value="">Select</option><option>UGC</option><option>VSL</option><option>Static</option><option>Listicle</option><option>Comparison</option><option>Testimonial</option><option>Founder</option><option>Authority</option><option>Demo</option><option>Other</option></select></label><label>Awareness<select data-field="awareness"><option value="">Select</option><option>Unaware</option><option>Problem aware</option><option>Solution aware</option><option>Product aware</option><option>Most aware</option></select></label></div>
+    <label>Transcript / copy<textarea data-field="transcript" rows="7" placeholder="Paste the creative transcript or full copy. Do this manually — this is where the reps begin."></textarea></label>
+    <div class="analysis-grid"><label>Angle<textarea data-field="angle" rows="3" placeholder="What core lens makes the problem/desire feel compelling?"></textarea></label><label>Hook<textarea data-field="hook" rows="3" placeholder="What earns the first 1–3 seconds?"></textarea></label><label>Lead<textarea data-field="lead" rows="3" placeholder="How does it deepen attention after the hook?"></textarea></label><label>Mechanism<textarea data-field="mechanism" rows="3" placeholder="Why does the problem happen / why does this solution work?"></textarea></label><label>Problem<textarea data-field="problem" rows="3" placeholder="What painful problem is being made vivid?"></textarea></label><label>Desire<textarea data-field="desire" rows="3" placeholder="What outcome does the customer really want?"></textarea></label><label>Proof<textarea data-field="proof" rows="3" placeholder="Reviews, demo, specificity, authority, social proof..."></textarea></label><label>Offer<textarea data-field="offer" rows="3" placeholder="Price, guarantee, bundle, urgency, risk reversal..."></textarea></label></div>
+    <label>Why do you believe this works?<textarea data-field="why" rows="5" placeholder="Your analysis. What is doing the heavy lifting? Be specific."></textarea></label>
+    <label>Orthora translation<textarea data-field="translation" rows="5" placeholder="Not a copy. How could the underlying logic be translated to Orthora without stealing surface-level execution?"></textarea></label>
+    <div class="swipe-actions"><button class="ghost-btn create-hypothesis-from-swipe" type="button">→ Turn into hypothesis</button><button class="danger-link clear-swipe" type="button">Clear swipe</button></div>
+  </div></details></template>
+
+  <script type="application/json" id="shared-research-data">{"competitors": [{"slot": 1, "name": "Hike Footwear", "website": "https://hike-footwear.com/", "adLibrary": "https://app.tryatria.com/workspace/advertisers/m104155625600453/ads", "adLibrary2": "https://app.tryatria.com/workspace/advertisers/m275270825974823/ads", "notes": "", "swipes": [{"title": "VSL Followed 2 women authority figure seniors", "url": "https://app.tryatria.com/ad/m1067875769161186", "avatar": "Seniors ", "format": "Authority", "awareness": "Unaware", "transcript": " I once followed two women, both 74,  with nearly identical health on paper.  Same conditions, same medications.  Five years later, one had passed away,  and the other was still taking her morning walk.  What separated them wasn't in their blood work,  and it wasn't in their genes.  It was one ordinary habit so small  that neither of them ever noticed it.  I'm Dr. Ellen Sorensen.  I've spent over 20 years studying a single question.  Why do some people stay strong, steady,  and independent into their 90s,  while others start fading in their 60s?  For most of my career, I assumed the answer was genetics,  or luck, or the usual list, weight, diet, blood work.  I was wrong.  The real answer had been hiding in plain sight,  in something as simple as the way a person moves across a room.  Let me show you what I found, because once you see it,  you'll understand why something most of us wear  every single day may be quietly speeding up the clock.  Here's what the research actually shows.  The most honest measure of how well your body is aging  isn't a number in your blood work.  It's how you move.  Scientists pooled data on more than 34,000 older adults  and found that a person's ordinary walking speed  predicted survival as accurately as a full workup of their age,  their diseases, their blood pressure,  and their hospital history combined.  One number produced every time you cross a room.  And that 10-second test?  Researchers found that people who couldn't stand on one leg  for 10 seconds had nearly double the risk of dying  in the following decade compared to people who could.  Your walking pace and your balance aren't small things.  They're your entire body, heart, nerves, muscles, joints,  reporting in on how you're aging.  So I asked the question that changed everything for me.  If walking speed and balance are this powerful,  what's the very first thing that quietly wears them down?  And the answer was uncomfortable.  Think about a limb in a cast.  Six weeks later, you take it off and the muscle has shrunk  because it never had to work.  A thick, stiff, over-cushioned shoe with a narrow toe box  does the same thing to your foot, just slowly, over years.  Your foot has dozens of tiny muscles  whose only job is balance and a strong stride.  Wrap them in all that support and they stop firing.  They fall asleep.  And a sleeping foot gives you exactly the two things  the research ties to a shorter life, a slower walk  and a shakier balance.  The thing in your closet isn't protecting your feet.  It's casting them.  This is why the standard advice never works.  The moment your balance slips,  everyone tells you the same thing.  Buy more supportive shoes, more cushion, more structure.  But that's like treating a shrinking muscle  by resting it even more.  More support was never the fix.  It was the cause.  Which is why people buy shoe after shoe  and never actually feel steadier on their feet.  So I flipped the whole idea around.  What if a shoe didn't try to do your foot's job for it?  What if it simply protected the sole from the ground,  then got out of the way and let the foot move  and work the way it was built to?  Because the research here is clear.  When people switch to a flatter, wider, more flexible shoe,  those small foot muscles measurably strengthen  and balance improves.  The foot wakes back up.  You don't need a gym,  and you don't need to add anything to your day.  I didn't exactly write my patients a prescription for go barefoot.  That's not realistic on a kitchen floor or a city sidewalk.  So I went looking for a shoe actually built on this principle.  Most so-called barefoot shoes were designed for young athletes.  Then I found one made for exactly the people I study,  developed and tested with podiatrists.  It's called HF Flow.  It sits on a zero drop sole,  so your foot lands flat and level  instead of tilted forward the way a raised heel forces it.  It has an extra wide toe box,  so your toes can finally spread and grip  and do their real job of keeping you stable.  And it uses a thin, flexible sole,  so your foot can feel the ground and move with it,  waking those balance muscles with every step  instead of numbing them.  Lightweight, breathable, and built for all-day wear.  And this is no longer a fringe idea.  Over two million people have already made the switch,  many of them people who'd given up on supportive shoes years ago  and assumed their unsteadiness was simply age catching up with them.  It wasn't.  HF Flow is priced far below what a shoe built this way should cost,  because the people who need it most should actually be able to get it.  Right now, as a first-time buyer, you can claim a limited-time deal.  And most people end up ordering a second or third pair,  because the offer gets better the more you take.  And because once your feet wake up,  you won't want to put the old shoes back on.  And you risk nothing to find out.  HF Flow comes with a full 30-day guarantee.  If your feet don't feel more awake, more stable,  more like they're finally allowed to move,  send them back for your money.  Picture yourself six months from now,  walking a little faster, standing a little steadier,  taking more steps in a day without even trying.  Not because you forced yourself to exercise,  but because your feet finally started doing their job again.  That's how you keep that 10-second test  moving in the right direction.  Click the button below now,  claim your first-time buyer's deal,  pick your size and color, and your pair ships within days.  I've tried supportive shoes and nothing helped.  That's the whole point.  More support was the problem.  HF Flow works the opposite way,  waking the foot up instead of putting it to sleep,  which is exactly why people who gave up on cushioned shoes  finally feel a difference.  Do I have to exercise or do anything special?  No.  You already walk every day.  HF Flow just changes what those steps do for you.  What if it doesn't work for me?  That's what the 30-day guarantee is for.  Try it risk-free and send them back if they're not for you.  The only thing you can't get back  is more years of your feet  slowly falling asleep in the wrong shoes.  So don't wait for your walk to slow down  or your balance to slip before you do something about it.  The signals your body sends about how you're aging  start at the ground, and so does keeping them strong.  Click the button below right now,  claim your first-time buyer's deal,  and remember you're covered by that full 30-day guarantee.  Give your feet permission to move the way they were built to.  Click below and claim your pair of HF Flow today.", "angle": "Based on fear and curiosity, losing independence.  ", "hook": "A doctor followed 2 women, with identical health, but 5 years later one has passed away, and the other still took her morning walk. With 1 small habit, that is easy to follow. ", "lead": "Its introducing the authority figure, and goes deeper into the dependence angle, why do some people lose it and others keep it? and become old happily, while others have a terrible retirement? \n\nIt points out the usual things. like weight, diet and bloodwork, but that was not right, the answer lies in how a person moves. There walking speed, predicated survival as a full workup of their age, diseases, bloodpressures and their hospital history combined. If people can not stand on 1 leg for 10 seconds , they could die within the next decade compared to people who could. \n\nThink about a limp in a", "mechanism": "The mechanism is that cushioned shoes don't work. Think about a limb in a cast, six weeks later you take it off and the muscle has shrunk, because it never had to work. A thick stiff over cushioned shoe, with a narrow toe box does the same thing to your foot just slowly over years. Your foot has dozens of tiny muscles whose only job is balance and a strong stride. \n\nThey explain why more support, makes your feet not work anymore and make it sleep and basically dies, it ensures it does not have to work anymore and therefore you can fall easier, its the problem. So what is the solution? What if a shoe didn't do the job for you but your feet actually works? If they swap to a more simples shoe, the muscles will work again and the foot strengthen, and balance improves. ", "problem": "Walking pace and balance are not small things they decide if you are going to live long. They are your entire body, your heart, nerves, muscles, joints reporting in on how you are aging. ", "desire": "Freedom and a great retirement where they don't lose independence, and that they are not afraid to fall", "proof": "Research, podatrist, reports, studies. over 2 million people already wear it. ", "offer": "for first time customers the offer is better, and if you buy 2 or 3 the offer gets better, it comes with a 30-day guarantee, ", "why": "Because the mechanism is explained very well, and its clear, it clicks, it make sense, people can buy into it. ", "translation": "I think that we can do that with the mechanism that they currently wear running shoes and running shoes are made for 30 min runs, and not to walk all day, or stand still, and have grip, we made shoes that keep you comfortable for 12 hours , of standing walking, and the reason why your shoes are not working is because they are running shoes, they are build to run, and not to walk, work, or stand in. "}, {"title": "Physical Therapist rates \"SHOES FOR WOMEN 180+ LBS\"", "url": "https://app.tryatria.com/ad/m1507596088047691", "avatar": "women over 180 lbs", "format": "Authority", "awareness": "Problem aware", "transcript": " Crocs? 3 out of 10. Easy to slip on, but that's where the positives end. Your foot slides around with every step, creating instability and friction. For swollen or sensitive feet, that constant movement can become surprisingly uncomfortable by the end of the day.  New balance? 5 out of 10. Most models still rely on a raised heel. That heel drop shifts your weight forward, increasing pressure on your forefoot and making balance harder than it needs to be. Hoka Bondi? 4 out of 10. I know people love the cushioning, but for heavier women, all that foam can actually work against you. You're standing high off the ground on a thick, soft platform that's constantly compressing underneath you.  Less stability. Less ground awareness. More wobbling. Skechers Memory Foam? 2 out of 10. Feels amazing for 5 minutes in the store. Then the foam starts flattening. Once it collapses, your foot sinks into the shoe instead of being supported by it. And for women over 180 pounds, that process happens even faster. HF Flow? 9 out of 10. Here's why.  First, the extra wide toe box. One of the widest you'll find on the market. Your toes can finally spread naturally instead of being squeezed together all day. For swollen feet, sensitive feet, bunions, and diabetic feet, that extra room is a game changer.  Second, the flat zero drop sole. Your heel and forefoot stay level with the ground, creating a stable foundation instead of tipping your body forward.  For heavier women, that means smoother, more controlled steps, and less stress on the knees, hips, and lower back.  Third, the adaptive stretch mesh upper. As your feet swell throughout the day, the material expands with them. No rubbing, no pinching, no pressure points.  And it's incredibly breathable, helping keep sensitive feet cooler and more comfortable.  Fourth, the lightweight, flexible design. Most comfort shoes feel bulky and heavy. HF Flow feels almost weightless, making walking easier and less tiring from morning to night.  And finally, the easy closure system. No fighting with laces, no struggling to get the fit right. Just adjust once and enjoy a secure, comfortable fit every time.  Most shoes were never designed for heavier women with swollen, sensitive feet. HF Flow was.  That's why so many women are finally walking longer, feeling more comfortable, and ending the day without their feet begging to come out of their shoes.  Check the link below to see if your size is still available.", "angle": "overweight women connecting to balance problems comparison other brands, basically shitting on other brands,", "hook": "Podatrist, and red banner, Shoes for women 180+ LBS , and direclty mentioning a big brand CROCS", "lead": "Shows failed alternatives, and connects with the market sophistication stage: \"I've tried everything and failed\" ", "mechanism": "Heel dorp swift your weight forward increasing pressure on your fore foot and making balance harder then it needs to be. the foam can work against you because the cushinoing makes you far away from the ground which can make balance harder then it should be and is constantly compression, less stability.\n\nSkechers: feel amazing in the store, the first 5 min. Then the foam starts collapsing. \n\nHF flow introdcution: Wide toe box, toes can spread naturally , for swollen feet, senstive feet, bunions and diabetic feet that extra room is a gamechanger. \n\n2nd the flat zero-drop sole, heel and forefoot stay level with the ground, creating a stable foundation instead of tipping your body forward. and less stress on the knees, hips and lower back. \n\n3rd the adaptive mesh upper, as your feet swell throughout the day the material expands with them, no rubbing , no pinching, no pressure points, breathable. ", "problem": "Its shitting on every shoe, hoka to much cushioning, not connected with the ground, ensures unstable, wobbeling, and balance problems, \nskechers: memory foam collapes, feels good in the first 5 minutes in the store\ncrocs, easy to slip on, but loose and not good for stability and balance. ", "desire": "Being able to walk comfortable the whole day, without having to worry about falling. ", "proof": "Podatrist is the proof", "offer": "Shop now", "why": "Podatrist shoes why other shoes are not working, and then introduces HF Flow, and shows why its working", "translation": "Heel dorp swift your weight forward increasing pressure on your heels, knees and lower back/ joints. "}, {"title": "Best way to fix poor balance", "url": "https://app.tryatria.com/ad/m28532846029649485", "avatar": "seniors", "format": "Other", "awareness": "Problem aware", "transcript": " The best way to fix poor balance is a cane, right?  That's what I thought.  Supportive shoes with arch support?  Turns out, that was making it worse.  At the hospital, waiting for his x-rays,  my dad finally admitted the truth.  This wasn't his first fall.  It was just the first one he couldn't hide from me.  He'd been falling for months,  catching himself on furniture,  grabbing walls,  shuffling instead of walking,  those cheap shoes sliding out from under him every time.  I didn't see what was happening until it was almost too late.  Looking back, the signs were all there.  The way he grabbed the counter a little too quickly.  How he'd steady himself against the wall without even thinking about it.  I just didn't realize how bad things had gotten.  The doctors told us something that made my blood run cold.  Hundreds of thousands of seniors break their hips from falls every year.  And for seniors, that's often where losing their independence begins.  I couldn't let that happen to my dad.  So I started researching everything about falls in older adults.  And what I found shocked me.  It's not just about age or weak bones.  The real culprit is balance and stability.  And the shoes we've been told are safe and supportive are actually making things worse.  After my dad healed,  a friend told me about HF Flow.  Her 85-year-old father had been struggling with balance.  Always shuffling.  Always afraid.  He hasn't slipped once since switching.  HF Flow has a zero-drop sole.  So his heel and toes sit level.  Keeping his body naturally aligned instead of pitched forward.  The sole is thin enough that he can actually feel the ground beneath him.  So his feet know exactly where they are.  A wide toe box lets his toes spread out for a stable base.  Nothing like those narrow, triangle-shaped shoes.  And he can just step into them.  No hands.  No bending.  No struggle.  No losing his balance trying to put the shoes on.  That's actually when most falls happen.  My dad was skeptical at first.  He thought they looked too flat.  Too simple.  That's exactly the point.  No raised heel pushing him forward.  No thick cushioning throwing off his balance.  Within days, he wasn't grabbing onto things anymore.  Within two weeks, he was walking further than he had in years.  Within a month, those old shoes were in the trash.  These shoes didn't fix his age.  He's still 78.  But he's not living in fear anymore.  Not one slip away from a broken hip.  There's a 30-day guarantee.  And they were running an offer.  Up to 50% off.  So I figured, worst case, we send them back.  And you know what?  We never did.  If this sounds like your dad, check if his size is available in the link below.  Thank you.  Thank you.  Thelinil.  Thelinil.  Thelinil.  Thelinil.", "angle": "fix poor balance, by preventing to lose independence", "hook": "senior with a cane, best way to fix poor balance", "lead": "Story telling that his dad already fell multiple times, and this is the first time he couldn't hide it,", "mechanism": "The culprit of losing indepencence is balance and stability, and the shoes we've been told are safe and supportive , are actually making things worse", "problem": "cheaps shoes that slide and let him fall, 100s of seniors break their hips from falls every year and for seniors that is often where losing their independence begins", "desire": "just walking without fear", "proof": "other dad also bought it for his 85 year old father", "offer": "30-day guarantee, 50% off", "why": "because it explains why thick and supportive shoes are disconnecting you from the ground and making you unstable, while barefoot shoes , connect you closely with the ground and let you feel every step. ", "translation": "I think still we need to mechanism running shoes are made for running , our shoes are made for standing, and pivitoing"}, {"title": "Podatrist never recommends theses 3 shoes for balance issues", "url": "https://app.tryatria.com/ad/m1787531232402987", "avatar": "seniors", "format": "Authority", "awareness": "Problem aware", "transcript": " Here are three shoes I would never recommend  to my patients with balance issues,  and I see women over 60 wearing these every single day.  Number one, new balance walking shoes.  These are the ones patients bring in and say,  my doctor recommended these,  and I understand, they look supportive.  But that elevated heel is constantly shifting  your center of gravity forward,  putting you in a subtle state of imbalance  with every single step.  And because the shoe does all the structural work,  your own stabilizing muscles never have to engage.  They atrophy quietly, month after month.  Number two, Brooks ghost or adrenaline.  This is what women graduate to when they get serious  about walking for their health.  Maximum cushioning, high heel to toe drop,  rocker shaped sole.  Women tell me they feel springy in Brooks.  What they're actually feeling is instability,  and their body is working overtime to compensate for it  without them even realizing.  Number three, hokas.  These are the ones that break my heart a little.  My patients spend $180 or more,  specifically because their balance is getting scary  and they want to fix it.  But the sole on a hoka can be over an inch thick,  and the higher your foot sits off the ground,  the less your nervous system can sense  where you are in space.  Fixed sole shoes don't just cushion your feet.  They silence the exact signal your body uses  to keep you balanced.  So what do I recommend?  These are the shoes I recommend to every patient  who comes to me with balance concerns.  HF flow barefoot shoes.  Here's why they actually help restore balance.  The thin, flexible sole lets your feet feel the ground again,  restoring the proprioceptive feedback  that thick cushioned shoes have been blocking for years.  It also keeps blood flowing to your feet and legs,  so numbness isn't dulling that signal even further.  The wide, anatomically shaped toe box  lets your toes spread and grip naturally,  giving you a stable base with every step.  The zero drop sole keeps your foot flat and level  with no elevated heel, tilting your center of gravity forward,  which means your stabilizer muscles actually have to work.  And over time, they get stronger.  The hands-free entry system means no bending down,  no struggling with laces.  You simply slide your foot in and go.  For my patients dealing with balance issues,  that alone makes a real difference.  Because the moments you're most at risk of a fall  aren't always when you're walking.  They're when you're standing on one foot,  trying to put your shoe on.  My patients who make the switch  tell me the same thing consistently.  Within a few weeks, they feel more grounded,  more confident on uneven surfaces,  and less like they're bracing for the next stumble.  Women who hadn't walked through a grocery store  without holding the cart are walking freely again.  If your balance has been getting worse  despite wearing supportive shoes,  your shoes may be a big part of the reason.  It's time to let your feet feel the ground again  with HF Flow.  You can get them at the link below.", "angle": "balance issues for women over 60 ", "hook": "Red banner, never recommend these shoes to my patients", "lead": "podatrist introduction on shoes she would never recommend for her patients, for women with balance issues over 60, and then direclty introduces a big brand like new balance walking shoes", "mechanism": "the shifting heel putting your center of gravity forward --\u003e putting you in a unstable balance situation. and because the shoe does all the structural work, your own stabilizing muscles never have to engage and weaken", "problem": "the current shoes have a high heel drop which makes you wabbeling, and disconnects you wih the ground. ", "desire": "To walk stable, without fear of falling. ", "proof": "podatrist authority.  witnother idea then", "offer": "", "why": "", "translation": " Running shoes are built for 30 min runs, not for being able to support you all day\n\nwat is het verschil tussen hoka en orthora , hoka are cushioned and designed to feel good the first hour, we are designed to support you to the last hour. \n\n12-hour support shoes\n\nCushioning feels good. Support keeps you going.\n"}, {"title": "army guy - Comparasion with 2 feet of people , 1 good feet, 1 bad feet", "url": "https://app.tryatria.com/ad/m3582688561897476", "avatar": "People with bad feet", "format": "Authority", "awareness": "Problem aware", "transcript": " This is the equipment you were issued the day you were born and this is what 30 years of the  wrong shoes did to it. Let me show you the three worst. Number one.  crocs i know why you wear these folks they're easy they're comfortable you slip them on and  you don't think about it that is exactly the problem in the army we say the feet are the roots  of the body your roots need to feel the ground these are blocks of plastic foam that shut off  the feeling your feet need to stay balanced your toes stop gripping your foot stops working the way  it was built to work and that wide open hole in the back your heel slides around with every step  so your toes have to claw at the front just to keep the shoe on that bump on the side of your  foot isn't growing because of your age it's growing because this shoe turned off the muscles  that were holding things in line number two new balance walking shoes these are the ones your  doctor recommended i understand they look supportive now look at that heel raised almost  an inch every single step that raised heel shifts your body weight forward onto the balls of your  feet and your toes your big toe is supposed to anchor your whole body when all that weight is  forced onto it eight hours a day every day the joint takes the pressure your doctor meant well  on. Number three, Hoka. These are the ones that break my heart a little. Folks spend $180 or more  specifically because their feet hurt and they want it fixed. The sole on a Hoka can be over an inch  thick. Your foot is sitting so high off the ground, it can't feel a thing. The small muscles  in your foot that hold your toes in line stop firing and that narrow shape up front is still  crowding your toes together. You spend 40 years pressing your big toe into a point and then you  the problem worse in comfort that's the cruelest part of it now here's the part that'll make you  angry every one of these companies knows what i just told you they know a raised heel throws your  weight onto your toes they know a narrow toe box crushes the joint they sell cushioning because  cushioning feels good in the store what it does to your feet over 10 years is not their department  they're not trying to help you they're selling you comfort in the army this is always the first  thing we change before the stretches before the supplements before anything else i tell them  first, zero heel wide toe box. To get out of pain, you have to put the foot back the way it came.  This shoe has a zero heel. Your heel and your toes sit at exactly the same height, which takes  the pressure straight off the ball of your foot and puts your posture back where it belongs. Your  knees stop compensating. Your hips line up. Your lower back gets some relief, not because of a  pill or a brace, but because you removed the thing that was causing the problem in the first  place. And the toe box is wide so your toes can finally spread the way they were designed to.  and that joint stops being pressed on all day long.  Folks tell me that within a couple of weeks,  the ache they've been living with starts backing off,  and they stop thinking about their feet every time they stand up.  That's not magic.  That's what happens when you stop crushing your foot into a shape  it was never meant to hold.  Now, here's the part nobody at the clinic is going to tell you.  Look at the soul.  That's it.  that's the whole thing the bottoms of your feet carry some of the most sensitive nerve endings  anywhere in your body their whole job is to read the ground and tell your brain where you are  hundreds of times a second without you knowing a thing about it that's your balance not your ears  not your eyes your feet every shoe i just showed you is built to shut that off an inch of foam  between you and the earth and then folks wonder why they feel unsteady this soul is thin enough  that your feet can feel the ground again that's not magic that's just giving you back the equipment  were born with. Folks who make the switch tell me the same things. They walk without thinking about  every single step. They're steadier on their feet. They stopped holding onto the cart at the  grocery store. 2.4 million pairs are out there now, and over 7,000 people left a review at 4.9 stars.  Those reviews will tell you everything I can't say in one video. Think about what you're already  paying. In pain, in walks, you don't take anymore. In co-pays for a doctor who tells you to take an  that didn't work right now hf flow is half off 69 and 95 cents instead of 140 dollars with free  shipping and you have 30 days to try them if they don't change how your feet feel send them back no  questions asked stop letting them wreck your feet check below and see if your size is still in stock  i'm sergeant earl i served 30 years so i could come home and tell you the truth", "angle": "They show a foot where you were born with that is healthy and a feet that is bad, because of wearing the wrong shoes. and then to go back in comparasion again. ", "hook": "", "lead": "Comparasion, big brands. ", "mechanism": "Goes into balance again, basically same mechanism, the foam disconnects you from the ground, why you are unbalanced. ", "problem": "shoes with raised heels, put your weight forward, pressing on all your joints, knees, lower back. zero drop sole, makes sure your whole body alligns and does take the pressure of your knees, hips and lower back. ", "desire": "", "proof": "", "offer": "", "why": "an guy from the army explains it, which gives creditibilty , besides that the features are explained really good, wide toe box, for bunions and swelling, zero drop sole so your knees, lower back and hips don't take pressure anymore. Joints stops being pressed on all day, toe box is wide, so your toes can finally spread the way they were designed to. Body of your feet tell the most senstive ", "translation": ""}, {"title": "Comparison for knee pain", "url": "https://app.tryatria.com/ad/m1065565976379178", "avatar": "For people dealing with knee pain", "format": "Comparison", "awareness": "Problem aware", "transcript": " We compared Skechers, Brooks, Hoka, Asics, and HF Stride for knee pain.  The results shocked us.  In fifth place, Skechers Memory Foam.  4.1 out of 10.  $65 and sold everywhere, the easy choice.  But soft isn't the same as supportive.  That squishy memory foam offers zero stability,  so your knees have to work overtime to keep you balanced.  For joints that are already struggling,  that extra work means extra pain.  Number four, Brooks Ghost.  Score, 4.8 out of 10, $160 for a trusted running brand.  But here's what most people don't know.  Running shoes have a high heel drop.  That raised heel shifts your weight forward  and increases stress on your knees with every step.  Number three, Hoka Bondi, score 5.2 out of 10, $175 for that famous max cushioning. But at 12  ounces per shoe, they're one of the heaviest options out there. When your knees already hurt,  every extra ounce adds strain. Heavy shoes fatigue your joints faster and all that cushion  doesn't help if the weight is wearing you down. Number two, Asics Gel Kayano, score 5.6 out of 10,  $160 for a brand known for stability. But stability shoes have a dirty secret. Those stiff  Rigid midsoles restrict your foot's natural movement.  When your foot can't move naturally, your knee compensates.  And a knee that's constantly compensating  is a knee that keeps hurting.  And the number one shoe for knee pain, HF Stride.  Score, 8.9 out of 10.  Here's where it gets interesting.  People with knee pain are reporting something  the expensive brands can't deliver.  What makes them different?  HF Stride is a barefoot style shoe  designed to work with your body, not against it.  Zero drop sole keeps your body properly  aligned. No raised heel shifting stress onto your knees. Thin flexible sole lets your foot move  naturally, which keeps your knees tracking properly instead of constantly compensating.  Wide toe box gives your toes room to spread, creating a stable base so your knees aren't  doing all the work. Lightweight design means less strain with every step. And the hands-free  entry, you just step in and go. No bending down, no putting extra pressure on your knees just to  happy customers. Look, after analyzing thousands of reviews from people dealing with knee pain,  the data doesn't lie. HF Stride is consistently outperforming shoes that cost twice as much.  If your knees hurt and you've tried the big brands without relief, you owe it to yourself to try  these. Right now, HF Stride is up to 50% off. If they don't reduce your knee pain, send them back.  No questions asked. But based on the reviews we analyzed, you're going to wonder why you spent  day of knee pain slow you down. Your joints have been waiting for this. Tap  below to check if your size is still in stock.", "angle": "For people dealing with knee pain", "hook": "we compared skechers, brooks, hoka and HF stride for knee pain", "lead": "Direclty analazying the top brands, with their price next to it and there score. ", "mechanism": "High heel drop , shifts your weight forward and increases stress on your knees with every step. ", "problem": "knee pain", "desire": "walking without knee pain. ", "proof": "", "offer": "", "why": "compares the big brands to HF, good price / good offer, puncy copy, ", "translation": ""}, {"title": "Classic VSL ", "url": "https://app.tryatria.com/ad/m2503019746860547", "avatar": "seniors", "format": "VSL", "awareness": "Problem aware", "transcript": " oh grandma come on the trail is right there you go ahead sweetheart grandma will wait on the bench  come on let grandma rest but grandma promised I know honey you go find us the biggest pumpkin  okay grandma will be right here mom he understands you have been doing everything the doctor said  the physical therapy the walks it is not your fault he shouldn't have to Sarah he's eight  I walked every morning for a year, Sarah, and I still couldn't do a mile of dirt with my own grandson.  Your blood work is fine, Eleanor. Bone deficiency is stable. This is really quite normal for a woman your age.  Doctor, I have been in physical therapy for two years. I take the calcium, I do the exercises, I still cannot walk half a mile.  I see. The nerve damage is simply too advanced.  Margaret?  Eleanor! Oh, my God.  oh you look so good margaret what happened to you two years ago you were using a walker at the funeral  now you just walked in here sit down let me tell you can i ask you something your knees is it the  joint or is it your balance both mostly balance my physical therapist said my feet just aren't firing  That's exactly what mine said.  And that's the thing nobody tells us.  Every woman our age thinks it's the knees or the hips.  So we go do more physical therapy, more cushioned shoes, more arch support, and nothing works.  So what did you do?  I stopped putting my feet in a cast every morning.  Every thick cushioned shoe we've worn for 40 years has been putting the tiny muscles in our feet to sleep.  That's what a cushioned shoe does to your foot, just slowly, over years.  That is why your balance is going, not your age.  So what did you switch to?  These.  hf flow wide toe box completely flat sole thin flexible bottom slip on so you don't bend down  my daughter got me a pair i got my life back mom what are these something margaret told me about  mom i've watched you get your hopes up so many times then don't watch sarah give me a month  All right, folks. The loop is about a mile of dirt path. Everyone comfortable?  We're comfortable.  Why, you're coming?  I'm coming, bud. I spent three years thinking it was just my age.  Turns out, I was fighting the wrong thing the whole time.  HF Flow is up to 50% off right now with free shipping and a 30-day money-back guarantee.  If your grandkids have been leaving you behind, it is not because you are old.  It is because your feet fell asleep.  The link is below.  Do not miss another pumpkin patch.", "angle": "Seniors losing independence which makes them not able anymore to play with their grandkids. ", "hook": "Kid goes to grandma, but grandma can't join, feeling pain of left behind, and not being able to play with her grandkids. ", "lead": "grandma can't join, feeling the pain, because she lost indepence. ", "mechanism": "Physical thepary, everything done what the doctor says, she lost indepence. Blood work is fine, Nerve damage is to advanced. \n\nStopped putting her feet in a cast every morning, every thick cushioned shoe has been putting the tiny muscles in our feet to sleep. That is what a cushioned shoe does to your feet. Just slowely and that is why your balance is going, not your age. ", "problem": "Problem is that cushioning shoes put your feet in cast which makes your feet not work anymore and slowly loses your balance. ", "desire": "", "proof": "", "offer": "", "why": "good relatable story, goes into what the customer audience has experienced, bloodwork is fine, physical theraphy, but nothing is working, it shows why the current things that they are trying is not working and it shows why HF Flow does work. ", "translation": "for us we need to show them why there current shoes, hoka, skechers, and other shoes are not working, they feel cushioned, cushioning feels good, but support keeps you going, orthora 12-hour support \n\nwe have a zero drop sole, that keeps your body natural allgined, taking off pressure from your knees, hips and lower back, "}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 2, "name": "Facelove", "website": "facelove-cosmetics.com", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 3, "name": "Metabolae", "website": "", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 4, "name": "Bronoir", "website": "", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 5, "name": "Luxe", "website": "luxe.com", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "Let me show you what is actually inside", "url": "https://app.tryatria.com/ad/m1728065348376387", "avatar": "women over 50", "format": "Comparison", "awareness": "", "transcript": " Let me show you what is actually inside those instant eye  tighteners the whole internet is buying.  Look at this.  It is glue.  It dries into a film and shrinks.  And these four products are the worst.  Number one, concealer.  It does not matter which,  maybe the Maybelline Instant Age Rewind  half of you have in your bag,  maybe a $40 one from Sephora.  They all do the same thing.  I know why you reach for it.  Fast, instant, dab it on and go.  That is exactly the problem.  In Korea, we say the eyes are the first place age shows,  so they are the first place you treat, not hide.  Concealer treats nothing.  It is paint.  On skin over 50, dry, hollow crease.  It sinks into every line, cakes along the crease by afternoon, and pulls the eye straight to the shadow you were hiding.  It never rewound anything. It trained you to hide the hollow instead of fill it.  Number two, the Instant Eye Tightener.  silver tube all over your social media that promises to erase your bags in 60  seconds, and it does for about 10 minutes. Here is what these actually are. Glue. The  magic ingredient is a silicate, the same film former they use to stiffen paper.  It dries into a tight film and shrinks, pulling everything flat. It is a  temporary cast. You cannot smile in it. The box literally tells you not to smile  or squint, or the film cracks. You cannot wear makeup over it. It flakes off in  and your bags come right back.  It is a costume.  It is the biggest lie in this lineup.  Number three, retinol eye creams.  Maybe the rock retinol correction off the drugstore shelf,  maybe a fancier one, same active.  This is what you buy when you get serious.  And retinol works on the thick skin of your cheek.  But under your eye, the skin is up to 10 times thinner.  Read the reviews on any of them.  Redness, burning, peeling, skin so raw it looks older  for weeks before it looks better, if it ever does.  actives in skincare onto the most fragile skin on your body.  On this skin, it does not repair, it strips.  Then number four, the luxury eye cream.  A jar of La Mer runs nearly $300 for half an ounce,  and there is a whole shelf of others like it.  These break my heart.  My clients save for them.  Believing that price has to mean it finally works.  Here is what that counter will not tell you.  Chemists have taken these jars apart.  The working ingredients are peptides and hydrators  you can buy for $60.  240 is the story, the silver wand, the glass jar, the feeling. And it is still a  rich cream sitting on top of the skin, not filling the hollow underneath. You  are paying $300 for a ritual. That is the cruelest part. Now this is the part that  will make you angry. Every one of these chases the wrong thing. After 50, the skin  under your eye loses its structure and hollows. And that hollow is what casts  the shadow you call bags or tired or dark circles. That is the real cause and  Every product they sell you either hides that hollow or sits on top of it.  Not one of them fills it. They are not selling you a fix.  They are selling you a feeling.  In Korean skincare, this is always the first thing we change.  Before serums, before tools, before anything.  I tell them, change what goes into that hollow first.  Fill it, do not hide it.  Here is what nobody else will tell you.  To fix the tired look, you fix the hollow, not the color.  This is not a concealer. It does not paint over the shadow.  it fills what is casting it. The moment it touches your skin, the hyaluronic acid plumps that thin,  creppy area to glass. And underneath, the real work begins. When the hollow fills,  the shadow disappears. When the shadow goes, the dark circle goes. And you look rested,  even when you are not. But here is the secret Western brands will never teach you. That real  work? It is one ingredient. PDRN. You have heard of it by its other name, the salmon sperm facial  all over the news, it is not a moisturizer that sits on top.  It is a bio-stimulator made from the DNA  of wild Pacific salmon.  That DNA is so close to human skin  that your body recognizes it and puts it to work  rebuilding the structure under your eye,  while plant and synthetic ingredients just sit there.  In America, they call it the future.  In Korea, it has been the standard for years.  This is the exact thing women pay a fortune  to inject into their faces.  We put it in a balm, you glide under your eyes.  Needle?  My clients who switch all tell me the same thing.  They stopped hearing, you look tired.  They stopped reaching for concealer.  Women who had not let anyone photograph them in years  are in every photo now.  The reviews will tell you everything I cannot say  in one video.  You have already wasted money on a concealer that creases,  a tightener that flakes off by lunch,  a serum that burns,  and a $300 jar that just sits on your skin.  Right now, buy one tube, get one free.  Two tubes for a fraction of one department store  jar. Free shipping and 30 days to try it risk-free, no forms, no conditions. If it does not change  what you see in the mirror, send it back. Stop hiding the thinnest skin on your body. Stop  painting over it. Click the link below to claim your free tube before they sell out. I am Mina.  I came to America for one reason, to share what they will never teach you here.", "angle": "comparison ", "hook": "great scroll stopper , stenly knife , cut open the product, ", "lead": "points out the other brands", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "Korean women, makes the video, with a great hook, ", "translation": "We could do a chinese or a japanse women, who is going to cut open a hoka shoe, and shows them that in japan / china they are not wearing these american brands. and we walk easy: JAPANESE ANGLE INCOMING: https://docs.google.com/document/d/1NkQncWYpMi4mxXpggNSnJmgvDV4H_W5IVYfa-1L2oAM/edit?tab=t.0"}, {"title": "Twins , two sisters, one walks like 68 and the other as 28 ", "url": "https://app.tryatria.com/ad/m1394133462602991", "avatar": "women 50+", "format": "Authority", "awareness": "Problem aware", "transcript": " You will never fix your crow's feet.  I know because I have a twins here  and one looks 10 years younger than the other.  I've been a beauty expert for 13 years  and I still see women destroying their eyes every day  with the wrong products.  These four are the worst.  Number one.  Plexiderm, that little pump all over your television that promises to erase your bags in 10 minutes,  and it does, for about an hour. Here is what it actually is. Liquid glass. The hero ingredient  is sodium silicate, the same mineral they put in cement and laundry detergent. It dries into a  film and physically pulls your skin flat. It is a temporary cast. Smile once and it cracks like  dried clay. Cry, sweat, or splash water and it slides right off. It is water soluble. You cannot  And the moment it warms up, the lines come right back.  It is a costume.  It is the biggest lie in this lineup.  Number two, the Dr. Melaxin calcium balm,  the filler in a stick every sponsored video is pushing.  Filler? Darling, no.  A dermatologist said it on record,  nothing in this balm is remotely comparable to filler or Tox.  Read the label, calcium, glycerin, and a stack of oils.  It's a primer.  It glides on, it feels lovely,  it makes your makeup sit better for a few hours.  That's the whole trick.  It does not erase one wrinkle,  it does not blur a single line,  and half of what ships online is counterfeit.  The brand itself has to warn you about the fakes.  A nice little moisturizer, cosplaying as a needle.  Number three, the Ordinary Caffeine Serum.  exactly like $9.  Caffeine is a vasoconstrictor.  It squeezes the little blood vessels shut  for an hour or two.  So if your dark circles are just veins  showing through thin skin,  fine, it dims them until lunch.  But after 40, your circles are not veins, my dear.  They are shadow, cast by volume you have lost.  Caffeine cannot fill a hollow.  It was built for a 22-year-old who stayed out too late,  not for a face that is actually losing its structure.  It wakes up your blood vessels.  It does nothing for your eyes.  And number four, the Grace and Stella eye masks.  She is a vibe, I will give her that.  Gorgeous on Instagram, cold and jiggly,  and so satisfying to peel off.  Here is what they are.  Hydrogel patches soaked in basic humectants.  You wear them 20 minutes, the surface plumps,  the skin feels cool, and then it fades.  By the time you have posted the selfie, it is already gone.  They never touch the hollow.  They never touch the reason you look tired.  Gorgeous packaging, gorgeous 20-minute selfie,  and a gorgeous way to do absolutely nothing  for your under eyes.  Now.  This is the part that will make you angry.  Every one of these companies knows what I just told you.  They know that after 40, the skin under your eye loses its structure and hollows,  and that hollow is what casts the shadow you call wrinkles or tired or dark circles.  That is the real cause, and the whole industry knows it.  Every product they sell you either hides those wrinkles temporarily or sits on top of them.  Not one fills them.  They are not selling you a fix.  They are selling you a feeling.  In Korean skincare, this is the first thing we change.  It is the only real difference between these two sisters' eyes.  Change what goes into those lines first,  fill them, do not hide them.  But here is the secret Western brands will never teach you.  That real work, it is one ingredient.  PDRN, you have heard of it by its other name,  the salmon sperm facial every celebrity is getting,  the injectable all over the news.  It is not a moisturizer that sits on top.  It is a biostimulator made from the DNA of wild salmon.  That DNA is so close to human skin  that your body recognizes it and puts it to work  rebuilding the structure under your eye  while plant and synthetic ingredients just sit there.  In America, they call it the future.  In Korea, it's been the standard for years.  to inject into their faces.  This is that same thing in a balm you glide under your eyes.  Same DNA, no needle.  My clients who switch all tell me the same thing.  They stopped hearing, you look tired.  They stopped reaching for concealer.  Women who had not let anyone photograph them in years  were like,  are in every photo now.  The reviews will tell you everything I cannot say in one video.  You have already wasted money on glue that cracks when you smile,  a moisturizer pretending to be filler,  a $9 serum that fades by lunch,  and a patch that lasts 20 minutes.  Right now, buy one tube, get one free.  Two tubes for a fraction of one department store jar,  free shipping, and 30 days to try it risk-free.  No forms, no conditions.  If it does not change what you see in the mirror,  Send it back put an end to the you look tired comments stop hiding the thinnest skin on your body  Stop painting over it click the link below to claim your free to before they sell out  I am Jun I came to America for one reason to share what they will never teach you here", "angle": "Crows feet, 2 sisters, 1 lived for 15 years in seoul the other one lives in USA. ", "hook": "2 sisters + authority figure, \n\n", "lead": "destroy their eyes with the wrong products, comparison to the wrong products. ", "mechanism": "does work for 1 hour and then it does not work anymore", "problem": "", "desire": "nice clear skin, looking young and beautiful", "proof": "", "offer": "", "why": "because two sister, same dna, and both have a different outcome, so it must be the product, shits first on the failed solutions. ", "translation": "Two sisters. Same face, same age, same DNA. One spent the last 15 years in Seoul. The other stayed here in the States.\n\none spend last 15 years in Japan and the other one in the states. podatrist has the two sisters sitting in front of her and points out the top 4 worst products, for the specific angle\n"}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 6, "name": "Smooche", "website": "https://smooche.com/", "adLibrary": "https://app.tryatria.com/workspace/advertisers/m711644652545487/ads?impression=100ads\u0026impressionPeriod=all_time\u0026sortBy=most_impressions\u0026rank_view=top_impression", "adLibrary2": "", "notes": "25m a month", "swipes": [{"title": "AI animation", "url": "https://app.tryatria.com/ad/m1503409684120011", "avatar": "Women 50+ that want to look young", "format": "Other", "awareness": "Solution aware", "transcript": " Every woman in Korea know me, and Sephora refused to sell me in the West because I'm bad for business.  Let me tell you what I am, and more importantly, what I'm not.  I'm not a luxury brand. I don't have a celebrity on my label.  I'm not wrapped in gold packaging sitting behind a Sephora counter while a commission-paid sales associate tells you,  I'll change your life. I'm a Korean pharmacy formula, plain pink bottle.  I've been on pharmacy shelves in Seoul for years, not beauty counters, pharmacies.  The same places Korean women go to treat their skin, not decorate it.  Korean dermatologists didn't recommend me because of marketing.  They recommended me because their patients came back and their skin actually looked different.  I have over 2 million users in Korea. Here's why.  Every foundation you've ever tried has the same fundamental problem.  The color is decided in a factory.  One fixed shade, pressed into a formula, sitting on your skin like a tinted film.  It can't adapt. It doesn't move with you. By noon, it's turned a different color on your face.  By 3 p.m. it's in every line. And the older your skin gets, the worse it looks on you.  That's not your skin failing. That's the formula failing. I work completely differently.  I don't come with a preset shade. I come out white. And the moment you blend me,  my micro-encapsulated pigments react to your skin's warmth and undertones and shift to your exact tone in about 30 seconds.  Not close to your shade. Not approximately your shade. Yours.  And because my pigments are merging with your skin instead of sitting on top of it, I don't oxidize.  I don't crease. I don't give you that mask effect.  What you look like at 8 a.m. is what you look like at 8 p.m.  Your pH changes throughout the day. Your skin moves, produces oil, reacts to temperature. I move with it.  Regular foundations can't do that. They were never designed to.  Here's what I carry with me when I go on.  Centella Asiatica. Korean pharmacists have used this to calm, heal, and rebuild damaged skin for decades.  Not because it smells nice. Because it actually tells your skin cells to repair themselves.  Glycerin and hyaluronic acid holding moisture inside your skin, not sitting on top of it.  All day. No tightness, no dry patches, no foundation clinging to flaky areas.  And vitamin E, nourishing your skin while you wear me, not just covering it.  Makeup and skin care at the same time. Oh, and SPF 15 built in.  Because the sun is quietly responsible for most of the dark spots and fine lines you're trying to cover in the first place.  One less step. No greasy layer. Just protection. Built into your morning routine without you having to think about it.  Here's what happens when you find me. First morning, no mask feeling, just your skin.  She keeps touching her face because it feels like nothing is there. That's always the first sign.  By the end of the first week, no orange tint by noon. No creasing by 3 p.m.  She checks her mirror at the end of the day, expecting to see the usual disappointment.  It still looks the same as when she left the house. She doesn't say anything yet. She wants to be sure.  Week 3. Someone at work asks if she's had a facial. Her husband looks at her getting ready and just says,  You look really good. She hasn't changed anything else. Just me.  Week 6. Someone else notices before she has to say anything. That's my favorite moment. Every single time.  She spent years in front of that mirror feeling like she was losing something she couldn't name and couldn't stop.  She tried foundation after foundation. Spent hundreds. Nothing worked. Not because she was doing something wrong.  Because nothing she was using was designed for skin like hers. 2 million tubes sold in Korea.  Korean women who never questioned whether something better existed because they already had me.  Their mothers had me. Their daughters have me. Not at a beauty counter. Not at Sephora. At a pharmacy.  Because in Korea, skin is treated like health, not like decoration.  While American brands were busy making prettier packaging and hiring bigger celebrities,  Korean pharmacists were quietly making a better formula. That's the difference.  And that's why you've been overspending on foundations that were never going to work for you.  If it doesn't match your skin perfectly, you pay nothing. The link is below. Pick me up.", "angle": "Foundation that exaclty matches your skin shade, makes you look younger", "hook": "", "lead": "Ai animation product, talks about animation", "mechanism": "normal foundation can't adapt to your skin, the micro-encapsulated pigments react to your skin which makes it exaclty your skin tone. ", "problem": "that normal foundation, does not match with your skin, and looks not good on it. ", "desire": "", "proof": "Korean skin care, already 2 million bottles sold in korea. In a pharmacy not in a sephora were a sale representive is trying to sell you something. ", "offer": "", "why": "Korean angle, people believe it because its in seoul, which diggs in to the belief that already exist in the market is that people from korea have a good skin and look younger. ", "translation": "we could tell the shoes are designed a country like japan where production is insane good, or swiss. "}, {"title": "3rd party koren women, explains sephora and amercian skincare industry is fucked", "url": "https://app.tryatria.com/ad/m2767022790312182", "avatar": "Women over 50+ who want to look young", "format": "UGC", "awareness": "Problem aware", "transcript": " every time i walk into sephora with my american friends i want to scream here's why i'm korean  i'm 54 years old and every time i visit sephora with my american friends i want to scream they're  spending 300 400 on foundations that physically cannot adapt to their skin see i grew up in korea  we learn about makeup the way americans learn about football it's cultural and the first thing  korean women learn is this if a foundation doesn't adapt it doesn't work period most american  foundations have pigments too rigid to match your skin tone they sit on top they feel luxurious  and they oxidize before morning that's not a flaw that's the business model if your premium  foundation actually matched your skin tone you'd stop buying it so they make it feel expensive  instead of making it work korean cosmetic companies don't play that game in korea makeup comes from  pharmacies not department stores it gets recommended by doctors not influencers and it's  designed to adapt not just feel nice we use foundations with centella asiatica and a pigment  complex that adapts 251 better than american formulas the pigments actually reach your  perfect shade this is why korean women look 20 years younger it's not genetics i promise you  it's adaptation the foundation i've used for 30 years is called smooch color changing foundation  two million bottles sold in korea every woman i know uses it my mother uses it my daughter uses  it simple packaging because we put the money into the formula not the bottle your american makeup  has a dirty secret ours doesn't link below try it for 60 off until midnight see what happens when  when something actually adapts", "angle": "American skin care is shit, they point out why it is shit and its just marketing, foundations don't work with your skin and the formulas are poorly made, there spending 300/ 400$ on foundations that physically can't adapt to their skin. ", "hook": "Everytime i walk into the sephora with my american friends i want to scream. ", "lead": "ugc creator shows that she grew up in korea, which makes her an authority figure. tell that how we learn about makeup is how americans learn about football, is culutural. ", "mechanism": "the foundations have pigments to rigid to match your skin they sit on top, if your premium foundation actually matches your skin tone, you would stop buying it. so they make it feel expensive, instead of making it work. korean cosmetic companies do not play these games. in korea make up comes from pharmacies, not department stores. It gets recommended by doctors not influencers. assigned to adapt, not feel nice. they use a pigment complex that adapts 251% better then american formulas. ", "problem": "foundation does not match your skin. ", "desire": "good looking skin, feeling young", "proof": "", "offer": "", "why": "it comes from korea, its something new, there is already a belief in the market that korean women have great skin. and in korea the skincare comes from pharmacies and is recommended by doctors and not promoted by influencers and sales representatives. ", "translation": "We could do something with a japanese women who understand production or a chinese women who is 70, and walks like she is 28, an ancient old method from another country is going to be golden. "}, {"title": "Animation cheating, husband etc", "url": "https://app.tryatria.com/ad/m1090261810185283", "avatar": "50+ women, want to look young again black women", "format": "Other", "awareness": "Problem aware", "transcript": " I ran into my baby daddy at daycare, drop off  With the bitch he left me for  And the only reason I didn't fall apart  Was because of what my hairstylist gave me a couple days before  So let me start from the beginning, Marcus and I were together for six years  We never married, he kept saying we don't need a piece of paper  And I believed him because I was in love and thought  Loyalty meant the same thing to him that it meant to me  We had two kids, my son is seven, and my daughter just turned four  I gave that man my twenties, I cooked, cleaned, held him down between jobs  Drove his mama to the hospital and planned every birthday and doctor's appointment  While he needed space, how did he repay me?  He started seeing some girl named Destiny, 23 works at her last studio  I found out through his cousin's girlfriend  She sent me a DM like, girl, I thought you should know  He moved out three months later, months after, I was a wreck  Not because I missed him, I missed who I thought he was  But mostly I was tired  That deep ass she, she's been through it, tired  That no amount of concealer can hide  I'm 32, but every morning I saw 45  in the mirror i tried everything full coverage concealers fancy facials anti-aging serums every  eye cream and ulta beauty nothing made a visible difference my dark under eyes are still there  and my tone was still uneven products would feel for 20 minutes then my skin would go  right back to looking like it had given up on me the same way it did  Then one day, I was in Maya's chair  She's been doing my hair for ten years  Knows everything about me  And she stops mid-blowout  Girl, what's going on with your face?  You look exhausted, I almost cry right there  She reached into her purse and pulled out  This pink bottle of serum, not a makeup powder  Just skincare  my korean client put me on this korean peptide serum not the tick tock stuff the real clinical  stuff recommended by pharmacists and so only thing i've seen actually change somebody's skin in days  maya i'm not spending more money on something that's gonna sit on my face and do nothing  she looked me dead in the eyes if it doesn't work  I'll do your hair free next time  She's never offered free hair in ten years  So I took it home  Watch my face and put on the serum  One layer glass  I thought it was a flu, but I stuck with it  Applied some more the next day  And the day after that  After a couple days  I walked to the mirror and just stood there  It wasn't hollow and tired  I looked ten years younger  The dark circle's soft  That ashy tone, gone  My skin looked like 10 hours of sleep  And a $300 facial after just a couple days  Daycare drop-off, daughter on my hips  Sun's backpack and my handbelly  Mascara and gloss  My skin was doing the work  I walked in and stopped breathing  Marcus at the signing table  And next to him, destiny  Fooled be that 8 in the morning  Latching edges, lady  My kids in like she's their mama  I didn't flinch, I signed my daughter in  Sent my son's bag on his hook  Same as every morning, Marcus looked at me, his face changed  Damn, you look  He paused right there in the lobby with Mr. Meek at the front desk  You look good, thanks, that's all I gave him  I kissed my babies and walked out  I caught destiny through the glass door  Checking herself in the phone camera  Foundations separating under those fluorescent lights  That orange lying alone  Meanwhile, I just walked through that same lightning with nothing but mascara, lip gloss  in the skin God gave me, he texted that night, I miss you, baby, I left him on red, but here's  what y'all need to hear, it wasn't him looking at me, it wasn't destiny's foundation falling  apart, the moment was me, once my face.  Then I applied that Korean peptide serum  And my skin said something different  She's still here  I didn't need Marcus to see me  I needed to see  from smooch korean clinical grade the collagen in american skincare molecules too big they sit on  top and evaporate this users could be in collagen small enough to penetrate powerful peptides that  target fine lines and instantly clump your skin small batches sell out constantly results in 30  days are your money back but after you see the skin transformation for yourself you won't need it  That's all it took for me  And if Mark can see the next drop off  That's just a bonus  But it's not for him anymore  It's for me", "angle": "becoming looking older and ugly, insecure, and partner leaving for a younger more beautiful women ", "hook": "bitch he left me for. Using swearing word. works well. ", "lead": "bitch that he swapped me for at day care. She was the perfect women, did everything right, but he still swapped her for a younger, more \"beautiful women\" Its a fear of alot of women. ", "mechanism": "tried everything nothing worked, toned uneven, korean peptide serum , ", "problem": "The current wife is getting older, and more ugly, she is 32, but looks like she is 45, ", "desire": "look young beautiful en confident. ", "proof": "", "offer": "", "why": "korean angle , decent mechanism ,", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 7, "name": "Resilia", "website": "", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 8, "name": "", "website": "", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 9, "name": "", "website": "", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}, {"slot": 10, "name": "", "website": "", "adLibrary": "", "adLibrary2": "", "notes": "", "swipes": [{"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}, {"title": "", "url": "", "avatar": "", "format": "", "awareness": "", "transcript": "", "angle": "", "hook": "", "lead": "", "mechanism": "", "problem": "", "desire": "", "proof": "", "offer": "", "why": "", "translation": ""}]}], "hypotheses": [{"id": "7kk7urmupsmutlpzbk", "createdAt": "2026-10-04T09:11:23.408Z", "title": "Based on fear and curiosity, losing independence.  ", "observation": "Because the mechanism is explained very well, and its clear, it clicks, it make sense, people can buy into it. ", "truth": "Walking pace and balance are not small things they decide if you are going to live long. They are your entire body, your heart, nerves, muscles, joints reporting in on how you are aging. ", "bet": "I think that we can do that with the mechanism that they currently wear running shoes and running shoes are made for 30 min runs, and not to walk all day, or stand still, and have grip, we made shoes that keep you comfortable for 12 hours , of standing walking, and the reason why your shoes are not working is because they are running shoes, they are build to run, and not to walk, work, or stand in. ", "avatar": "Seniors ", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m1067875769161186", "score": 9}, {"id": "jlnyw4z8z4muthkq5i", "createdAt": "2026-10-04T07:15:19.782Z", "title": "Crows feet, 2 sisters, 1 lived for 15 years in seoul the other one lives in USA. ", "observation": "because two sister, same dna, and both have a different outcome, so it must be the product, shits first on the failed solutions. ", "truth": "nice clear skin, looking young and beautiful", "bet": "Two sisters. Same face, same age, same DNA. One spent the last 15 years in Seoul. The other stayed here in the States.\n\none spend last 15 years in Japan and the other one in the states. podatrist has the two sisters sitting in front of her and points out the top 4 worst products, for the specific angle\n", "avatar": "women 50+", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Luxe — https://app.tryatria.com/ad/m1394133462602991", "score": 9}, {"id": "f3uy5vxv6g6muth9mmd", "createdAt": "2026-10-04T07:06:41.989Z", "title": "comparison ", "observation": "Korean women, makes the video, with a great hook, ", "truth": "", "bet": "We could do a chinese or a japanse women, who is going to cut open a hoka shoe, and shows them that in japan / china they are not wearing these american brands. and we walk easy: JAPANESE ANGLE INCOMING: https://docs.google.com/document/d/1NkQncWYpMi4mxXpggNSnJmgvDV4H_W5IVYfa-1L2oAM/edit?tab=t.0", "avatar": "women over 50", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Luxe — https://app.tryatria.com/ad/m1728065348376387", "score": 9}, {"id": "v708i06erjgmutf9a4h", "createdAt": "2026-10-04T06:10:26.561Z", "title": "American skin care is shit, they point out why it is shit and its just marketing, foundations don't work with your skin and the formulas are poorly made, there spending 300/ 400$ on foundations that physically can't adapt to their skin. ", "observation": "it comes from korea, its something new, there is already a belief in the market that korean women have great skin. and in korea the skincare comes from pharmacies and is recommended by doctors and not promoted by influencers and sales representatives. ", "truth": "foundation does not match your skin. ", "bet": "We could do something with a japanese women who understand production or a chinese women who is 70, and walks like she is 28, an ancient old method from another country is going to be golden. ", "avatar": "Women over 50+ who want to look young", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Smooche — https://app.tryatria.com/ad/m2767022790312182", "score": 9}, {"id": "nqquy943nw8mutel4u8", "createdAt": "2026-10-04T05:51:39.968Z", "title": "Foundation that exaclty matches your skin shade, makes you look younger", "observation": "Korean angle, people believe it because its in seoul, which diggs in to the belief that already exist in the market is that people from korea have a good skin and look younger. ", "truth": "that normal foundation, does not match with your skin, and looks not good on it. ", "bet": "we could tell the shoes are designed a country like japan where production is insane good, or swiss. ", "avatar": "Women 50+ that want to look young", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Smooche — https://app.tryatria.com/ad/m1503409684120011", "score": 9}, {"id": "f7zfkv5ouowmute0x1f", "createdAt": "2026-10-04T05:35:56.739Z", "title": "Seniors losing independence which makes them not able anymore to play with their grandkids. ", "observation": "good relatable story, goes into what the customer audience has experienced, bloodwork is fine, physical theraphy, but nothing is working, it shows why the current things that they are trying is not working and it shows why HF Flow does work. ", "truth": "Problem is that cushioning shoes put your feet in cast which makes your feet not work anymore and slowly loses your balance. ", "bet": "for us we need to show them why there current shoes, hoka, skechers, and other shoes are not working, they feel cushioned, cushioning feels good, but support keeps you going, orthora 12-hour support \n\nwe have a zero drop sole, that keeps your body natural allgined, taking off pressure from your knees, hips and lower back, ", "avatar": "seniors", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m2503019746860547", "score": 9}, {"id": "myacfkzgvfomutcoeyn", "createdAt": "2026-10-04T04:58:13.823Z", "title": "For people dealing with knee pain", "observation": "compares the big brands to HF, good price / good offer, puncy copy, ", "truth": "knee pain", "bet": "", "avatar": "For people dealing with knee pain", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m1065565976379178", "score": 9}, {"id": "ibe2qfqf39mutbawqa", "createdAt": "2026-10-04T04:19:44.050Z", "title": "balance issues for women over 60 ", "observation": "", "truth": "the current shoes have a high heel drop which makes you wabbeling, and disconnects you wih the ground. ", "bet": " Running shoes are built for 30 min runs, not for being able to support you all day\n\nwat is het verschil tussen hoka en orthora , hoka are cushioned and designed to feel good the first hour, we are designed to support you to the last hour. \n\n12-hour support shoes\n\nCushioning feels good. Support keeps you going.\n", "avatar": "seniors", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m1787531232402987", "score": 9}, {"id": "w7vx14kbg9bmut9i33o", "createdAt": "2026-10-04T03:29:19.668Z", "title": "fix poor balance, by preventing to lose independence", "observation": "because it explains why thick and supportive shoes are disconnecting you from the ground and making you unstable, while barefoot shoes , connect you closely with the ground and let you feel every step. ", "truth": "cheaps shoes that slide and let him fall, 100s of seniors break their hips from falls every year and for seniors that is often where losing their independence begins", "bet": "I think still we need to mechanism running shoes are made for running , our shoes are made for standing, and pivitoing", "avatar": "seniors", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m28532846029649485", "score": 9}, {"id": "yaudxfo1dlmus16dx3", "createdAt": "2026-10-03T06:48:30.711Z", "title": "overweight women connecting to balance problems comparison other brands, basically shitting on other brands,", "observation": "Podatrist shoes why other shoes are not working, and then introduces HF Flow, and shows why its working", "truth": "Its shitting on every shoe, hoka to much cushioning, not connected with the ground, ensures unstable, wobbeling, and balance problems, \nskechers: memory foam collapes, feels good in the first 5 minutes in the store\ncrocs, easy to slip on, but loose and not good for stability and balance. ", "bet": "Heel dorp swift your weight forward increasing pressure on your heels, knees and lower back/ joints. ", "avatar": "women over 180 lbs", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m1507596088047691", "score": 9}, {"id": "avelpmqemymuryb887", "createdAt": "2026-10-03T05:28:17.767Z", "title": "Based on fear and curiosity, losing independence.  ", "observation": "Because the mechanism is explained very well, and its clear, it clicks, it make sense, people can buy into it. ", "truth": "Walking pace and balance are not small things they decide if you are going to live long. They are your entire body, your heart, nerves, muscles, joints reporting in on how you are aging. ", "bet": "I think that we can do that with the mechanism that they currently wear running shoes and running shoes are made for 30 min runs, and not to walk all day, or stand still, and have grip, we made shoes that keep you comfortable for 12 hours , of standing walking, and the reason why your shoes are not working is because they are running shoes, they are build to run, and not to walk, work, or stand in. ", "avatar": "Seniors ", "source": "Competitor", "evidence": 3, "relevance": 3, "novelty": 3, "evidenceNotes": "Hike Footwear — https://app.tryatria.com/ad/m1067875769161186", "score": 9}], "angleStages": {"backlog": ["avelpmqemymuryb887"], "approved": ["7kk7urmupsmutlpzbk"], "testing": []}}</script><script>const STORAGE_KEY='orthoraCreativeIntelligenceV1';
+const blankSwipe=()=>({title:'',url:'',avatar:'',format:'',awareness:'',transcript:'',angle:'',hook:'',lead:'',mechanism:'',problem:'',desire:'',proof:'',offer:'',why:'',translation:''});
+const blankCompetitor=slot=>({slot,name:'',website:'',adLibrary:'',adLibrary2:'',notes:'',swipes:Array.from({length:10},blankSwipe)});
+const defaultState=()=>({competitors:Array.from({length:10},(_,i)=>blankCompetitor(i+1)),hypotheses:[],angleStages:{backlog:[],approved:[],testing:[]}});
+let state=loadState(),currentBrandIndex=null;
+function loadState(){return JSON.parse(document.getElementById('shared-research-data').textContent)}
+function saveState(){return;}
+function debounce(fn,wait=250){let t;return(...args)=>{clearTimeout(t);t=setTimeout(()=>fn(...args),wait)}}const saveDebounced=debounce(saveState,200);
+function esc(str=''){return String(str).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}function uid(){return Math.random().toString(36).slice(2)+Date.now().toString(36)}
+function toast(msg){const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),1800)}
+const navItems=[...document.querySelectorAll('.nav-item')];navItems.forEach(btn=>btn.addEventListener('click',()=>showView(btn.dataset.view)));
+function showView(view){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));navItems.forEach(n=>n.classList.toggle('active',n.dataset.view===view));const map={competitors:'competitorsView',hypotheses:'hypothesesView',angles:'anglesView'};document.getElementById(map[view]).classList.add('active');document.getElementById('pageTitle').textContent={competitors:'Competitor Intelligence',hypotheses:'Hypothesis Lab',angles:'Angle Pipeline'}[view];if(view==='competitors')renderCompetitors();if(view==='hypotheses')renderHypotheses();if(view==='angles')renderAngles();window.scrollTo({top:0,behavior:'smooth'})}
+function renderNavCounts(){document.getElementById('competitorNavCount').textContent=`${state.competitors.filter(b=>b.name.trim()).length}/10`;document.getElementById('hypothesisNavCount').textContent=state.hypotheses.length;document.getElementById('angleNavCount').textContent=Object.values(state.angleStages).flat().length}
+function swipeCompletion(s){const keys=['title','url','transcript','angle','hook','lead','mechanism','problem','desire','proof','why','translation'];return Math.round(keys.filter(k=>String(s[k]||'').trim()).length/keys.length*100)}
+function renderMetrics(){const brands=state.competitors.filter(b=>b.name.trim()).length,all=state.competitors.flatMap(b=>b.swipes),swipes=all.filter(s=>s.title||s.url||s.transcript).length,complete=all.filter(s=>swipeCompletion(s)>=75).length,promoted=Object.values(state.angleStages).flat().length;const data=[['Brands mapped',`${brands}/10`,'Target: 10 relevant brands'],['Swipes captured',swipes,'Up to 100 total'],['Deep teardowns',complete,'≥75% fields complete'],['Angles promoted',promoted,'Ready for concepting']];document.getElementById('metrics').innerHTML=data.map(([n,v,s])=>`<div class="metric-card"><div class="metric-name">${n}</div><div class="metric-value">${v}</div><div class="metric-sub">${s}</div></div>`).join('')}
+function renderCompetitors(){renderMetrics();renderNavCounts();const grid=document.getElementById('competitorGrid');grid.innerHTML='';state.competitors.forEach((b,i)=>{const card=document.createElement('div');card.className='competitor-card'+(b.name?'':' empty');if(!b.name){card.innerHTML=`<div><div class="empty-plus">＋</div><strong>Add competitor ${String(i+1).padStart(2,'0')}</strong><div style="font-size:11px;margin-top:6px;color:#58626e">Name the brand, then do the research yourself.</div></div><span class="competitor-slot">${String(i+1).padStart(2,'0')}/10</span>`}else{const active=b.swipes.filter(s=>s.title||s.url||s.transcript),used=active.length,avg=used?Math.round(active.reduce((a,s)=>a+swipeCompletion(s),0)/used):0;let domain='';try{domain=b.website?new URL(b.website).hostname.replace('www.',''):''}catch{}card.innerHTML=`<span class="competitor-slot">${String(i+1).padStart(2,'0')}/10</span><div class="competitor-domain">${esc(domain||'COMPETITOR')}</div><div class="competitor-name">${esc(b.name)}</div><div class="competitor-notes">${esc(b.notes||'No strategic note yet.')}</div><div class="progress-line"><span style="width:${avg}%"></span></div><div class="card-footer"><span>${used}/10 swipes</span><span>${avg}% analyzed</span></div>`}card.addEventListener('click',()=>openBrand(i));grid.appendChild(card)})}
+function openBrand(index){currentBrandIndex=index;document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));navItems.forEach(n=>n.classList.remove('active'));document.getElementById('brandView').classList.add('active');document.getElementById('pageTitle').textContent=state.competitors[index].name||`Competitor ${index+1}`;renderBrandWorkspace(index);window.scrollTo(0,0)}
+document.getElementById('backToCompetitors').addEventListener('click',()=>showView('competitors'));
+function renderBrandWorkspace(index){const b=state.competitors[index],active=b.swipes.filter(s=>s.title||s.url||s.transcript),used=active.length,avg=used?Math.round(active.reduce((a,s)=>a+swipeCompletion(s),0)/used):0,wrap=document.getElementById('brandWorkspace');wrap.innerHTML=`<div class="brand-hero"><div><div class="brand-title-row"><input id="brandName" value="${esc(b.name)}" placeholder="Competitor brand name" /></div><div class="brand-meta research-links"><label>Website<input id="brandWebsite" type="url" value="${esc(b.website)}" placeholder="https://..." /></label><label>Ad Library / Research Link 1<input id="brandAdLibrary" type="url" value="${esc(b.adLibrary)}" placeholder="Paste research link 1" /></label><label>Ad Library / Research Link 2<input id="brandAdLibrary2" type="url" value="${esc(b.adLibrary2||'')}" placeholder="Paste research link 2" /></label></div><div class="brand-meta" style="grid-template-columns:1fr"><label>Strategic note<textarea id="brandNotes" rows="3" placeholder="Why is this brand worth studying? What do they appear to win on?">${esc(b.notes)}</textarea></label></div></div><div class="brand-meta-card"><div class="section-label">RESEARCH COMPLETENESS</div><div class="brand-score">${avg}%</div><div class="brand-score-label">across ${used} active swipe${used===1?'':'s'}</div><div class="progress-line"><span style="width:${avg}%"></span></div><div class="brand-score-caption">Completion rewards depth, not volume. A swipe counts as a deep teardown once ~75% of the key fields are filled.</div></div></div><div class="swipes-head"><div><h3>Creative swipes</h3><p>10 slots. Capture less, understand more.</p></div><div class="sprint-pill">${used}/10 USED</div></div><div class="swipe-stack" id="swipeStack"></div>`;['brandName','brandWebsite','brandAdLibrary','brandAdLibrary2','brandNotes'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{const field={brandName:'name',brandWebsite:'website',brandAdLibrary:'adLibrary',brandAdLibrary2:'adLibrary2',brandNotes:'notes'}[id];b[field]=document.getElementById(id).value;document.getElementById('pageTitle').textContent=b.name||`Competitor ${index+1}`;saveDebounced()}));const stack=document.getElementById('swipeStack');b.swipes.forEach((s,si)=>stack.appendChild(buildSwipeCard(index,si,s)))}
+function buildSwipeCard(bi,si,s){const node=document.getElementById('swipeTemplate').content.firstElementChild.cloneNode(true);node.querySelector('.swipe-number').textContent=`#${String(si+1).padStart(2,'0')}`;const title=node.querySelector('.swipe-title-display'),format=node.querySelector('.swipe-format-display'),bar=node.querySelector('.swipe-completeness span'),summary=()=>{title.textContent=s.title||'Untitled creative';format.textContent=[s.format,s.avatar].filter(Boolean).join(' · ')||'Not analyzed';bar.style.width=`${swipeCompletion(s)}%`};summary();node.querySelectorAll('[data-field]').forEach(el=>{const field=el.dataset.field;el.value=s[field]||'';el.addEventListener('input',()=>{s[field]=el.value;summary();saveDebounced()})});node.querySelector('.clear-swipe').addEventListener('click',()=>{if(confirm('Clear this swipe?')){state.competitors[bi].swipes[si]=blankSwipe();saveState();renderBrandWorkspace(bi)}});node.querySelector('.create-hypothesis-from-swipe').addEventListener('click',()=>openHypothesisModal({title:s.angle||s.title||'',observation:s.why||'',truth:s.problem||s.desire||'',bet:s.translation||'',avatar:s.avatar||'',source:'Competitor',evidenceNotes:[state.competitors[bi].name,s.url].filter(Boolean).join(' — ')}));return node}
+const modal=document.getElementById('modalBackdrop');document.getElementById('newHypothesisBtn').addEventListener('click',()=>openHypothesisModal());document.getElementById('closeModal').addEventListener('click',closeModal);document.getElementById('cancelModal').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});function openHypothesisModal(prefill={}){const form=document.getElementById('hypothesisForm');form.reset();Object.entries(prefill).forEach(([k,v])=>{if(form.elements[k])form.elements[k].value=v});modal.classList.add('show');setTimeout(()=>form.elements.title.focus(),30)}function closeModal(){modal.classList.remove('show')}
+document.getElementById('hypothesisForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target),h={id:uid(),createdAt:new Date().toISOString(),title:f.get('title')||'',observation:f.get('observation')||'',truth:f.get('truth')||'',bet:f.get('bet')||'',avatar:f.get('avatar')||'',source:f.get('source')||'',evidence:Number(f.get('evidence')),relevance:Number(f.get('relevance')),novelty:Number(f.get('novelty')),evidenceNotes:f.get('evidenceNotes')||''};h.score=h.evidence+h.relevance+h.novelty;state.hypotheses.unshift(h);saveState();closeModal();toast('Hypothesis saved');showView('hypotheses')});
+function renderHypotheses(){renderNavCounts();const list=document.getElementById('hypothesisList');if(!state.hypotheses.length){list.innerHTML='<div class="empty-state">No hypotheses yet. Build them from your own observations or promote one directly from a competitor swipe.</div>';return}list.innerHTML='';state.hypotheses.forEach(h=>{const el=document.createElement('div');el.className='hypothesis-card';el.innerHTML=`<div class="hyp-top"><div><div class="hyp-title">${esc(h.title)}</div><div class="hyp-meta"><span class="tag">${esc(h.source)}</span>${h.avatar?`<span class="tag">${esc(h.avatar)}</span>`:''}<span class="tag score-tag">${h.score||0}/15</span></div></div><button class="danger-link delete-hyp">Delete</button></div><div class="hyp-body"><div class="hyp-block"><span>OBSERVATION</span><p>${esc(h.observation||'—')}</p></div><div class="hyp-block"><span>CUSTOMER TRUTH</span><p>${esc(h.truth||'—')}</p></div><div class="hyp-block"><span>THE BET</span><p>${esc(h.bet||'—')}</p></div><div class="hyp-block"><span>EVIDENCE</span><p>${esc(h.evidenceNotes||'—')}</p></div></div><div class="hyp-actions"><button class="ghost-btn promote-angle">Promote → Angle backlog</button></div>`;el.querySelector('.delete-hyp').addEventListener('click',()=>{state.hypotheses=state.hypotheses.filter(x=>x.id!==h.id);Object.keys(state.angleStages).forEach(k=>state.angleStages[k]=state.angleStages[k].filter(id=>id!==h.id));saveState();renderHypotheses()});el.querySelector('.promote-angle').addEventListener('click',()=>{if(!Object.values(state.angleStages).flat().includes(h.id)){state.angleStages.backlog.push(h.id);saveState();toast('Promoted to angle backlog')}else toast('Already in angle pipeline')});list.appendChild(el)})}
+function renderAngles(){renderNavCounts();const board=document.getElementById('angleBoard'),cols=[['backlog','ANGLE BACKLOG'],['approved','APPROVED TO CONCEPT'],['testing','IN CREATIVE TESTING']];board.innerHTML='';cols.forEach(([key,label])=>{const col=document.createElement('div');col.className='angle-column';const ids=state.angleStages[key]||[];col.innerHTML=`<div class="angle-column-head"><span>${label}</span><span>${ids.length}</span></div>`;ids.forEach(id=>{const h=state.hypotheses.find(x=>x.id===id);if(!h)return;const card=document.createElement('div');card.className='angle-card';card.innerHTML=`<h4>${esc(h.title)}</h4><p>${esc(h.bet||h.truth||'No bet written yet.')}</p><div class="mini-actions">${key!=='backlog'?'<button class="tiny-btn move-back">←</button>':''}${key!=='testing'?'<button class="tiny-btn move-forward">Move →</button>':''}<button class="tiny-btn remove-angle">Remove</button></div>`;const order=['backlog','approved','testing'],idx=order.indexOf(key);card.querySelector('.move-back')?.addEventListener('click',()=>moveAngle(id,key,order[idx-1]));card.querySelector('.move-forward')?.addEventListener('click',()=>moveAngle(id,key,order[idx+1]));card.querySelector('.remove-angle').addEventListener('click',()=>{state.angleStages[key]=state.angleStages[key].filter(x=>x!==id);saveState();renderAngles()});col.appendChild(card)});board.appendChild(col)})}function moveAngle(id,from,to){state.angleStages[from]=state.angleStages[from].filter(x=>x!==id);state.angleStages[to].push(id);saveState();renderAngles()}
+document.getElementById('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`orthora-creative-intelligence-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);toast('Backup exported')});document.getElementById('importInput').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{const parsed=JSON.parse(await file.text());localStorage.setItem(STORAGE_KEY,JSON.stringify(parsed));state=loadState();renderCompetitors();renderNavCounts();toast('Backup imported')}catch{alert('Invalid backup file.')}e.target.value=''});renderCompetitors();renderNavCounts();
+
+function lockSharedView(){document.querySelectorAll('input:not([type=file]),textarea').forEach(e=>e.readOnly=true);document.querySelectorAll('select').forEach(e=>e.disabled=true);}
+new MutationObserver(lockSharedView).observe(document.querySelector('.main'),{childList:true,subtree:true});lockSharedView();
+</script>
+</body>
+</html>
