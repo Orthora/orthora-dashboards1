@@ -76,6 +76,28 @@ body{background:#f4f5f6;color:#111}
 .angle-open:hover{border-color:#111}
 @media(max-width:980px){.avatar-priority-head{grid-template-columns:45px 1fr}.recommended-angles{grid-column:1/-1}.recommended-angle{grid-template-columns:28px 1fr 1.2fr 90px 80px}}
 @media(max-width:680px){.priority-summary{grid-template-columns:1fr}.avatar-priority-head{grid-template-columns:40px 1fr}.recommended-angle{grid-template-columns:26px 1fr}.angle-reason,.recommended-angle .angle-status,.angle-tested,.angle-open{grid-column:2}}
+
+.concept-stats{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
+.stat-chip{font:8px "DM Mono";border:1px solid #dedede;border-radius:999px;padding:5px 7px;background:#fafafa;color:#555}
+.track-concept{background:#111!important;color:#fff!important;border-color:#111!important}
+.tracker-modal{width:min(980px,96vw)}
+.tracker-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;border-bottom:1px solid #e5e5e5;padding-bottom:14px;margin-bottom:14px}
+.tracker-head p{margin:5px 0 0;color:#666;font-size:10px;line-height:1.45}
+.tracker-metrics{display:flex;gap:8px;flex-wrap:wrap}
+.tracker-metric{border:1px solid #dedede;background:#fafafa;border-radius:10px;padding:8px 10px;min-width:92px}
+.tracker-metric small{display:block;font:8px "DM Mono";color:#777;text-transform:uppercase}
+.tracker-metric b{font-size:16px}
+.variant-add{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end;margin-bottom:14px}
+.variant-add label{font:8px "DM Mono";color:#777;display:grid;gap:5px}
+.variant-add select{width:100%;border:1px solid #d6d6d6;background:#fff;color:#111;border-radius:9px;padding:9px;font-size:10px}
+.variant-table-wrap{border:1px solid #dedede;border-radius:12px;overflow:auto}
+.variant-table{width:100%;border-collapse:collapse;min-width:760px}
+.variant-table th,.variant-table td{padding:9px 10px;border-bottom:1px solid #e6e6e6;text-align:left;font-size:9px}
+.variant-table th{font:8px "DM Mono";color:#777;background:#fafafa;text-transform:uppercase}
+.variant-status{border:1px solid #d6d6d6;background:#fff;color:#111;border-radius:7px;padding:5px;font-size:9px}
+.variant-id{font:8px "DM Mono";color:#777}
+@media(max-width:680px){.variant-add{grid-template-columns:1fr}.tracker-head{display:block}.tracker-metrics{margin-top:10px}}
+
 </style>
 </head>
 <body>
@@ -177,6 +199,32 @@ body{background:#f4f5f6;color:#111}
 </main>
 </div>
 
+
+<div class="modal-bg" id="trackerModal">
+  <div class="modal tracker-modal">
+    <div class="modal-head"><div><div class="tag">CONCEPT VARIANT TRACKER</div><h3 id="trackerTitle">Concept</h3></div><button class="x" id="closeTracker">×</button></div>
+    <div class="tracker-head">
+      <div><p id="trackerDesc">Use the same concept across different Avatar × Angle combinations so the concept stays constant while the customer thesis changes.</p></div>
+      <div class="tracker-metrics">
+        <div class="tracker-metric"><small>Variants</small><b id="trackerVariants">0</b></div>
+        <div class="tracker-metric"><small>Testing / done</small><b id="trackerTested">0</b></div>
+        <div class="tracker-metric"><small>Winners</small><b id="trackerWinners">0</b></div>
+      </div>
+    </div>
+    <div class="variant-add">
+      <label>AVATAR<select id="vAvatar"></select></label>
+      <label>ANGLE<select id="vAngle"></select></label>
+      <button class="btn primary" id="addVariant">+ Add Variant</button>
+    </div>
+    <div class="variant-table-wrap">
+      <table class="variant-table">
+        <thead><tr><th>Variant</th><th>Avatar</th><th>Angle</th><th>Status</th><th>Creative ID</th><th></th></tr></thead>
+        <tbody id="variantRows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <div class="modal-bg" id="conceptModal"><div class="modal"><div class="modal-head"><div><div class="tag">CONCEPT LIBRARY</div><h3>Add reusable concept</h3></div><button class="x" id="closeConcept">×</button></div><div class="form-grid" style="margin-top:15px"><label>CONCEPT NAME<input id="cName" placeholder="e.g. 4 Worst Shoes"></label><label>FAMILY<input id="cFamily" placeholder="Ranking / Comparison / UGC Diary"></label><label>FORMAT<input id="cFormat" placeholder="UGC Video / Static / Listicle"></label><label>REFERENCE URL<input id="cUrl" placeholder="https://..."></label></div><label class="full">THUMBNAIL / IMAGE URL<input id="cThumb" placeholder="https://..."></label><label class="full">CORE STRUCTURE<textarea id="cStructure"></textarea></label><label class="full">WHY IT WORKS<textarea id="cWhy"></textarea></label><div class="modal-actions"><button class="btn" id="cancelConcept">Cancel</button><button class="btn primary" id="saveConcept">Save Concept</button></div></div></div>
 
 <script>
@@ -185,6 +233,7 @@ const byId=id=>document.getElementById(id);
 const pageTitle=byId('pageTitle'),quickBuild=byId('quickBuild'),avatarCount=byId('avatarCount'),angleCount=byId('angleCount'),priorityCount=byId('priorityCount'),conceptCount=byId('conceptCount'),testCount=byId('testCount'),mAvatars=byId('mAvatars'),mAngles=byId('mAngles'),mConcepts=byId('mConcepts'),mTests=byId('mTests'),priorityList=byId('priorityList'),priorityTotal=byId('priorityTotal'),priorityDone=byId('priorityDone'),priorityAngleTotal=byId('priorityAngleTotal');
 const avatarSearch=byId('avatarSearch'),avatarType=byId('avatarType'),avatarGrid=byId('avatarGrid'),angleSearch=byId('angleSearch'),angleFamily=byId('angleFamily'),angleList=byId('angleList'),matrixTable=byId('matrixTable'),conceptSearch=byId('conceptSearch'),conceptGrid=byId('conceptGrid'),newConceptBtn=byId('newConceptBtn');
 const conceptModal=byId('conceptModal'),closeConcept=byId('closeConcept'),cancelConcept=byId('cancelConcept'),saveConcept=byId('saveConcept'),cName=byId('cName'),cFamily=byId('cFamily'),cFormat=byId('cFormat'),cUrl=byId('cUrl'),cThumb=byId('cThumb'),cStructure=byId('cStructure'),cWhy=byId('cWhy');
+const trackerModal=byId('trackerModal'),trackerTitle=byId('trackerTitle'),trackerDesc=byId('trackerDesc'),closeTracker=byId('closeTracker'),trackerVariants=byId('trackerVariants'),trackerTested=byId('trackerTested'),trackerWinners=byId('trackerWinners'),vAvatar=byId('vAvatar'),vAngle=byId('vAngle'),addVariant=byId('addVariant'),variantRows=byId('variantRows');
 const bAvatar=byId('bAvatar'),bAngle=byId('bAngle'),bConcept=byId('bConcept'),bType=byId('bType'),bHook=byId('bHook'),bProof=byId('bProof'),bHypothesis=byId('bHypothesis'),creativeId=byId('creativeId'),briefTitle=byId('briefTitle'),briefAvatar=byId('briefAvatar'),briefAngle=byId('briefAngle'),briefConcept=byId('briefConcept'),briefTruth=byId('briefTruth'),briefMechanism=byId('briefMechanism'),briefOutcome=byId('briefOutcome'),addTest=byId('addTest'),copyBrief=byId('copyBrief'),testRows=byId('testRows'),exportBtn=byId('exportBtn'),importInput=byId('importInput');
 
 const AVATARS=[
@@ -337,7 +386,8 @@ const SEED=[
 ['CP09','Before Work / After Work','Transformation','UGC Video','Same creator before shift and after shift; compare physical/emotional state.','Makes the desired outcome visible.'],
 ['CP10','First Step Next Morning','Story','UGC Video','Open morning after a shift → first step → reveal yesterday’s footwear story.','Unexpected time frame makes heel/PF pain more emotional.'],
 ['CP11','Work Floor Test','Demonstration','Demo Video','Real floor, long stand, walking, pivoting and environment proof.','Contextual proof beats generic product claims.'],
-['CP12','I’ve Tried Everything Confessional','Testimonial','UGC Story','List previous shoes and money spent → skepticism → why this test felt different.','Mirrors the internal conversation of the skeptical buyer.']
+['CP12','I’ve Tried Everything Confessional','Testimonial','UGC Story','List previous shoes and money spent → skepticism → why this test felt different.','Mirrors the internal conversation of the skeptical buyer.'],
+['CP13','Podiatrist Ranks Shoes','Ranking / Authority','UGC / VSL','Podiatrist-style ranking of familiar shoe options for a specific avatar/problem → explain trade-offs → Orthora as the best-fit option for that use case.','Highly reusable because the same ranking structure can be reframed for different avatars and angles while keeping the concept constant.']
 ].map(x=>({id:x[0],name:x[1],family:x[2],format:x[3],structure:x[4],why:x[5],url:'',thumb:''}));
 const KEY='orthoraCreativeSystemV1';let local=load();function load(){try{let x=JSON.parse(localStorage.getItem(KEY)||'{}');return{concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}}}catch{return{concepts:[],tests:[],priorityState:{}}}}function save(){localStorage.setItem(KEY,JSON.stringify(local));counts()}function concepts(){return[...SEED,...local.concepts]}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function slug(s=''){return s.toUpperCase().replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,24)}function get(arr,id){return arr.find(x=>x.id===id)}function score(av,an){if((HERO[av]||[]).includes(an))return 3;if((STRONG[av]||[]).includes(an))return 2;if(UNIVERSAL.has(an))return 1;return 0}function toast(m){let e=document.createElement('div');e.className='toast';e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),1600)}function counts(){avatarCount.textContent=AVATARS.length;angleCount.textContent=ANGLES.filter(a=>a.id!=='AN01').length;priorityCount.textContent=PRIORITY_AVATARS.length;conceptCount.textContent=concepts().length;testCount.textContent=local.tests.length;mAvatars.textContent=AVATARS.length;mAngles.textContent=ANGLES.filter(a=>a.id!=='AN01').length;mConcepts.textContent=concepts().length;mTests.textContent=local.tests.length;if(priorityTotal){priorityTotal.textContent=PRIORITY_AVATARS.length;const states=Object.values(local.priorityState||{});priorityDone.textContent=states.filter(s=>s.tested).length;if(priorityAngleTotal)priorityAngleTotal.textContent=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0)}}
 const titles={overview:'Creative Strategy',avatars:'Avatar Library',angles:'Angle Library',priorities:'Priority Tests',matrix:'Avatar × Angle Matrix',concepts:'Concept Library',builder:'Test Builder'};document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>show(b.dataset.view));function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===v));document.getElementById(v+'View').classList.add('active');pageTitle.textContent=titles[v];if(v==='avatars')renderAvatars();if(v==='angles')renderAngles();if(v==='priorities')renderPriorities();if(v==='matrix')renderMatrix();if(v==='concepts')renderConcepts();if(v==='builder'){builderOptions();renderTests();brief()}window.scrollTo(0,0)}quickBuild.onclick=()=>show('builder');
@@ -380,12 +430,84 @@ function renderPriorities(){
   counts();
 }
 function renderMatrix(){let h=`<thead><tr><th class="avatar">Avatar</th>${ANGLES.filter(a=>a.id!=='AN01').map(a=>`<th title="${esc(a.name)}">${a.id}<br><span style="font-size:7px;color:#83909b">${esc(a.name.slice(0,18))}</span></th>`).join('')}</tr></thead><tbody>`;AVATARS.forEach(a=>{h+=`<tr><td class="avatar"><b>${a.id}</b> · ${esc(a.name)}</td>`;ANGLES.filter(n=>n.id!=='AN01').forEach(n=>{let s=score(a.id,n.id);h+=`<td><div class="score s${s}" data-av="${a.id}" data-an="${n.id}" title="${esc(a.name)} × ${esc(n.name)}">${s||''}</div></td>`});h+='</tr>'});h+='</tbody>';matrixTable.innerHTML=h;matrixTable.querySelectorAll('.score').forEach(x=>x.onclick=()=>{show('builder');bAvatar.value=x.dataset.av;bAngle.value=x.dataset.an;brief()})}
-function renderConcepts(){let q=conceptSearch.value.toLowerCase(),d=concepts().filter(c=>JSON.stringify(c).toLowerCase().includes(q));conceptGrid.innerHTML=d.length?d.map(c=>`<article class="concept"><div class="thumb">${c.thumb?'<img src="'+esc(c.thumb)+'" alt="">':'REFERENCE / THUMBNAIL'}</div><div class="concept-body"><div class="id">${c.id} · ${esc(c.family)}</div><h3>${esc(c.name)}</h3><div class="meta">${esc(c.format)}</div><p><b>Structure:</b> ${esc(c.structure)}</p><p><b>Why:</b> ${esc(c.why)}</p><div class="concept-actions">${c.url?'<a class="btn" href="'+esc(c.url)+'" target="_blank">Reference ↗</a>':''}<button class="btn use-concept" data-id="${c.id}">Use in Test</button></div></div></article>`).join(''):'<div class="empty">No concepts found.</div>';document.querySelectorAll('.use-concept').forEach(b=>b.onclick=()=>{show('builder');bConcept.value=b.dataset.id;brief()})}conceptSearch.oninput=renderConcepts;
+function renderConcepts(){
+  let q=conceptSearch.value.toLowerCase(),d=concepts().filter(c=>JSON.stringify(c).toLowerCase().includes(q));
+  conceptGrid.innerHTML=d.length?d.map(c=>{
+    const variants=local.tests.filter(t=>t.concept===c.id);
+    const active=variants.filter(t=>['Testing','Winner','Loser','Retired'].includes(t.status)).length;
+    const winners=variants.filter(t=>t.status==='Winner').length;
+    return `<article class="concept">
+      <div class="thumb">${c.thumb?'<img src="'+esc(c.thumb)+'" alt="">':'REFERENCE / THUMBNAIL'}</div>
+      <div class="concept-body">
+        <div class="id">${c.id} · ${esc(c.family)}</div>
+        <h3>${esc(c.name)}</h3>
+        <div class="meta">${esc(c.format)}</div>
+        <p><b>Structure:</b> ${esc(c.structure)}</p>
+        <p><b>Why:</b> ${esc(c.why)}</p>
+        <div class="concept-stats"><span class="stat-chip">${variants.length} variants</span><span class="stat-chip">${active} tested/testing</span><span class="stat-chip">${winners} winners</span></div>
+        <div class="concept-actions">
+          ${c.url?'<a class="btn" href="'+esc(c.url)+'" target="_blank">Reference ↗</a>':''}
+          <button class="btn track-concept" data-id="${c.id}">Track Variants</button>
+          <button class="btn use-concept" data-id="${c.id}">Use in Test</button>
+        </div>
+      </div>
+    </article>`;
+  }).join(''):'<div class="empty">No concepts found.</div>';
+  document.querySelectorAll('.use-concept').forEach(b=>b.onclick=()=>{show('builder');bConcept.value=b.dataset.id;brief()});
+  document.querySelectorAll('.track-concept').forEach(b=>b.onclick=()=>openConceptTracker(b.dataset.id));
+}
+conceptSearch.oninput=renderConcepts;
+
+let activeConceptId=null;
+function openConceptTracker(conceptId){
+  activeConceptId=conceptId;
+  const c=get(concepts(),conceptId);
+  if(!c)return;
+  trackerTitle.textContent=c.name;
+  trackerDesc.textContent=c.structure;
+  vAvatar.innerHTML=AVATARS.map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');
+  vAngle.innerHTML=ANGLES.filter(a=>a.id!=='AN01').map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');
+  renderConceptVariants();
+  trackerModal.classList.add('show');
+}
+function renderConceptVariants(){
+  const c=get(concepts(),activeConceptId);
+  if(!c)return;
+  const variants=local.tests.filter(t=>t.concept===activeConceptId);
+  trackerVariants.textContent=variants.length;
+  trackerTested.textContent=variants.filter(t=>['Testing','Winner','Loser','Retired'].includes(t.status)).length;
+  trackerWinners.textContent=variants.filter(t=>t.status==='Winner').length;
+  variantRows.innerHTML=variants.length?variants.map(t=>{
+    const a=get(AVATARS,t.avatar),n=get(ANGLES,t.angle);
+    const cid=slug(a?.name||t.avatar)+'_'+slug(n?.name||t.angle)+'_'+slug(c.name);
+    return `<tr>
+      <td class="variant-id">${t.id}</td>
+      <td><b>${esc(a?.name||t.avatar)}</b></td>
+      <td>${esc(n?.name||t.angle)}</td>
+      <td><select class="variant-status" data-id="${t.id}">${['Planned','Briefing','Production','Ready','Testing','Winner','Loser','Retired'].map(s=>'<option '+(s===t.status?'selected':'')+'>'+s+'</option>').join('')}</select></td>
+      <td class="variant-id">${esc(cid)}</td>
+      <td><button class="btn variant-open" data-id="${t.id}">Open</button> <button class="btn variant-delete" data-id="${t.id}">Delete</button></td>
+    </tr>`;
+  }).join(''):'<tr><td colspan="6"><div class="empty">No variants yet. Add the first Avatar × Angle combination above.</div></td></tr>';
+  document.querySelectorAll('.variant-status').forEach(el=>el.onchange=()=>{const t=local.tests.find(x=>x.id===el.dataset.id);if(t){t.status=el.value;save();renderConceptVariants();renderConcepts();}});
+  document.querySelectorAll('.variant-open').forEach(el=>el.onclick=()=>{const t=local.tests.find(x=>x.id===el.dataset.id);if(!t)return;trackerModal.classList.remove('show');show('builder');bAvatar.value=t.avatar;bAngle.value=t.angle;bConcept.value=t.concept;bHook.value=t.hook||'';bProof.value=t.proof||'';bHypothesis.value=t.hypothesis||'';brief();});
+  document.querySelectorAll('.variant-delete').forEach(el=>el.onclick=()=>{local.tests=local.tests.filter(x=>x.id!==el.dataset.id);save();renderConceptVariants();renderConcepts();renderTests();});
+}
+addVariant.onclick=()=>{
+  if(!activeConceptId)return;
+  const exists=local.tests.some(t=>t.concept===activeConceptId&&t.avatar===vAvatar.value&&t.angle===vAngle.value);
+  if(exists){toast('Variant already exists');return;}
+  const t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:vAvatar.value,angle:vAngle.value,concept:activeConceptId,type:'Concept Test',hook:'',proof:'',hypothesis:'',status:'Planned',createdAt:new Date().toISOString()};
+  local.tests.push(t);save();renderConceptVariants();renderConcepts();renderTests();toast('Variant added');
+};
+closeTracker.onclick=()=>trackerModal.classList.remove('show');
+trackerModal.onclick=e=>{if(e.target===trackerModal)trackerModal.classList.remove('show')};
+
 newConceptBtn.onclick=()=>conceptModal.classList.add('show');closeConcept.onclick=cancelConcept.onclick=()=>conceptModal.classList.remove('show');conceptModal.onclick=e=>{if(e.target===conceptModal)conceptModal.classList.remove('show')};saveConcept.onclick=()=>{if(!cName.value.trim())return alert('Concept name required.');let id='CP'+String(concepts().length+1).padStart(2,'0');local.concepts.push({id,name:cName.value.trim(),family:cFamily.value.trim()||'Custom',format:cFormat.value.trim()||'Unknown',url:cUrl.value.trim(),thumb:cThumb.value.trim(),structure:cStructure.value.trim(),why:cWhy.value.trim()});['cName','cFamily','cFormat','cUrl','cThumb','cStructure','cWhy'].forEach(i=>document.getElementById(i).value='');conceptModal.classList.remove('show');save();renderConcepts();toast('Concept saved')};
 function builderOptions(){bAvatar.innerHTML=AVATARS.map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bAngle.innerHTML=ANGLES.filter(a=>a.id!=='AN01').map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bConcept.innerHTML=concepts().map(c=>`<option value="${c.id}">${c.id} · ${esc(c.name)}</option>`).join('');['bAvatar','bAngle','bConcept','bType','bHook','bProof','bHypothesis'].forEach(id=>document.getElementById(id).oninput=brief)}
 function brief(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);if(!a||!n||!c)return;let id=slug(a.name)+'_'+slug(n.name)+'_'+slug(c.name);creativeId.textContent=id;briefTitle.textContent=a.name+' × '+n.name;briefAvatar.textContent=a.name;briefAngle.textContent=n.name;briefConcept.textContent=c.name;briefTruth.textContent=n.truth;briefMechanism.textContent=n.mechanism;briefOutcome.textContent=n.outcome;if(!bHypothesis.value)bHypothesis.placeholder=`If we communicate “${n.name}” to ${a.name} through “${c.name}”, we believe it will outperform generic comfort messaging because it matches a specific lived experience.`}
-function renderTests(){testRows.innerHTML=local.tests.length?local.tests.map(t=>{let a=get(AVATARS,t.avatar),n=get(ANGLES,t.angle),c=get(concepts(),t.concept);return`<tr><td class="id">${t.id}</td><td>${esc(a?.name||t.avatar)}</td><td>${esc(n?.name||t.angle)}</td><td>${esc(c?.name||t.concept)}</td><td>${esc(t.type)}</td><td><select class="status test-status" data-id="${t.id}">${['Planned','Briefing','Production','Ready','Testing','Winner','Loser','Retired'].map(s=>'<option '+(s===t.status?'selected':'')+'>'+s+'</option>').join('')}</select></td><td>${esc(t.hook||'—')}</td><td><button class="btn delete-test" data-id="${t.id}">Delete</button></td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No tests queued yet. Build the first A × A × C combination above.</div></td></tr>';document.querySelectorAll('.test-status').forEach(x=>x.onchange=()=>{let t=local.tests.find(y=>y.id===x.dataset.id);t.status=x.value;save()});document.querySelectorAll('.delete-test').forEach(x=>x.onclick=()=>{local.tests=local.tests.filter(y=>y.id!==x.dataset.id);save();renderTests()})}
-addTest.onclick=()=>{let t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:bAvatar.value,angle:bAngle.value,concept:bConcept.value,type:bType.value,hook:bHook.value.trim(),proof:bProof.value.trim(),hypothesis:bHypothesis.value.trim(),status:'Planned',createdAt:new Date().toISOString()};local.tests.push(t);save();renderTests();toast('Test queued')};
+function renderTests(){testRows.innerHTML=local.tests.length?local.tests.map(t=>{let a=get(AVATARS,t.avatar),n=get(ANGLES,t.angle),c=get(concepts(),t.concept);return`<tr><td class="id">${t.id}</td><td>${esc(a?.name||t.avatar)}</td><td>${esc(n?.name||t.angle)}</td><td>${esc(c?.name||t.concept)}</td><td>${esc(t.type)}</td><td><select class="status test-status" data-id="${t.id}">${['Planned','Briefing','Production','Ready','Testing','Winner','Loser','Retired'].map(s=>'<option '+(s===t.status?'selected':'')+'>'+s+'</option>').join('')}</select></td><td>${esc(t.hook||'—')}</td><td><button class="btn delete-test" data-id="${t.id}">Delete</button></td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No tests queued yet. Build the first A × A × C combination above.</div></td></tr>';document.querySelectorAll('.test-status').forEach(x=>x.onchange=()=>{let t=local.tests.find(y=>y.id===x.dataset.id);t.status=x.value;save();renderConcepts()});document.querySelectorAll('.delete-test').forEach(x=>x.onclick=()=>{local.tests=local.tests.filter(y=>y.id!==x.dataset.id);save();renderTests()})}
+addTest.onclick=()=>{let t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:bAvatar.value,angle:bAngle.value,concept:bConcept.value,type:bType.value,hook:bHook.value.trim(),proof:bProof.value.trim(),hypothesis:bHypothesis.value.trim(),status:'Planned',createdAt:new Date().toISOString()};local.tests.push(t);save();renderTests();renderConcepts();toast('Test queued')};
 function briefText(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);return`ORTHORA CREATIVE BRIEF\n\nCreative ID: ${creativeId.textContent}\nAvatar: ${a?.name}\nAngle: ${n?.name}\nConcept: ${c?.name}\nTest Type: ${bType.value}\n\nCustomer truth: ${n?.truth}\nReason to believe: ${n?.mechanism}\nDesired outcome: ${n?.outcome}\n\nHook: ${bHook.value}\nProof required: ${bProof.value}\nHypothesis: ${bHypothesis.value||bHypothesis.placeholder}\n\nConcept structure: ${c?.structure}\nWhy concept works: ${c?.why}`}
 copyBrief.onclick=async()=>{await navigator.clipboard.writeText(briefText());toast('Brief copied')};
 exportBtn.onclick=()=>{let blob=new Blob([JSON.stringify(local,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='orthora-creative-system-team.json';a.click();URL.revokeObjectURL(a.href);toast('Team export created')};importInput.onchange=async e=>{let f=e.target.files?.[0];if(!f)return;try{let x=JSON.parse(await f.text());local={concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}};save();renderConcepts();builderOptions();renderTests();toast('Team file imported')}catch{alert('Invalid team file.')}e.target.value=''};
