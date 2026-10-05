@@ -103,6 +103,13 @@ body{background:#f4f5f6;color:#111}
 .variant-id{font:8px "DM Mono";color:#777}
 @media(max-width:680px){.variant-add{grid-template-columns:1fr}.tracker-head{display:block}.tracker-metrics{margin-top:10px}}
 
+
+.delete-concept{border-color:#d6d6d6!important;color:#8b1e1e!important;background:#fff!important}
+.delete-concept:hover{border-color:#8b1e1e!important;background:#fff7f7!important}
+.concept-head{position:relative;padding-right:24px!important}
+.concept-head-delete{position:absolute;top:5px;right:5px;width:18px;height:18px;border:0;border-radius:50%;background:transparent;color:#999;cursor:pointer;font-size:13px;line-height:18px;padding:0;text-align:center}
+.concept-head-delete:hover{background:#111;color:#fff}
+
 </style>
 </head>
 <body>
@@ -397,7 +404,7 @@ const SEED=[
 ['CP12','I’ve Tried Everything Confessional','Testimonial','UGC Story','List previous shoes and money spent → skepticism → why this test felt different.','Mirrors the internal conversation of the skeptical buyer.'],
 ['CP13','Podiatrist Ranks Shoes','Ranking / Authority','UGC / VSL','Podiatrist-style ranking of familiar shoe options for a specific avatar/problem → explain trade-offs → Orthora as the best-fit option for that use case.','Highly reusable because the same ranking structure can be reframed for different avatars and angles while keeping the concept constant.']
 ].map(x=>({id:x[0],name:x[1],family:x[2],format:x[3],structure:x[4],why:x[5],url:'',thumb:''}));
-const KEY='orthoraCreativeSystemV1';let local=load();function load(){try{let x=JSON.parse(localStorage.getItem(KEY)||'{}');return{concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}}}catch{return{concepts:[],tests:[],priorityState:{}}}}function save(){localStorage.setItem(KEY,JSON.stringify(local));counts()}function concepts(){return[...SEED,...local.concepts]}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function slug(s=''){return s.toUpperCase().replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,24)}function get(arr,id){return arr.find(x=>x.id===id)}function score(av,an){if((HERO[av]||[]).includes(an))return 3;if((STRONG[av]||[]).includes(an))return 2;if(UNIVERSAL.has(an))return 1;return 0}function toast(m){let e=document.createElement('div');e.className='toast';e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),1600)}function counts(){avatarCount.textContent=AVATARS.length;angleCount.textContent=ANGLES.filter(a=>a.id!=='AN01').length;priorityCount.textContent=PRIORITY_AVATARS.length;conceptCount.textContent=concepts().length;testCount.textContent=local.tests.length;mAvatars.textContent=AVATARS.length;mAngles.textContent=ANGLES.filter(a=>a.id!=='AN01').length;mConcepts.textContent=concepts().length;mTests.textContent=local.tests.length;if(priorityTotal){priorityTotal.textContent=PRIORITY_AVATARS.length;if(priorityAngleTotal)priorityAngleTotal.textContent=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0);if(overviewConceptTotal)overviewConceptTotal.textContent=concepts().length;if(overviewTestTotal)overviewTestTotal.textContent=local.tests.length}}
+const KEY='orthoraCreativeSystemV1';let local=load();function load(){try{let x=JSON.parse(localStorage.getItem(KEY)||'{}');return{concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{},deletedConceptIds:Array.isArray(x.deletedConceptIds)?x.deletedConceptIds:[]}}catch{return{concepts:[],tests:[],priorityState:{},deletedConceptIds:[]}}}function save(){localStorage.setItem(KEY,JSON.stringify(local));counts()}function concepts(){const deleted=new Set(local.deletedConceptIds||[]);return[...SEED,...local.concepts].filter(c=>!deleted.has(c.id))}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function slug(s=''){return s.toUpperCase().replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,24)}function get(arr,id){return arr.find(x=>x.id===id)}function score(av,an){if((HERO[av]||[]).includes(an))return 3;if((STRONG[av]||[]).includes(an))return 2;if(UNIVERSAL.has(an))return 1;return 0}function toast(m){let e=document.createElement('div');e.className='toast';e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),1600)}function counts(){avatarCount.textContent=AVATARS.length;angleCount.textContent=ANGLES.filter(a=>a.id!=='AN01').length;priorityCount.textContent=PRIORITY_AVATARS.length;conceptCount.textContent=concepts().length;testCount.textContent=local.tests.length;mAvatars.textContent=AVATARS.length;mAngles.textContent=ANGLES.filter(a=>a.id!=='AN01').length;mConcepts.textContent=concepts().length;mTests.textContent=local.tests.length;if(priorityTotal){priorityTotal.textContent=PRIORITY_AVATARS.length;if(priorityAngleTotal)priorityAngleTotal.textContent=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0);if(overviewConceptTotal)overviewConceptTotal.textContent=concepts().length;if(overviewTestTotal)overviewTestTotal.textContent=local.tests.length}}
 const titles={overview:'Creative Strategy',avatars:'Avatar Library',angles:'Angle Library',priorities:'Testing Overview',matrix:'Avatar × Angle Matrix',concepts:'Concept Library',builder:'Test Builder'};document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>show(b.dataset.view));function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===v));document.getElementById(v+'View').classList.add('active');pageTitle.textContent=titles[v];if(v==='avatars')renderAvatars();if(v==='angles')renderAngles();if(v==='priorities')renderPriorities();if(v==='matrix')renderMatrix();if(v==='concepts')renderConcepts();if(v==='builder'){builderOptions();renderTests();brief()}window.scrollTo(0,0)}quickBuild.onclick=()=>show('builder');
 function renderAvatars(){let q=avatarSearch.value.toLowerCase(),t=avatarType.value;let d=AVATARS.filter(a=>(!t||a.type===t)&&JSON.stringify(a).toLowerCase().includes(q));avatarGrid.innerHTML=d.map(a=>`<article class="card avatar-card" data-avatar="${a.id}"><div class="card-top"><span class="id">${a.id}</span><span class="pill ${a.priority==='Core'?'core':''}">${a.priority}</span></div><h3>${esc(a.name)}</h3><div class="meta">${esc(a.type)} · ${esc(a.env)}</div><p><b>Reality:</b> ${esc(a.reality)}</p><p><b>Desired outcome:</b> ${esc(a.desire)}</p><p><b>Failed alternatives:</b> ${esc(a.failed)}</p><p><b>Best proof:</b> ${esc(a.proof)}</p><div class="chips">${a.pains.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div></article>`).join('');avatarGrid.querySelectorAll('.avatar-card').forEach(card=>card.onclick=()=>{show('builder');bAvatar.value=card.dataset.avatar;brief()});avatarSearch.oninput=renderAvatars;avatarType.onchange=renderAvatars;}
 function renderAngles(){let fam=[...new Set(ANGLES.map(a=>a.family))];if(angleFamily.options.length===1)fam.forEach(x=>angleFamily.add(new Option(x,x)));let q=angleSearch.value.toLowerCase(),f=angleFamily.value;let d=ANGLES.filter(a=>a.id!=='AN01').filter(a=>(!f||a.family===f)&&JSON.stringify(a).toLowerCase().includes(q));angleList.innerHTML=d.map(a=>`<div class="angle"><div class="id">${a.id}</div><div class="angle-name">${esc(a.name)}</div><div class="angle-family">${esc(a.family)}</div><div class="angle-truth"><b>Truth:</b> ${esc(a.truth)}<br><b>Mechanism:</b> ${esc(a.mechanism)}<br><b>Outcome:</b> ${esc(a.outcome)}</div><div class="angle-prio">${a.priority}</div></div>`).join('')}angleSearch.oninput=renderAngles;angleFamily.onchange=renderAngles;
@@ -415,7 +422,7 @@ function renderPriorities(){
   overviewConceptTotal.textContent=cs.length;
   overviewTestTotal.textContent=local.tests.length;
   let h='<thead><tr><th class="avatar-col">Priority Avatar</th><th class="angle-col">Recommended Angle</th>';
-  h+=cs.map(c=>`<th class="concept-head" data-cid="${c.id}" title="${esc(c.structure)}"><b>${c.id}</b><strong>${esc(c.name)}</strong><span>${esc(c.family)}</span></th>`).join('');
+  h+=cs.map(c=>`<th class="concept-head" data-cid="${c.id}" title="${esc(c.structure)}"><button class="concept-head-delete" data-id="${c.id}" title="Delete concept">×</button><b>${c.id}</b><strong>${esc(c.name)}</strong><span>${esc(c.family)}</span></th>`).join('');
   h+='</tr></thead><tbody>';
   PRIORITY_AVATARS.forEach(p=>{
     const a=get(AVATARS,p.avatar);
@@ -435,7 +442,8 @@ function renderPriorities(){
   });
   h+='</tbody>';
   testingOverviewTable.innerHTML=h;
-  document.querySelectorAll('.concept-head').forEach(el=>el.onclick=()=>openConceptTracker(el.dataset.cid));
+  document.querySelectorAll('.concept-head').forEach(el=>el.onclick=e=>{if(e.target.closest('.concept-head-delete'))return;openConceptTracker(el.dataset.cid)});
+  document.querySelectorAll('.concept-head-delete').forEach(el=>el.onclick=e=>{e.stopPropagation();deleteConcept(el.dataset.id)});
   document.querySelectorAll('.combo-btn').forEach(el=>el.onclick=()=>{
     let t=el.dataset.test?local.tests.find(x=>x.id===el.dataset.test):null;
     if(!t){
@@ -468,14 +476,48 @@ function renderConcepts(){
           ${c.url?'<a class="btn" href="'+esc(c.url)+'" target="_blank">Reference ↗</a>':''}
           <button class="btn track-concept" data-id="${c.id}">Track Variants</button>
           <button class="btn use-concept" data-id="${c.id}">Use in Test</button>
+          <button class="btn delete-concept" data-id="${c.id}">Delete Concept</button>
         </div>
       </div>
     </article>`;
   }).join(''):'<div class="empty">No concepts found.</div>';
   document.querySelectorAll('.use-concept').forEach(b=>b.onclick=()=>{show('builder');bConcept.value=b.dataset.id;brief()});
   document.querySelectorAll('.track-concept').forEach(b=>b.onclick=()=>openConceptTracker(b.dataset.id));
+  document.querySelectorAll('.delete-concept').forEach(b=>b.onclick=()=>deleteConcept(b.dataset.id));
 }
 conceptSearch.oninput=renderConcepts;
+
+
+function deleteConcept(conceptId){
+  const c=get(concepts(),conceptId);
+  if(!c)return;
+  const linked=local.tests.filter(t=>t.concept===conceptId).length;
+  const msg=linked
+    ? `Delete “${c.name}” and its ${linked} linked test variant${linked===1?'':'s'}? This cannot be undone from this browser.`
+    : `Delete “${c.name}”? This cannot be undone from this browser.`;
+  if(!confirm(msg))return;
+
+  const customIndex=local.concepts.findIndex(x=>x.id===conceptId);
+  if(customIndex>=0){
+    local.concepts.splice(customIndex,1);
+  }else{
+    const set=new Set(local.deletedConceptIds||[]);
+    set.add(conceptId);
+    local.deletedConceptIds=[...set];
+  }
+  local.tests=local.tests.filter(t=>t.concept!==conceptId);
+  if(activeConceptId===conceptId){
+    activeConceptId=null;
+    trackerModal.classList.remove('show');
+  }
+  save();
+  builderOptions();
+  renderConcepts();
+  renderPriorities();
+  renderTests();
+  brief();
+  toast('Concept deleted');
+}
 
 let activeConceptId=null;
 function openConceptTracker(conceptId){
@@ -523,13 +565,13 @@ closeTracker.onclick=()=>trackerModal.classList.remove('show');
 trackerModal.onclick=e=>{if(e.target===trackerModal)trackerModal.classList.remove('show')};
 
 newConceptBtn.onclick=()=>conceptModal.classList.add('show');closeConcept.onclick=cancelConcept.onclick=()=>conceptModal.classList.remove('show');conceptModal.onclick=e=>{if(e.target===conceptModal)conceptModal.classList.remove('show')};saveConcept.onclick=()=>{if(!cName.value.trim())return alert('Concept name required.');let id='CP'+String(concepts().length+1).padStart(2,'0');local.concepts.push({id,name:cName.value.trim(),family:cFamily.value.trim()||'Custom',format:cFormat.value.trim()||'Unknown',url:cUrl.value.trim(),thumb:cThumb.value.trim(),structure:cStructure.value.trim(),why:cWhy.value.trim()});['cName','cFamily','cFormat','cUrl','cThumb','cStructure','cWhy'].forEach(i=>document.getElementById(i).value='');conceptModal.classList.remove('show');save();renderConcepts();builderOptions();renderPriorities();toast('Concept saved')};
-function builderOptions(){bAvatar.innerHTML=AVATARS.map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bAngle.innerHTML=ANGLES.filter(a=>a.id!=='AN01').map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bConcept.innerHTML=concepts().map(c=>`<option value="${c.id}">${c.id} · ${esc(c.name)}</option>`).join('');['bAvatar','bAngle','bConcept','bType','bHook','bProof','bHypothesis','bBrief'].forEach(id=>document.getElementById(id).oninput=brief)}
+function builderOptions(){bAvatar.innerHTML=AVATARS.map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bAngle.innerHTML=ANGLES.filter(a=>a.id!=='AN01').map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');const cs=concepts();bConcept.innerHTML=cs.length?cs.map(c=>`<option value="${c.id}">${c.id} · ${esc(c.name)}</option>`).join(''):'<option value="">No concepts — add one first</option>';['bAvatar','bAngle','bConcept','bType','bHook','bProof','bHypothesis','bBrief'].forEach(id=>document.getElementById(id).oninput=brief)}
 function brief(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);if(!a||!n||!c)return;let id=slug(a.name)+'_'+slug(n.name)+'_'+slug(c.name);creativeId.textContent=id;briefTitle.textContent=a.name+' × '+n.name;briefAvatar.textContent=a.name;briefAngle.textContent=n.name;briefConcept.textContent=c.name;briefTruth.textContent=n.truth;briefMechanism.textContent=n.mechanism;briefOutcome.textContent=n.outcome;if(!bHypothesis.value)bHypothesis.placeholder=`If we communicate “${n.name}” to ${a.name} through “${c.name}”, we believe it will outperform generic comfort messaging because it matches a specific lived experience.`}
 function renderTests(){testRows.innerHTML=local.tests.length?local.tests.map(t=>{let a=get(AVATARS,t.avatar),n=get(ANGLES,t.angle),c=get(concepts(),t.concept);return`<tr><td class="id">${t.id}</td><td>${esc(a?.name||t.avatar)}</td><td>${esc(n?.name||t.angle)}</td><td>${esc(c?.name||t.concept)}</td><td>${esc(t.type)}</td><td><select class="status test-status" data-id="${t.id}">${['Planned','Briefing','Production','Ready','Testing','Winner','Loser','Retired'].map(s=>'<option '+(s===t.status?'selected':'')+'>'+s+'</option>').join('')}</select></td><td>${esc(t.hook||'—')}</td><td><button class="btn delete-test" data-id="${t.id}">Delete</button></td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No tests queued yet. Build the first A × A × C combination above.</div></td></tr>';document.querySelectorAll('.test-status').forEach(x=>x.onchange=()=>{let t=local.tests.find(y=>y.id===x.dataset.id);t.status=x.value;save();renderConcepts();renderPriorities()});document.querySelectorAll('.delete-test').forEach(x=>x.onclick=()=>{local.tests=local.tests.filter(y=>y.id!==x.dataset.id);save();renderTests();renderPriorities()})}
 addTest.onclick=()=>{let t=local.tests.find(x=>x.avatar===bAvatar.value&&x.angle===bAngle.value&&x.concept===bConcept.value);if(t){t.type=bType.value;t.hook=bHook.value.trim();t.proof=bProof.value.trim();t.hypothesis=bHypothesis.value.trim();t.brief=bBrief.value.trim();if(!t.status)t.status='Planned';toast('Existing test updated')}else{t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:bAvatar.value,angle:bAngle.value,concept:bConcept.value,type:bType.value,hook:bHook.value.trim(),proof:bProof.value.trim(),hypothesis:bHypothesis.value.trim(),brief:bBrief.value.trim(),status:'Planned',createdAt:new Date().toISOString()};local.tests.push(t);toast('Test queued')}save();renderTests();renderConcepts();renderPriorities()};
 function briefText(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);return`ORTHORA CREATIVE BRIEF\n\nCreative ID: ${creativeId.textContent}\nAvatar: ${a?.name}\nAngle: ${n?.name}\nConcept: ${c?.name}\nTest Type: ${bType.value}\n\nCustomer truth: ${n?.truth}\nReason to believe: ${n?.mechanism}\nDesired outcome: ${n?.outcome}\n\nHook: ${bHook.value}\nProof required: ${bProof.value}\nHypothesis: ${bHypothesis.value||bHypothesis.placeholder}\n\nCreative brief: ${bBrief.value||'—'}\n\nConcept structure: ${c?.structure}\nWhy concept works: ${c?.why}`}
 copyBrief.onclick=async()=>{await navigator.clipboard.writeText(briefText());toast('Brief copied')};
-exportBtn.onclick=()=>{let blob=new Blob([JSON.stringify(local,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='orthora-creative-system-team.json';a.click();URL.revokeObjectURL(a.href);toast('Team export created')};importInput.onchange=async e=>{let f=e.target.files?.[0];if(!f)return;try{let x=JSON.parse(await f.text());local={concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}};save();renderConcepts();builderOptions();renderTests();toast('Team file imported')}catch{alert('Invalid team file.')}e.target.value=''};
+exportBtn.onclick=()=>{let blob=new Blob([JSON.stringify(local,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='orthora-creative-system-team.json';a.click();URL.revokeObjectURL(a.href);toast('Team export created')};importInput.onchange=async e=>{let f=e.target.files?.[0];if(!f)return;try{let x=JSON.parse(await f.text());local={concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{},deletedConceptIds:Array.isArray(x.deletedConceptIds)?x.deletedConceptIds:[]};save();renderConcepts();builderOptions();renderTests();toast('Team file imported')}catch{alert('Invalid team file.')}e.target.value=''};
 renderAvatars();renderAngles();renderPriorities();builderOptions();brief();renderTests();counts();
 </script>
 </body>
