@@ -56,27 +56,32 @@ body{background:#f4f5f6;color:#111}
 .avatar-card:after{content:'Open in Test Builder →';display:block;margin-top:12px;font:9px "DM Mono";color:#111}
 
 
-.priority-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:16px}
-.priority-list{display:grid;gap:12px}
-.avatar-priority-card{background:#fff;border:1px solid #dcdcdc;border-radius:16px;overflow:hidden}
-.avatar-priority-head{display:grid;grid-template-columns:54px minmax(220px,.9fr) minmax(0,2fr);gap:14px;align-items:center;padding:16px}
-.rank-badge{width:38px;height:38px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font:700 12px "DM Mono"}
-.avatar-priority-name small,.priority-label{display:block;font:8px "DM Mono";letter-spacing:.08em;color:#777;text-transform:uppercase;margin-bottom:4px}
-.avatar-priority-name strong{font-size:14px}
-.avatar-priority-name p{margin:5px 0 0;color:#777;font-size:9px;line-height:1.4}
-.recommended-angles{display:grid;gap:7px}
-.recommended-angle{display:grid;grid-template-columns:30px minmax(170px,1fr) minmax(220px,1.35fr) 92px 88px;gap:9px;align-items:center;border:1px solid #e1e1e1;border-radius:10px;padding:8px 9px;background:#fafafa}
-.angle-rank{font:700 9px "DM Mono";color:#777}
-.angle-main strong{font-size:10px}.angle-main span{display:block;font-size:8px;color:#777;margin-top:2px}
-.angle-reason{font-size:9px;line-height:1.35;color:#555}
-.angle-status{border:1px solid #d6d6d6;background:#fff;color:#111;border-radius:8px;padding:6px;font-size:9px;width:100%}
-.angle-tested{display:flex;align-items:center;gap:5px;font-size:9px;font-weight:700}
-.angle-tested input{accent-color:#111}
-.angle-open{border:1px solid #cfcfcf;background:#fff;color:#111;border-radius:8px;padding:6px 7px;font-size:8px;font-weight:700;cursor:pointer}
-.angle-open:hover{border-color:#111}
-@media(max-width:980px){.avatar-priority-head{grid-template-columns:45px 1fr}.recommended-angles{grid-column:1/-1}.recommended-angle{grid-template-columns:28px 1fr 1.2fr 90px 80px}}
-@media(max-width:680px){.priority-summary{grid-template-columns:1fr}.avatar-priority-head{grid-template-columns:40px 1fr}.recommended-angle{grid-template-columns:26px 1fr}.angle-reason,.recommended-angle .angle-status,.angle-tested,.angle-open{grid-column:2}}
-
+.priority-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:14px}
+.testing-grid-help{font-size:9px;color:#666;margin:0 0 10px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cell-key{display:inline-block;border:1px solid #d7d7d7;border-radius:6px;padding:4px 6px;font:8px "DM Mono";background:#fff;color:#555}
+.planned-key{background:#f3f3f3}.testing-key{background:#111;color:#fff;border-color:#111}.winner-key{background:#111;color:#fff;border-color:#111;font-weight:700}.loser-key{text-decoration:line-through;color:#8a8a8a}
+.testing-overview-wrap{background:#fff;border:1px solid #dcdcdc;border-radius:14px;overflow:auto;max-height:74vh}
+.testing-overview-table{border-collapse:separate;border-spacing:0;min-width:2200px;width:100%;font-size:9px}
+.testing-overview-table th,.testing-overview-table td{border-right:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;padding:7px;vertical-align:middle;background:#fff}
+.testing-overview-table thead th{position:sticky;top:0;z-index:4;background:#f7f7f8}
+.testing-overview-table .avatar-col{position:sticky;left:0;z-index:3;width:210px;min-width:210px;background:#fff;text-align:left}
+.testing-overview-table .angle-col{position:sticky;left:210px;z-index:3;width:230px;min-width:230px;background:#fff;text-align:left}
+.testing-overview-table thead .avatar-col,.testing-overview-table thead .angle-col{z-index:6;background:#f7f7f8}
+.avatar-cell .rank-mini{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#111;color:#fff;font:700 8px "DM Mono";margin-right:7px}
+.avatar-cell strong{font-size:10px}.avatar-cell span{display:block;color:#777;font-size:8px;margin-top:3px;padding-left:31px}
+.angle-cell strong{display:block;font-size:9px}.angle-cell span{display:block;color:#777;font-size:8px;margin-top:3px;line-height:1.35}
+.concept-head{width:118px;min-width:118px;max-width:118px;text-align:left;cursor:pointer}
+.concept-head b{display:block;font:8px "DM Mono";color:#777;margin-bottom:3px}.concept-head strong{display:block;font-size:9px;line-height:1.2}.concept-head span{display:block;color:#8a8a8a;font-size:7px;margin-top:3px}
+.overview-cell{width:118px;min-width:118px;text-align:center}
+.combo-btn{width:100%;min-height:44px;border:1px solid #d8d8d8;background:#fff;color:#666;border-radius:8px;padding:5px;cursor:pointer;font:8px "DM Mono";line-height:1.25}
+.combo-btn:hover{border-color:#111;color:#111}
+.combo-btn.has-test{background:#f3f3f3;color:#111}
+.combo-btn.status-Testing,.combo-btn.status-Winner{background:#111;color:#fff;border-color:#111}
+.combo-btn.status-Loser{background:#f2f2f2;color:#888;text-decoration:line-through}
+.combo-btn small{display:block;font-size:7px;opacity:.75;margin-top:2px}
+.avatar-group-start td{border-top:2px solid #cfcfcf}
+@media(max-width:900px){.priority-summary{grid-template-columns:1fr 1fr}.testing-overview-table .avatar-col{width:170px;min-width:170px}.testing-overview-table .angle-col{left:170px;width:200px;min-width:200px}}
+@media(max-width:680px){.priority-summary{grid-template-columns:1fr 1fr}}
 .concept-stats{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}
 .stat-chip{font:8px "DM Mono";border:1px solid #dedede;border-radius:999px;padding:5px 7px;background:#fafafa;color:#555}
 .track-concept{background:#111!important;color:#fff!important;border-color:#111!important}
@@ -109,7 +114,7 @@ body{background:#f4f5f6;color:#111}
     <button class="active" data-view="overview"><span class="idx">01</span>Overview</button>
     <button data-view="avatars"><span class="idx">02</span>Avatars<span class="count" id="avatarCount"></span></button>
     <button data-view="angles"><span class="idx">03</span>Angles<span class="count" id="angleCount"></span></button>
-    <button data-view="priorities"><span class="idx">04</span>Priority Tests<span class="count" id="priorityCount"></span></button>
+    <button data-view="priorities"><span class="idx">04</span>Testing Overview<span class="count" id="priorityCount"></span></button>
     <button data-view="matrix"><span class="idx">05</span>Matrix</button>
     <button data-view="concepts"><span class="idx">06</span>Concepts<span class="count" id="conceptCount"></span></button>
     <button data-view="builder"><span class="idx">07</span>Test Builder<span class="count" id="testCount"></span></button>
@@ -159,15 +164,17 @@ body{background:#f4f5f6;color:#111}
 
 <section class="view" id="prioritiesView">
   <div class="section-head">
-    <div><div class="tag">WHAT TO TEST FIRST</div><h2>Avatar Priority × Recommended Angles</h2></div>
-    <p>Start with the highest-probability avatars. Next to each avatar are the angles most naturally connected to that person. Pick an angle, then choose any concept separately in the Concept Library / Test Builder.</p>
+    <div><div class="tag">MASTER TESTING MAP</div><h2>Avatar × Angle × Concept Overview</h2></div>
+    <p>Rows are the highest-priority Avatar × Angle combinations. Columns are reusable concepts. Scan a concept vertically to compare it across customer segments, or scan a row horizontally to see which concepts have been tested for that thesis.</p>
   </div>
   <div class="priority-summary">
     <div class="metric"><small>Priority avatars</small><b id="priorityTotal">10</b></div>
-    <div class="metric"><small>Angle tests completed</small><b id="priorityDone">0</b></div>
-    <div class="metric"><small>Total angle opportunities</small><b id="priorityAngleTotal">0</b></div>
+    <div class="metric"><small>Recommended angle rows</small><b id="priorityAngleTotal">0</b></div>
+    <div class="metric"><small>Concepts</small><b id="overviewConceptTotal">0</b></div>
+    <div class="metric"><small>Tests created</small><b id="overviewTestTotal">0</b></div>
   </div>
-  <div class="priority-list" id="priorityList"></div>
+  <div class="testing-grid-help"><span class="cell-key empty-key">+ Test</span> not created <span class="cell-key planned-key">Planned</span> queued <span class="cell-key testing-key">Testing</span> live <span class="cell-key winner-key">Winner</span> winning <span class="cell-key loser-key">Loser</span> failed</div>
+  <div class="testing-overview-wrap"><table class="testing-overview-table" id="testingOverviewTable"></table></div>
 </section>
 
 <section class="view" id="matrixView">
@@ -189,6 +196,7 @@ body{background:#f4f5f6;color:#111}
   <label class="full">HOOK / OPENING<input id="bHook" placeholder="Write the first line / first-frame idea"></label>
   <label class="full">PROOF REQUIRED<textarea id="bProof" placeholder="Real nurse creator, 12-hour shift, hospital floor, competitor comparison..."></textarea></label>
   <label class="full">HYPOTHESIS<textarea id="bHypothesis" placeholder="If we communicate X to avatar Y through concept Z, we believe..."></textarea></label>
+  <label class="full">CREATIVE BRIEF<textarea id="bBrief" placeholder="Write the execution brief: hook direction, creator, scenes, proof, product moments, CTA, claims to avoid..."></textarea></label>
   <div style="display:flex;gap:7px;margin-top:13px"><button class="btn primary" id="addTest">Add to Test Queue</button><button class="btn" id="copyBrief">Copy Brief</button></div>
 </div>
 <aside class="brief"><div class="tag">LIVE BRIEF</div><h3 id="briefTitle">Choose a combination</h3><div class="creative-id" id="creativeId">—</div><div class="brief-row"><span>AVATAR</span><strong id="briefAvatar">—</strong></div><div class="brief-row"><span>ANGLE</span><strong id="briefAngle">—</strong></div><div class="brief-row"><span>CONCEPT</span><strong id="briefConcept">—</strong></div><div class="brief-row"><span>CUSTOMER TRUTH</span><p id="briefTruth">—</p></div><div class="brief-row"><span>REASON TO BELIEVE</span><p id="briefMechanism">—</p></div><div class="brief-row"><span>DESIRED OUTCOME</span><p id="briefOutcome">—</p></div></aside>
@@ -230,11 +238,11 @@ body{background:#f4f5f6;color:#111}
 <script>
 
 const byId=id=>document.getElementById(id);
-const pageTitle=byId('pageTitle'),quickBuild=byId('quickBuild'),avatarCount=byId('avatarCount'),angleCount=byId('angleCount'),priorityCount=byId('priorityCount'),conceptCount=byId('conceptCount'),testCount=byId('testCount'),mAvatars=byId('mAvatars'),mAngles=byId('mAngles'),mConcepts=byId('mConcepts'),mTests=byId('mTests'),priorityList=byId('priorityList'),priorityTotal=byId('priorityTotal'),priorityDone=byId('priorityDone'),priorityAngleTotal=byId('priorityAngleTotal');
+const pageTitle=byId('pageTitle'),quickBuild=byId('quickBuild'),avatarCount=byId('avatarCount'),angleCount=byId('angleCount'),priorityCount=byId('priorityCount'),conceptCount=byId('conceptCount'),testCount=byId('testCount'),mAvatars=byId('mAvatars'),mAngles=byId('mAngles'),mConcepts=byId('mConcepts'),mTests=byId('mTests'),priorityTotal=byId('priorityTotal'),priorityAngleTotal=byId('priorityAngleTotal'),overviewConceptTotal=byId('overviewConceptTotal'),overviewTestTotal=byId('overviewTestTotal'),testingOverviewTable=byId('testingOverviewTable');
 const avatarSearch=byId('avatarSearch'),avatarType=byId('avatarType'),avatarGrid=byId('avatarGrid'),angleSearch=byId('angleSearch'),angleFamily=byId('angleFamily'),angleList=byId('angleList'),matrixTable=byId('matrixTable'),conceptSearch=byId('conceptSearch'),conceptGrid=byId('conceptGrid'),newConceptBtn=byId('newConceptBtn');
 const conceptModal=byId('conceptModal'),closeConcept=byId('closeConcept'),cancelConcept=byId('cancelConcept'),saveConcept=byId('saveConcept'),cName=byId('cName'),cFamily=byId('cFamily'),cFormat=byId('cFormat'),cUrl=byId('cUrl'),cThumb=byId('cThumb'),cStructure=byId('cStructure'),cWhy=byId('cWhy');
 const trackerModal=byId('trackerModal'),trackerTitle=byId('trackerTitle'),trackerDesc=byId('trackerDesc'),closeTracker=byId('closeTracker'),trackerVariants=byId('trackerVariants'),trackerTested=byId('trackerTested'),trackerWinners=byId('trackerWinners'),vAvatar=byId('vAvatar'),vAngle=byId('vAngle'),addVariant=byId('addVariant'),variantRows=byId('variantRows');
-const bAvatar=byId('bAvatar'),bAngle=byId('bAngle'),bConcept=byId('bConcept'),bType=byId('bType'),bHook=byId('bHook'),bProof=byId('bProof'),bHypothesis=byId('bHypothesis'),creativeId=byId('creativeId'),briefTitle=byId('briefTitle'),briefAvatar=byId('briefAvatar'),briefAngle=byId('briefAngle'),briefConcept=byId('briefConcept'),briefTruth=byId('briefTruth'),briefMechanism=byId('briefMechanism'),briefOutcome=byId('briefOutcome'),addTest=byId('addTest'),copyBrief=byId('copyBrief'),testRows=byId('testRows'),exportBtn=byId('exportBtn'),importInput=byId('importInput');
+const bAvatar=byId('bAvatar'),bAngle=byId('bAngle'),bConcept=byId('bConcept'),bType=byId('bType'),bHook=byId('bHook'),bProof=byId('bProof'),bHypothesis=byId('bHypothesis'),bBrief=byId('bBrief'),creativeId=byId('creativeId'),briefTitle=byId('briefTitle'),briefAvatar=byId('briefAvatar'),briefAngle=byId('briefAngle'),briefConcept=byId('briefConcept'),briefTruth=byId('briefTruth'),briefMechanism=byId('briefMechanism'),briefOutcome=byId('briefOutcome'),addTest=byId('addTest'),copyBrief=byId('copyBrief'),testRows=byId('testRows'),exportBtn=byId('exportBtn'),importInput=byId('importInput');
 
 const AVATARS=[
 ['AV01','Nurse / RN','Occupation','Healthcare','Core','Women 25–60','10–12 hour shifts, hospital floors, constant walking and standing.','Finish the shift normally with less foot and whole-body fatigue.',['12h shifts','heel / PF','back & knee','swelling','slip safety'],'Hoka, Brooks, Dansko, Crocs, insoles','Real nurse UGC · scrubs · hour-based proof · end-of-shift'],
@@ -389,8 +397,8 @@ const SEED=[
 ['CP12','I’ve Tried Everything Confessional','Testimonial','UGC Story','List previous shoes and money spent → skepticism → why this test felt different.','Mirrors the internal conversation of the skeptical buyer.'],
 ['CP13','Podiatrist Ranks Shoes','Ranking / Authority','UGC / VSL','Podiatrist-style ranking of familiar shoe options for a specific avatar/problem → explain trade-offs → Orthora as the best-fit option for that use case.','Highly reusable because the same ranking structure can be reframed for different avatars and angles while keeping the concept constant.']
 ].map(x=>({id:x[0],name:x[1],family:x[2],format:x[3],structure:x[4],why:x[5],url:'',thumb:''}));
-const KEY='orthoraCreativeSystemV1';let local=load();function load(){try{let x=JSON.parse(localStorage.getItem(KEY)||'{}');return{concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}}}catch{return{concepts:[],tests:[],priorityState:{}}}}function save(){localStorage.setItem(KEY,JSON.stringify(local));counts()}function concepts(){return[...SEED,...local.concepts]}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function slug(s=''){return s.toUpperCase().replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,24)}function get(arr,id){return arr.find(x=>x.id===id)}function score(av,an){if((HERO[av]||[]).includes(an))return 3;if((STRONG[av]||[]).includes(an))return 2;if(UNIVERSAL.has(an))return 1;return 0}function toast(m){let e=document.createElement('div');e.className='toast';e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),1600)}function counts(){avatarCount.textContent=AVATARS.length;angleCount.textContent=ANGLES.filter(a=>a.id!=='AN01').length;priorityCount.textContent=PRIORITY_AVATARS.length;conceptCount.textContent=concepts().length;testCount.textContent=local.tests.length;mAvatars.textContent=AVATARS.length;mAngles.textContent=ANGLES.filter(a=>a.id!=='AN01').length;mConcepts.textContent=concepts().length;mTests.textContent=local.tests.length;if(priorityTotal){priorityTotal.textContent=PRIORITY_AVATARS.length;const states=Object.values(local.priorityState||{});priorityDone.textContent=states.filter(s=>s.tested).length;if(priorityAngleTotal)priorityAngleTotal.textContent=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0)}}
-const titles={overview:'Creative Strategy',avatars:'Avatar Library',angles:'Angle Library',priorities:'Priority Tests',matrix:'Avatar × Angle Matrix',concepts:'Concept Library',builder:'Test Builder'};document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>show(b.dataset.view));function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===v));document.getElementById(v+'View').classList.add('active');pageTitle.textContent=titles[v];if(v==='avatars')renderAvatars();if(v==='angles')renderAngles();if(v==='priorities')renderPriorities();if(v==='matrix')renderMatrix();if(v==='concepts')renderConcepts();if(v==='builder'){builderOptions();renderTests();brief()}window.scrollTo(0,0)}quickBuild.onclick=()=>show('builder');
+const KEY='orthoraCreativeSystemV1';let local=load();function load(){try{let x=JSON.parse(localStorage.getItem(KEY)||'{}');return{concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}}}catch{return{concepts:[],tests:[],priorityState:{}}}}function save(){localStorage.setItem(KEY,JSON.stringify(local));counts()}function concepts(){return[...SEED,...local.concepts]}function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function slug(s=''){return s.toUpperCase().replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,24)}function get(arr,id){return arr.find(x=>x.id===id)}function score(av,an){if((HERO[av]||[]).includes(an))return 3;if((STRONG[av]||[]).includes(an))return 2;if(UNIVERSAL.has(an))return 1;return 0}function toast(m){let e=document.createElement('div');e.className='toast';e.textContent=m;document.body.appendChild(e);setTimeout(()=>e.remove(),1600)}function counts(){avatarCount.textContent=AVATARS.length;angleCount.textContent=ANGLES.filter(a=>a.id!=='AN01').length;priorityCount.textContent=PRIORITY_AVATARS.length;conceptCount.textContent=concepts().length;testCount.textContent=local.tests.length;mAvatars.textContent=AVATARS.length;mAngles.textContent=ANGLES.filter(a=>a.id!=='AN01').length;mConcepts.textContent=concepts().length;mTests.textContent=local.tests.length;if(priorityTotal){priorityTotal.textContent=PRIORITY_AVATARS.length;if(priorityAngleTotal)priorityAngleTotal.textContent=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0);if(overviewConceptTotal)overviewConceptTotal.textContent=concepts().length;if(overviewTestTotal)overviewTestTotal.textContent=local.tests.length}}
+const titles={overview:'Creative Strategy',avatars:'Avatar Library',angles:'Angle Library',priorities:'Testing Overview',matrix:'Avatar × Angle Matrix',concepts:'Concept Library',builder:'Test Builder'};document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>show(b.dataset.view));function show(v){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===v));document.getElementById(v+'View').classList.add('active');pageTitle.textContent=titles[v];if(v==='avatars')renderAvatars();if(v==='angles')renderAngles();if(v==='priorities')renderPriorities();if(v==='matrix')renderMatrix();if(v==='concepts')renderConcepts();if(v==='builder'){builderOptions();renderTests();brief()}window.scrollTo(0,0)}quickBuild.onclick=()=>show('builder');
 function renderAvatars(){let q=avatarSearch.value.toLowerCase(),t=avatarType.value;let d=AVATARS.filter(a=>(!t||a.type===t)&&JSON.stringify(a).toLowerCase().includes(q));avatarGrid.innerHTML=d.map(a=>`<article class="card avatar-card" data-avatar="${a.id}"><div class="card-top"><span class="id">${a.id}</span><span class="pill ${a.priority==='Core'?'core':''}">${a.priority}</span></div><h3>${esc(a.name)}</h3><div class="meta">${esc(a.type)} · ${esc(a.env)}</div><p><b>Reality:</b> ${esc(a.reality)}</p><p><b>Desired outcome:</b> ${esc(a.desire)}</p><p><b>Failed alternatives:</b> ${esc(a.failed)}</p><p><b>Best proof:</b> ${esc(a.proof)}</p><div class="chips">${a.pains.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div></article>`).join('');avatarGrid.querySelectorAll('.avatar-card').forEach(card=>card.onclick=()=>{show('builder');bAvatar.value=card.dataset.avatar;brief()});avatarSearch.oninput=renderAvatars;avatarType.onchange=renderAvatars;}
 function renderAngles(){let fam=[...new Set(ANGLES.map(a=>a.family))];if(angleFamily.options.length===1)fam.forEach(x=>angleFamily.add(new Option(x,x)));let q=angleSearch.value.toLowerCase(),f=angleFamily.value;let d=ANGLES.filter(a=>a.id!=='AN01').filter(a=>(!f||a.family===f)&&JSON.stringify(a).toLowerCase().includes(q));angleList.innerHTML=d.map(a=>`<div class="angle"><div class="id">${a.id}</div><div class="angle-name">${esc(a.name)}</div><div class="angle-family">${esc(a.family)}</div><div class="angle-truth"><b>Truth:</b> ${esc(a.truth)}<br><b>Mechanism:</b> ${esc(a.mechanism)}<br><b>Outcome:</b> ${esc(a.outcome)}</div><div class="angle-prio">${a.priority}</div></div>`).join('')}angleSearch.oninput=renderAngles;angleFamily.onchange=renderAngles;
 
@@ -400,34 +408,45 @@ function priorityStateFor(id){
 }
 function renderPriorities(){
   counts();
-  const totalAngles=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0);
-  if(priorityTotal)priorityTotal.textContent=PRIORITY_AVATARS.length;
-  if(priorityAngleTotal)priorityAngleTotal.textContent=totalAngles;
-  priorityList.innerHTML=PRIORITY_AVATARS.map(p=>{
+  const cs=concepts();
+  const totalRows=PRIORITY_AVATARS.reduce((n,p)=>n+p.angles.length,0);
+  priorityTotal.textContent=PRIORITY_AVATARS.length;
+  priorityAngleTotal.textContent=totalRows;
+  overviewConceptTotal.textContent=cs.length;
+  overviewTestTotal.textContent=local.tests.length;
+  let h='<thead><tr><th class="avatar-col">Priority Avatar</th><th class="angle-col">Recommended Angle</th>';
+  h+=cs.map(c=>`<th class="concept-head" data-cid="${c.id}" title="${esc(c.structure)}"><b>${c.id}</b><strong>${esc(c.name)}</strong><span>${esc(c.family)}</span></th>`).join('');
+  h+='</tr></thead><tbody>';
+  PRIORITY_AVATARS.forEach(p=>{
     const a=get(AVATARS,p.avatar);
-    const angles=p.angles.map((ang,i)=>{
-      const s=priorityStateFor(ang.id);
-      return `<div class="recommended-angle">
-        <div class="angle-rank">#${i+1}</div>
-        <div class="angle-main"><strong>${esc(ang.label)}</strong><span>${esc(get(ANGLES,ang.angleId)?.family||'Angle')}</span></div>
-        <div class="angle-reason">${esc(ang.reason)}</div>
-        <select class="angle-status" data-aid="${ang.id}">${['Not started','Briefing','Ready','Testing','Winner','Loser','Retest'].map(x=>`<option ${x===s.status?'selected':''}>${x}</option>`).join('')}</select>
-        <label class="angle-tested"><input type="checkbox" class="angle-tested-input" data-aid="${ang.id}" ${s.tested?'checked':''}> Tested</label>
-        <button class="angle-open" data-avatar="${p.avatar}" data-angle="${ang.angleId}">Build test →</button>
-      </div>`;
-    }).join('');
-    return `<article class="avatar-priority-card">
-      <div class="avatar-priority-head">
-        <div><div class="rank-badge">#${p.rank}</div></div>
-        <div class="avatar-priority-name"><small>Priority avatar</small><strong>${esc(a?.name||p.avatar)}</strong><p>${esc(p.why)}</p></div>
-        <div class="recommended-angles"><span class="priority-label">Recommended angles — ranked for this avatar</span>${angles}</div>
-      </div>
-    </article>`;
-  }).join('');
-  document.querySelectorAll('.angle-status').forEach(el=>el.onchange=()=>{priorityStateFor(el.dataset.aid).status=el.value;save();});
-  document.querySelectorAll('.angle-tested-input').forEach(el=>el.onchange=()=>{priorityStateFor(el.dataset.aid).tested=el.checked;save();counts();});
-  document.querySelectorAll('.angle-open').forEach(el=>el.onclick=()=>{show('builder');bAvatar.value=el.dataset.avatar;bAngle.value=el.dataset.angle;brief();});
-  counts();
+    p.angles.forEach((ang,i)=>{
+      const rowClass=i===0?'avatar-group-start':'';
+      h+=`<tr class="${rowClass}">`;
+      h+=`<td class="avatar-col avatar-cell">${i===0?`<span class="rank-mini">#${p.rank}</span><strong>${esc(a?.name||p.avatar)}</strong><span>${esc(p.why)}</span>`:''}</td>`;
+      h+=`<td class="angle-col angle-cell"><strong>#${i+1} · ${esc(ang.label)}</strong><span>${esc(ang.reason)}</span></td>`;
+      cs.forEach(c=>{
+        const t=local.tests.find(x=>x.avatar===p.avatar&&x.angle===ang.angleId&&x.concept===c.id);
+        const label=t?(t.status||'Planned'):'+ Test';
+        const note=t?.brief?'Brief ✓':'';
+        h+=`<td class="overview-cell"><button class="combo-btn ${t?'has-test status-'+esc(t.status||'Planned'):''}" data-avatar="${p.avatar}" data-angle="${ang.angleId}" data-concept="${c.id}" data-test="${t?.id||''}">${esc(label)}${note?`<small>${note}</small>`:''}</button></td>`;
+      });
+      h+='</tr>';
+    });
+  });
+  h+='</tbody>';
+  testingOverviewTable.innerHTML=h;
+  document.querySelectorAll('.concept-head').forEach(el=>el.onclick=()=>openConceptTracker(el.dataset.cid));
+  document.querySelectorAll('.combo-btn').forEach(el=>el.onclick=()=>{
+    let t=el.dataset.test?local.tests.find(x=>x.id===el.dataset.test):null;
+    if(!t){
+      t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:el.dataset.avatar,angle:el.dataset.angle,concept:el.dataset.concept,type:'Concept Test',hook:'',proof:'',hypothesis:'',brief:'',status:'Planned',createdAt:new Date().toISOString()};
+      local.tests.push(t);save();
+    }
+    show('builder');
+    bAvatar.value=t.avatar;bAngle.value=t.angle;bConcept.value=t.concept;bType.value=t.type||'Concept Test';
+    bHook.value=t.hook||'';bProof.value=t.proof||'';bHypothesis.value=t.hypothesis||'';bBrief.value=t.brief||'';
+    brief();
+  });
 }
 function renderMatrix(){let h=`<thead><tr><th class="avatar">Avatar</th>${ANGLES.filter(a=>a.id!=='AN01').map(a=>`<th title="${esc(a.name)}">${a.id}<br><span style="font-size:7px;color:#83909b">${esc(a.name.slice(0,18))}</span></th>`).join('')}</tr></thead><tbody>`;AVATARS.forEach(a=>{h+=`<tr><td class="avatar"><b>${a.id}</b> · ${esc(a.name)}</td>`;ANGLES.filter(n=>n.id!=='AN01').forEach(n=>{let s=score(a.id,n.id);h+=`<td><div class="score s${s}" data-av="${a.id}" data-an="${n.id}" title="${esc(a.name)} × ${esc(n.name)}">${s||''}</div></td>`});h+='</tr>'});h+='</tbody>';matrixTable.innerHTML=h;matrixTable.querySelectorAll('.score').forEach(x=>x.onclick=()=>{show('builder');bAvatar.value=x.dataset.av;bAngle.value=x.dataset.an;brief()})}
 function renderConcepts(){
@@ -490,25 +509,25 @@ function renderConceptVariants(){
     </tr>`;
   }).join(''):'<tr><td colspan="6"><div class="empty">No variants yet. Add the first Avatar × Angle combination above.</div></td></tr>';
   document.querySelectorAll('.variant-status').forEach(el=>el.onchange=()=>{const t=local.tests.find(x=>x.id===el.dataset.id);if(t){t.status=el.value;save();renderConceptVariants();renderConcepts();}});
-  document.querySelectorAll('.variant-open').forEach(el=>el.onclick=()=>{const t=local.tests.find(x=>x.id===el.dataset.id);if(!t)return;trackerModal.classList.remove('show');show('builder');bAvatar.value=t.avatar;bAngle.value=t.angle;bConcept.value=t.concept;bHook.value=t.hook||'';bProof.value=t.proof||'';bHypothesis.value=t.hypothesis||'';brief();});
+  document.querySelectorAll('.variant-open').forEach(el=>el.onclick=()=>{const t=local.tests.find(x=>x.id===el.dataset.id);if(!t)return;trackerModal.classList.remove('show');show('builder');bAvatar.value=t.avatar;bAngle.value=t.angle;bConcept.value=t.concept;bHook.value=t.hook||'';bProof.value=t.proof||'';bHypothesis.value=t.hypothesis||'';bBrief.value=t.brief||'';brief();});
   document.querySelectorAll('.variant-delete').forEach(el=>el.onclick=()=>{local.tests=local.tests.filter(x=>x.id!==el.dataset.id);save();renderConceptVariants();renderConcepts();renderTests();});
 }
 addVariant.onclick=()=>{
   if(!activeConceptId)return;
   const exists=local.tests.some(t=>t.concept===activeConceptId&&t.avatar===vAvatar.value&&t.angle===vAngle.value);
   if(exists){toast('Variant already exists');return;}
-  const t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:vAvatar.value,angle:vAngle.value,concept:activeConceptId,type:'Concept Test',hook:'',proof:'',hypothesis:'',status:'Planned',createdAt:new Date().toISOString()};
+  const t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:vAvatar.value,angle:vAngle.value,concept:activeConceptId,type:'Concept Test',hook:'',proof:'',hypothesis:'',brief:'',status:'Planned',createdAt:new Date().toISOString()};
   local.tests.push(t);save();renderConceptVariants();renderConcepts();renderTests();toast('Variant added');
 };
 closeTracker.onclick=()=>trackerModal.classList.remove('show');
 trackerModal.onclick=e=>{if(e.target===trackerModal)trackerModal.classList.remove('show')};
 
-newConceptBtn.onclick=()=>conceptModal.classList.add('show');closeConcept.onclick=cancelConcept.onclick=()=>conceptModal.classList.remove('show');conceptModal.onclick=e=>{if(e.target===conceptModal)conceptModal.classList.remove('show')};saveConcept.onclick=()=>{if(!cName.value.trim())return alert('Concept name required.');let id='CP'+String(concepts().length+1).padStart(2,'0');local.concepts.push({id,name:cName.value.trim(),family:cFamily.value.trim()||'Custom',format:cFormat.value.trim()||'Unknown',url:cUrl.value.trim(),thumb:cThumb.value.trim(),structure:cStructure.value.trim(),why:cWhy.value.trim()});['cName','cFamily','cFormat','cUrl','cThumb','cStructure','cWhy'].forEach(i=>document.getElementById(i).value='');conceptModal.classList.remove('show');save();renderConcepts();toast('Concept saved')};
-function builderOptions(){bAvatar.innerHTML=AVATARS.map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bAngle.innerHTML=ANGLES.filter(a=>a.id!=='AN01').map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bConcept.innerHTML=concepts().map(c=>`<option value="${c.id}">${c.id} · ${esc(c.name)}</option>`).join('');['bAvatar','bAngle','bConcept','bType','bHook','bProof','bHypothesis'].forEach(id=>document.getElementById(id).oninput=brief)}
+newConceptBtn.onclick=()=>conceptModal.classList.add('show');closeConcept.onclick=cancelConcept.onclick=()=>conceptModal.classList.remove('show');conceptModal.onclick=e=>{if(e.target===conceptModal)conceptModal.classList.remove('show')};saveConcept.onclick=()=>{if(!cName.value.trim())return alert('Concept name required.');let id='CP'+String(concepts().length+1).padStart(2,'0');local.concepts.push({id,name:cName.value.trim(),family:cFamily.value.trim()||'Custom',format:cFormat.value.trim()||'Unknown',url:cUrl.value.trim(),thumb:cThumb.value.trim(),structure:cStructure.value.trim(),why:cWhy.value.trim()});['cName','cFamily','cFormat','cUrl','cThumb','cStructure','cWhy'].forEach(i=>document.getElementById(i).value='');conceptModal.classList.remove('show');save();renderConcepts();builderOptions();renderPriorities();toast('Concept saved')};
+function builderOptions(){bAvatar.innerHTML=AVATARS.map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bAngle.innerHTML=ANGLES.filter(a=>a.id!=='AN01').map(a=>`<option value="${a.id}">${a.id} · ${esc(a.name)}</option>`).join('');bConcept.innerHTML=concepts().map(c=>`<option value="${c.id}">${c.id} · ${esc(c.name)}</option>`).join('');['bAvatar','bAngle','bConcept','bType','bHook','bProof','bHypothesis','bBrief'].forEach(id=>document.getElementById(id).oninput=brief)}
 function brief(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);if(!a||!n||!c)return;let id=slug(a.name)+'_'+slug(n.name)+'_'+slug(c.name);creativeId.textContent=id;briefTitle.textContent=a.name+' × '+n.name;briefAvatar.textContent=a.name;briefAngle.textContent=n.name;briefConcept.textContent=c.name;briefTruth.textContent=n.truth;briefMechanism.textContent=n.mechanism;briefOutcome.textContent=n.outcome;if(!bHypothesis.value)bHypothesis.placeholder=`If we communicate “${n.name}” to ${a.name} through “${c.name}”, we believe it will outperform generic comfort messaging because it matches a specific lived experience.`}
-function renderTests(){testRows.innerHTML=local.tests.length?local.tests.map(t=>{let a=get(AVATARS,t.avatar),n=get(ANGLES,t.angle),c=get(concepts(),t.concept);return`<tr><td class="id">${t.id}</td><td>${esc(a?.name||t.avatar)}</td><td>${esc(n?.name||t.angle)}</td><td>${esc(c?.name||t.concept)}</td><td>${esc(t.type)}</td><td><select class="status test-status" data-id="${t.id}">${['Planned','Briefing','Production','Ready','Testing','Winner','Loser','Retired'].map(s=>'<option '+(s===t.status?'selected':'')+'>'+s+'</option>').join('')}</select></td><td>${esc(t.hook||'—')}</td><td><button class="btn delete-test" data-id="${t.id}">Delete</button></td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No tests queued yet. Build the first A × A × C combination above.</div></td></tr>';document.querySelectorAll('.test-status').forEach(x=>x.onchange=()=>{let t=local.tests.find(y=>y.id===x.dataset.id);t.status=x.value;save();renderConcepts()});document.querySelectorAll('.delete-test').forEach(x=>x.onclick=()=>{local.tests=local.tests.filter(y=>y.id!==x.dataset.id);save();renderTests()})}
-addTest.onclick=()=>{let t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:bAvatar.value,angle:bAngle.value,concept:bConcept.value,type:bType.value,hook:bHook.value.trim(),proof:bProof.value.trim(),hypothesis:bHypothesis.value.trim(),status:'Planned',createdAt:new Date().toISOString()};local.tests.push(t);save();renderTests();renderConcepts();toast('Test queued')};
-function briefText(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);return`ORTHORA CREATIVE BRIEF\n\nCreative ID: ${creativeId.textContent}\nAvatar: ${a?.name}\nAngle: ${n?.name}\nConcept: ${c?.name}\nTest Type: ${bType.value}\n\nCustomer truth: ${n?.truth}\nReason to believe: ${n?.mechanism}\nDesired outcome: ${n?.outcome}\n\nHook: ${bHook.value}\nProof required: ${bProof.value}\nHypothesis: ${bHypothesis.value||bHypothesis.placeholder}\n\nConcept structure: ${c?.structure}\nWhy concept works: ${c?.why}`}
+function renderTests(){testRows.innerHTML=local.tests.length?local.tests.map(t=>{let a=get(AVATARS,t.avatar),n=get(ANGLES,t.angle),c=get(concepts(),t.concept);return`<tr><td class="id">${t.id}</td><td>${esc(a?.name||t.avatar)}</td><td>${esc(n?.name||t.angle)}</td><td>${esc(c?.name||t.concept)}</td><td>${esc(t.type)}</td><td><select class="status test-status" data-id="${t.id}">${['Planned','Briefing','Production','Ready','Testing','Winner','Loser','Retired'].map(s=>'<option '+(s===t.status?'selected':'')+'>'+s+'</option>').join('')}</select></td><td>${esc(t.hook||'—')}</td><td><button class="btn delete-test" data-id="${t.id}">Delete</button></td></tr>`}).join(''):'<tr><td colspan="8"><div class="empty">No tests queued yet. Build the first A × A × C combination above.</div></td></tr>';document.querySelectorAll('.test-status').forEach(x=>x.onchange=()=>{let t=local.tests.find(y=>y.id===x.dataset.id);t.status=x.value;save();renderConcepts();renderPriorities()});document.querySelectorAll('.delete-test').forEach(x=>x.onclick=()=>{local.tests=local.tests.filter(y=>y.id!==x.dataset.id);save();renderTests();renderPriorities()})}
+addTest.onclick=()=>{let t=local.tests.find(x=>x.avatar===bAvatar.value&&x.angle===bAngle.value&&x.concept===bConcept.value);if(t){t.type=bType.value;t.hook=bHook.value.trim();t.proof=bProof.value.trim();t.hypothesis=bHypothesis.value.trim();t.brief=bBrief.value.trim();if(!t.status)t.status='Planned';toast('Existing test updated')}else{t={id:'T'+String(local.tests.length+1).padStart(3,'0'),avatar:bAvatar.value,angle:bAngle.value,concept:bConcept.value,type:bType.value,hook:bHook.value.trim(),proof:bProof.value.trim(),hypothesis:bHypothesis.value.trim(),brief:bBrief.value.trim(),status:'Planned',createdAt:new Date().toISOString()};local.tests.push(t);toast('Test queued')}save();renderTests();renderConcepts();renderPriorities()};
+function briefText(){let a=get(AVATARS,bAvatar.value),n=get(ANGLES,bAngle.value),c=get(concepts(),bConcept.value);return`ORTHORA CREATIVE BRIEF\n\nCreative ID: ${creativeId.textContent}\nAvatar: ${a?.name}\nAngle: ${n?.name}\nConcept: ${c?.name}\nTest Type: ${bType.value}\n\nCustomer truth: ${n?.truth}\nReason to believe: ${n?.mechanism}\nDesired outcome: ${n?.outcome}\n\nHook: ${bHook.value}\nProof required: ${bProof.value}\nHypothesis: ${bHypothesis.value||bHypothesis.placeholder}\n\nCreative brief: ${bBrief.value||'—'}\n\nConcept structure: ${c?.structure}\nWhy concept works: ${c?.why}`}
 copyBrief.onclick=async()=>{await navigator.clipboard.writeText(briefText());toast('Brief copied')};
 exportBtn.onclick=()=>{let blob=new Blob([JSON.stringify(local,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='orthora-creative-system-team.json';a.click();URL.revokeObjectURL(a.href);toast('Team export created')};importInput.onchange=async e=>{let f=e.target.files?.[0];if(!f)return;try{let x=JSON.parse(await f.text());local={concepts:Array.isArray(x.concepts)?x.concepts:[],tests:Array.isArray(x.tests)?x.tests:[],priorityState:x.priorityState&&typeof x.priorityState==='object'?x.priorityState:{}};save();renderConcepts();builderOptions();renderTests();toast('Team file imported')}catch{alert('Invalid team file.')}e.target.value=''};
 renderAvatars();renderAngles();renderPriorities();builderOptions();brief();renderTests();counts();
